@@ -9,7 +9,8 @@
     "subtitle": "Automated WhatsApp bot confirms orders before shipping",
     "urgency": "🔥 Special Offer: First 20 stores only - 2 months free",
     "social_proof": "Join 47+ Egyptian stores already on the waitlist",
-    "cta": "Reserve Now - Pay Only 1 EGP"
+    "cta": "Reserve Now - Pay Only 1 EGP",
+    "scroll_down": "Scroll Down"
   },
   "problems": {
     "title": "Are You Facing These Problems Daily?",
@@ -65,11 +66,15 @@
       "title": "Designed for Egyptian Market",
       "description": "Messages in Arabic, rate-limited so not blocked, Egyptian support"
     },
-    "testimonial_1": "Before the bot I had 40% returns. Now only 18%. Saved more than 15,000 EGP in two months!"
+    "testimonial_1": "Before the bot I had 40% returns. Now only 18%. Saved more than 15,000 EGP in two months!",
+    "orders_monthly": "orders monthly"
   },
   "pricing": {
     "title": "Simple Pricing",
     "subtitle": "No long contracts - no hidden fees",
+    "per_verification": "per verification",
+    "select_plan": "Select Plan",
+    "month": "month",
     "starter": {
       "name": "Starter",
       "features": {

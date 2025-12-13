@@ -106,6 +106,16 @@ const config: Config = {
           '0%': { transform: 'scale(0.95)', opacity: '0' },
           '100%': { transform: 'scale(1)', opacity: '1' },
         },
+        gradient: {
+          '0%, 100%': {
+            'background-size': '200% 200%',
+            'background-position': 'left center',
+          },
+          '50%': {
+            'background-size': '200% 200%',
+            'background-position': 'right center',
+          },
+        },
       },
       animation: {
         'accordion-down': 'accordion-down 0.2s ease-out',
@@ -113,6 +123,8 @@ const config: Config = {
         'fade-in': 'fade-in 0.5s ease-in-out',
         'slide-up': 'slide-up 0.5s ease-out',
         'scale-in': 'scale-in 0.3s ease-out',
+        'bounce-slow': 'bounce 3s infinite',
+        gradient: 'gradient 8s linear infinite',
       },
     },
   },

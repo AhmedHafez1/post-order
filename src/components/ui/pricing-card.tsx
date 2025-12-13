@@ -6,14 +6,16 @@ import { Button } from './button'
 import { Check } from 'lucide-react'
 import { cn } from '@/lib/utils'
 
+import { ReactNode } from 'react'
+
 export interface PricingCardProps {
-  name: string
-  price: number | string
-  period?: string
-  description?: string
-  features: string[]
+  name: string | ReactNode
+  price: number | string | ReactNode
+  period?: string | ReactNode
+  description?: string | ReactNode
+  features: (string | ReactNode)[]
   popular?: boolean
-  cta: string
+  cta: string | ReactNode
   onCtaClick: () => void
   className?: string
 }
