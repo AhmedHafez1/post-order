@@ -1,0 +1,185 @@
+{
+  "metadata": {
+    "title": "Reduce COD Returns by 40% | WhatsApp Verification Bot",
+    "description": "Automated WhatsApp verification for Egyptian e-commerce stores. Save thousands of EGP monthly by reducing COD returns."
+  },
+  "hero": {
+    "title": "Reduce COD Returns",
+    "highlight": "by 40%",
+    "subtitle": "Automated WhatsApp bot confirms orders before shipping",
+    "urgency": "🔥 Special Offer: First 20 stores only - 2 months free",
+    "social_proof": "Join 47+ Egyptian stores already on the waitlist",
+    "cta": "Reserve Now - Pay Only 1 EGP"
+  },
+  "problems": {
+    "title": "Are You Facing These Problems Daily?",
+    "financial_loss": {
+      "title": "Losing Thousands of EGP Monthly",
+      "description": "30-40% of COD orders return - you pay shipping both ways for nothing"
+    },
+    "time_wasted": {
+      "title": "Too Many Calls, Nobody Answers",
+      "description": "Waste hours daily calling customers - they don't answer or say 'I didn't order'"
+    },
+    "stock_locked": {
+      "title": "Inventory Stuck and Cash Locked",
+      "description": "Products shipped and returned - your inventory is locked and can't be sold"
+    },
+    "constant_worry": {
+      "title": "Constant Worry About Returns",
+      "description": "Every order you fear will return - especially large orders and distant areas"
+    },
+    "reality": "The Truth: If just 10% of your orders return, and each order averages 200 EGP, and you pay 50 EGP shipping roundtrip...",
+    "reality_highlight": "You're losing more than 7,500 EGP every month! 💔"
+  },
+  "solution": {
+    "title": "The Simple Solution",
+    "subtitle": "Automatic verification via WhatsApp - no effort from you",
+    "steps": {
+      "1": {
+        "title": "Customer Orders",
+        "description": "Your customer orders from your Shopify or WooCommerce store"
+      },
+      "2": {
+        "title": "Bot Sends Automatically",
+        "description": "Instant WhatsApp message: 'Hi Ahmed, your order #1234 arrives tomorrow. Confirm?'"
+      },
+      "3": {
+        "title": "Instant Savings",
+        "description": "If customer not interested or canceled - save shipping and product cost"
+      }
+    },
+    "save_money": {
+      "title": "Save 10,000+ EGP Monthly",
+      "description": "Reduce returns from 35% to 15% - every saved order = more profit"
+    },
+    "easy_integration": {
+      "title": "5-Minute Integration",
+      "description": "Works with Shopify and WooCommerce - no coding, just simple code"
+    },
+    "detailed_reports": {
+      "title": "Detailed Reports",
+      "description": "Know who confirmed and who refused - clear data for every order"
+    },
+    "egypt_focused": {
+      "title": "Designed for Egyptian Market",
+      "description": "Messages in Arabic, rate-limited so not blocked, Egyptian support"
+    },
+    "testimonial_1": "Before the bot I had 40% returns. Now only 18%. Saved more than 15,000 EGP in two months!"
+  },
+  "pricing": {
+    "title": "Simple Pricing",
+    "subtitle": "No long contracts - no hidden fees",
+    "starter": {
+      "name": "Starter",
+      "features": {
+        "pay_per_use": "Pay only when you use",
+        "no_minimum": "No minimum",
+        "basic_support": "Ideal for small stores"
+      }
+    },
+    "pro": {
+      "name": "Pro",
+      "popular": "Most Popular 🔥",
+      "up_to": "Up to 500 verifications",
+      "per_verification": "0.60 EGP each",
+      "features": {
+        "up_to_500": "Save 20% vs regular usage",
+        "detailed_reports": "Detailed reports",
+        "priority_support": "Priority support",
+        "zapier_integration": "Zapier integration"
+      }
+    },
+    "enterprise": {
+      "name": "Enterprise",
+      "features": {
+        "unlimited_verifications": "Unlimited verifications",
+        "dedicated_manager": "Dedicated account manager",
+        "custom_integrations": "Custom integrations",
+        "white_label": "White label"
+      }
+    },
+    "reserve_title": "Reserve Your Spot Now",
+    "reserve_subtitle": "First 20 stores: 2 months free + free setup (worth 500 EGP)",
+    "trust_badges": {
+      "secure": "🔒 100% Secure",
+      "refund": "💳 Full Refund",
+      "support": "🇪🇬 Arabic Support"
+    }
+  },
+  "faq": {
+    "title": "Frequently Asked Questions",
+    "money_back": {
+      "question": "What if it doesn't work for me?",
+      "answer": "Full refund in first 30 days - no questions asked"
+    },
+    "coding_required": {
+      "question": "Do I need to know coding?",
+      "answer": "No, the opposite. We'll give you ready code to copy and paste in your store - that's it"
+    },
+    "platforms": {
+      "question": "Works with which platform?",
+      "answer": "Shopify, WooCommerce, and any other platform with Webhooks"
+    },
+    "why_pay_now": {
+      "question": "Why pay 1 EGP now?",
+      "answer": "To make sure you're serious. The 1 EGP will be deducted from your first subscription"
+    }
+  },
+  "form": {
+    "name": {
+      "label": "Full Name",
+      "placeholder": "Mohamed Ahmed",
+      "required": "Name is required"
+    },
+    "phone": {
+      "label": "WhatsApp Number",
+      "placeholder": "01012345678",
+      "required": "WhatsApp number is required",
+      "invalid": "Invalid Egyptian number (example: 01012345678)"
+    },
+    "email": {
+      "label": "Email",
+      "placeholder": "example@email.com",
+      "required": "Email is required",
+      "invalid": "Invalid email"
+    },
+    "storeUrl": {
+      "label": "Store URL (optional)",
+      "placeholder": "https://mystore.com"
+    },
+    "monthlyOrders": {
+      "label": "Approximately how many orders monthly?",
+      "placeholder": "Select...",
+      "required": "Select number of orders",
+      "options": {
+        "0-50": "Less than 50",
+        "50-200": "50 - 200",
+        "200-500": "200 - 500",
+        "500-1000": "500 - 1000",
+        "1000+": "More than 1000"
+      }
+    },
+    "submit": "Reserve Now - Pay Only 1 EGP 💳",
+    "submitting": "Loading...",
+    "error": "An error occurred. Try again or contact us on WhatsApp",
+    "info": "The 1 EGP will be deducted from your first subscription. Full refund if you don't like the service."
+  },
+  "success": {
+    "title": "Reservation Successful!",
+    "subtitle": "Congratulations! You're now one of the first 20 stores to use the bot free for 2 months",
+    "next_title": "What's Next?",
+    "next_steps": {
+      "1": "We'll contact you within 24 hours on WhatsApp",
+      "2": "We'll help you with setup (only 5 minutes)",
+      "3": "You'll start saving money from the first week"
+    },
+    "important_title": "Very Important!",
+    "important_text": "Open WhatsApp and send us \"Ready\" at number:",
+    "important_cta": "So we can start with you immediately",
+    "cta": "Open WhatsApp Now 📱"
+  },
+  "footer": {
+    "copyright": "© 2024 COD Verification Bot - Made in Egypt 🇪🇬"
+  }
+}
