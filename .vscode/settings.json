@@ -3,5 +3,14 @@
     "*.css": "tailwindcss"
   },
   "css.lint.unknownAtRules": "ignore",
-  "cSpell.words": ["عربي"]
+  "cSpell.words": [
+    "waitlist",
+    "أوردر",
+    "اختر",
+    "الخطة",
+    "تأكيد",
+    "جنيه",
+    "شهرياً",
+    "عربي"
+  ]
 }

@@ -9,7 +9,7 @@ import { TestimonialCard } from '@/components/ui/testimonial-card'
 import { Badge } from '@/components/ui/badge'
 import { motion } from 'framer-motion'
 import { features, testimonials } from '@/config/site'
-import { ArrowRight, CheckCircle2 } from 'lucide-react'
+import { CheckCircle2 } from 'lucide-react'
 
 const container = {
   hidden: { opacity: 0 },
@@ -32,15 +32,11 @@ export function Solution() {
   return (
     <Section variant="gradient">
       <Container>
-        <SectionHeader 
-          title={t('title')}
-          subtitle={t('subtitle')}
-          centered
-        />
+        <SectionHeader title={t('title')} subtitle={t('subtitle')} centered />
 
         {/* How it works - 3 steps */}
         <div className="mb-20">
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid gap-8 md:grid-cols-3">
             {['1', '2', '3'].map((step) => (
               <motion.div
                 key={step}
@@ -52,22 +48,22 @@ export function Solution() {
               >
                 {/* Connector line */}
                 {step !== '3' && (
-                  <div className="hidden md:block absolute top-8 start-full w-full h-0.5 bg-gradient-to-r from-primary to-transparent -z-10" />
+                  <div className="from-primary absolute start-full top-8 -z-10 hidden h-0.5 w-full bg-linear-to-r to-transparent md:block" />
                 )}
 
-                <Card className="relative overflow-hidden group hover:shadow-2xl transition-all duration-500 border-2 hover:border-primary h-full">
+                <Card className="group hover:border-primary relative h-full overflow-hidden border-2 transition-all duration-500 hover:shadow-2xl">
                   {/* Number badge */}
-                  <div className="absolute -top-4 -start-4 w-16 h-16 bg-gradient-to-br from-primary to-primary-600 rounded-full flex items-center justify-center text-white text-2xl font-bold shadow-lg group-hover:scale-110 transition-transform">
+                  <div className="from-primary to-primary-600 absolute -start-4 -top-4 flex h-16 w-16 items-center justify-center rounded-full bg-linear-to-br text-2xl font-bold text-white shadow-lg transition-transform group-hover:scale-110">
                     {step}
                   </div>
 
-                  <CardContent className="pt-12 pb-8 px-6">
-                    <div className="text-5xl mb-4 group-hover:scale-110 transition-transform">
+                  <CardContent className="px-6 pt-12 pb-8">
+                    <div className="mb-4 text-5xl transition-transform group-hover:scale-110">
                       {step === '1' && '🛒'}
                       {step === '2' && '📱'}
                       {step === '3' && '✅'}
                     </div>
-                    <h3 className="text-xl font-bold mb-3">
+                    <h3 className="mb-3 text-xl font-bold">
                       {t(`steps.${step}.title`)}
                     </h3>
                     <p className="text-muted-foreground leading-relaxed">
@@ -76,7 +72,7 @@ export function Solution() {
                   </CardContent>
 
                   {/* Hover effect */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-primary/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity -z-10" />
+                  <div className="from-primary/10 absolute inset-0 -z-10 bg-linear-to-t to-transparent opacity-0 transition-opacity group-hover:opacity-100" />
                 </Card>
               </motion.div>
             ))}
@@ -89,25 +85,25 @@ export function Solution() {
           initial="hidden"
           whileInView="show"
           viewport={{ once: true, margin: '-100px' }}
-          className="grid md:grid-cols-2 gap-6 mb-16"
+          className="mb-16 grid gap-6 md:grid-cols-2"
         >
           {features.solutions.map((solution) => (
             <motion.div key={solution.key} variants={item}>
-              <Card className="h-full group hover:shadow-xl transition-all duration-300 hover:-translate-y-2 bg-white/80 backdrop-blur border-2 hover:border-primary">
+              <Card className="group hover:border-primary h-full border-2 bg-white/80 backdrop-blur transition-all duration-300 hover:-translate-y-2 hover:shadow-xl">
                 <CardContent className="p-8">
                   <div className="flex items-start gap-4">
-                    <div className="text-5xl group-hover:scale-110 transition-transform">
+                    <div className="text-5xl transition-transform group-hover:scale-110">
                       {solution.icon}
                     </div>
                     <div className="flex-1">
-                      <h3 className="text-xl font-bold mb-2 group-hover:text-primary transition-colors">
+                      <h3 className="group-hover:text-primary mb-2 text-xl font-bold transition-colors">
                         {t(`${solution.key}.title`)}
                       </h3>
                       <p className="text-muted-foreground leading-relaxed">
                         {t(`${solution.key}.description`)}
                       </p>
                     </div>
-                    <CheckCircle2 className="w-6 h-6 text-primary flex-shrink-0 opacity-0 group-hover:opacity-100 transition-opacity" />
+                    <CheckCircle2 className="text-primary h-6 w-6 shrink-0 opacity-0 transition-opacity group-hover:opacity-100" />
                   </div>
                 </CardContent>
               </Card>
@@ -121,10 +117,10 @@ export function Solution() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="max-w-3xl mx-auto"
+          className="mx-auto max-w-3xl"
         >
-          <div className="text-center mb-6">
-            <Badge variant="secondary" className="text-base px-4 py-2">
+          <div className="mb-6 text-center">
+            <Badge variant="secondary" className="px-4 py-2 text-base">
               ⭐⭐⭐⭐⭐
             </Badge>
           </div>
@@ -132,7 +128,11 @@ export function Solution() {
             quote={t('testimonial_1')}
             author={testimonials[0].name}
             role={testimonials[0].store}
-            meta={testimonials[0].orders + ' ' + t.rich('orders_monthly', { default: 'أوردر شهرياً' })}
+            meta={
+              testimonials[0].orders +
+              ' ' +
+              t.rich('orders_monthly', { default: 'أوردر شهرياً' })
+            }
             className="shadow-2xl"
           />
         </motion.div>

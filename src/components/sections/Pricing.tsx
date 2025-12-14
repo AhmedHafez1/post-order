@@ -25,16 +25,15 @@ export function Pricing() {
   }
 
   return (
-    <Section id="pricing" className="bg-gradient-to-b from-background via-primary/5 to-background">
+    <Section
+      id="pricing"
+      className="from-background via-primary/5 to-background bg-linear-to-b"
+    >
       <Container>
-        <SectionHeader 
-          title={t('title')}
-          subtitle={t('subtitle')}
-          centered
-        />
+        <SectionHeader title={t('title')} subtitle={t('subtitle')} centered />
 
         {/* Pricing cards */}
-        <div className="grid md:grid-cols-3 gap-8 mb-16">
+        <div className="mb-16 grid gap-8 md:grid-cols-3">
           {/* Starter */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -65,10 +64,11 @@ export function Pricing() {
               name={t('pro.name')}
               price={`${pricing.pro.price} جنيه`}
               period={t.rich('month', { default: 'شهر' })}
-              description={t('pro.up_to') + ` (${pricing.pro.perVerification} ${t('pro.per_verification')})`}
-              features={pricing.pro.features.map((f) =>
-                t(`pro.features.${f}`)
-              )}
+              description={
+                t('pro.up_to') +
+                ` (${pricing.pro.perVerification} ${t('pro.per_verification')})`
+              }
+              features={pricing.pro.features.map((f) => t(`pro.features.${f}`))}
               popular
               cta={t.rich('select_plan', { default: 'اختر الخطة' })}
               onCtaClick={handleCtaClick}
@@ -102,12 +102,12 @@ export function Pricing() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="max-w-2xl mx-auto mb-16"
+          className="mx-auto mb-16 max-w-2xl"
         >
-          <Card className="shadow-2xl border-2 border-primary/20 bg-white/80 backdrop-blur">
+          <Card className="border-primary/20 border-2 bg-white/80 shadow-2xl backdrop-blur">
             <CardContent className="p-8 md:p-12">
-              <div className="text-center mb-8">
-                <h3 className="text-3xl font-bold mb-3">
+              <div className="mb-8 text-center">
+                <h3 className="mb-3 text-3xl font-bold">
                   {t('reserve_title')}
                 </h3>
                 <p className="text-muted-foreground text-lg">
@@ -118,17 +118,17 @@ export function Pricing() {
               <WaitlistForm />
 
               {/* Trust badges */}
-              <div className="mt-8 flex flex-wrap items-center justify-center gap-6 text-sm text-muted-foreground">
+              <div className="text-muted-foreground mt-8 flex flex-wrap items-center justify-center gap-6 text-sm">
                 <div className="flex items-center gap-2">
-                  <Shield className="w-5 h-5 text-primary" />
+                  <Shield className="text-primary h-5 w-5" />
                   <span>{t('trust_badges.secure')}</span>
                 </div>
                 <div className="flex items-center gap-2">
-                  <CreditCard className="w-5 h-5 text-primary" />
+                  <CreditCard className="text-primary h-5 w-5" />
                   <span>{t('trust_badges.refund')}</span>
                 </div>
                 <div className="flex items-center gap-2">
-                  <Headphones className="w-5 h-5 text-primary" />
+                  <Headphones className="text-primary h-5 w-5" />
                   <span>{t('trust_badges.support')}</span>
                 </div>
               </div>
@@ -142,9 +142,9 @@ export function Pricing() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="max-w-3xl mx-auto"
+          className="mx-auto max-w-3xl"
         >
-          <h3 className="text-3xl font-bold text-center mb-8">
+          <h3 className="mb-8 text-center text-3xl font-bold">
             {tFaq('title')}
           </h3>
 
