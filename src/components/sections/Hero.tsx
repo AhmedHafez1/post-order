@@ -28,12 +28,12 @@ export function Hero() {
     <section className="relative flex min-h-screen items-center overflow-hidden pt-20">
       {/* Enhanced animated background */}
       <div className="absolute inset-0 -z-10">
-        <div className="from-primary/10 via-secondary/5 to-background absolute inset-0 bg-gradient-to-br" />
+        <div className="from-primary/10 via-secondary/5 to-background absolute inset-0 bg-linear-to-br" />
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(34,197,94,0.15),transparent_50%)]" />
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_80%,rgba(250,204,21,0.15),transparent_50%)]" />
 
         {/* Grid pattern */}
-        <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px]" />
+        <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-size-[24px_24px]" />
 
         {/* Floating orbs */}
         <motion.div
@@ -92,7 +92,7 @@ export function Hero() {
             >
               {t('title')}{' '}
               <span className="relative inline-block">
-                <span className="from-primary-600 via-primary-500 to-primary-400 bg-gradient-to-r bg-clip-text text-transparent">
+                <span className="from-primary-600 via-primary-500 to-primary-400 bg-linear-to-r bg-clip-text text-transparent">
                   {t('highlight')}
                 </span>
                 <motion.svg
@@ -161,7 +161,7 @@ export function Hero() {
                 className="hover:shadow-primary/50 group relative overflow-hidden px-8 py-6 text-lg shadow-2xl transition-all duration-300 hover:scale-105"
               >
                 <span className="relative z-10">{t('cta')}</span>
-                <div className="from-primary-600 to-primary absolute inset-0 bg-gradient-to-r opacity-0 transition-opacity group-hover:opacity-100" />
+                <div className="from-primary-600 to-primary absolute inset-0 bg-linear-to-r opacity-0 transition-opacity group-hover:opacity-100" />
               </Button>
               <Button
                 size="lg"
@@ -184,7 +184,7 @@ export function Hero() {
                 {[1, 2, 3, 4, 5].map((i) => (
                   <div
                     key={i}
-                    className="border-background from-primary-400 to-primary-600 flex h-10 w-10 items-center justify-center rounded-full border-4 bg-gradient-to-br text-xs font-bold text-white shadow-lg"
+                    className="border-background from-primary-400 to-primary-600 flex h-10 w-10 items-center justify-center rounded-full border-4 bg-linear-to-br text-xs font-bold text-white shadow-lg"
                   >
                     {i}
                   </div>
@@ -210,7 +210,7 @@ export function Hero() {
           >
             {/* Placeholder for phone mockup or dashboard screenshot */}
             <div className="relative aspect-square">
-              <div className="from-primary/20 to-secondary/20 absolute inset-0 rounded-3xl bg-gradient-to-br blur-3xl" />
+              <div className="from-primary/20 to-secondary/20 absolute inset-0 rounded-3xl bg-linear-to-br blur-3xl" />
               <div className="border-border relative space-y-4 rounded-3xl border-2 bg-white/80 p-8 shadow-2xl backdrop-blur">
                 {/* Mock WhatsApp message */}
                 <div className="bg-primary/10 space-y-2 rounded-2xl p-4">

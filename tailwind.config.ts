@@ -129,10 +129,15 @@ const config: Config = {
     },
   },
   plugins: [
-    require('tailwindcss-animate'),
-    require('@tailwindcss/forms'),
     // RTL support plugin
-    function ({ addUtilities }: any) {
+    function ({
+      addUtilities,
+    }: {
+      addUtilities: (arg0: {
+        '.rtl': { direction: string }
+        '.ltr': { direction: string }
+      }) => void
+    }) {
       const newUtilities = {
         '.rtl': {
           direction: 'rtl',

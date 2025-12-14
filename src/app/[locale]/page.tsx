@@ -9,13 +9,13 @@ export default function Home() {
       <div className="w-full">
         <Hero />
       </div>
-      <div className="w-full border-t border-gray-200 dark:border-gray-800">
+      <div className="w-full border-t-2 border-gray-200 dark:border-gray-800">
         <Problem />
       </div>
-      <div className="w-full border-t border-gray-200 dark:border-gray-800">
+      <div className="w-full border-t-2 border-gray-200 dark:border-gray-800">
         <Solution />
       </div>
-      <div className="w-full border-t border-gray-200 dark:border-gray-800">
+      <div className="w-full border-t-2 border-gray-200 dark:border-gray-800">
         <Pricing />
       </div>
     </main>
