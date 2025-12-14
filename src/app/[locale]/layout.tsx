@@ -1,13 +1,29 @@
 import { Cairo } from 'next/font/google'
 import { NextIntlClientProvider } from 'next-intl'
-import { getMessages } from 'next-intl/server'
+import { getMessages, getTranslations } from 'next-intl/server'
 import { Toaster } from 'react-hot-toast'
+import { Header } from '@/components/layout/Header'
 import '../globals.css'
 
 const cairo = Cairo({ 
   subsets: ['arabic', 'latin'],
-  weight: ['400', '600', '700', '900']
+  weight: ['400', '600', '700', '900'],
+  display: 'swap',
 })
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>
+}) {
+  const { locale } = await params
+  const t = await getTranslations({ locale, namespace: 'metadata' })
+
+  return {
+    title: t('title'),
+    description: t('description'),
+  }
+}
 
 export default async function LocaleLayout({
   children,
@@ -23,6 +39,7 @@ export default async function LocaleLayout({
     <html lang={locale} dir={locale === 'ar' ? 'rtl' : 'ltr'}>
       <body className={cairo.className}>
         <NextIntlClientProvider messages={messages}>
+          <Header />
           {children}
           <Toaster 
             position={locale === 'ar' ? 'top-left' : 'top-right'}

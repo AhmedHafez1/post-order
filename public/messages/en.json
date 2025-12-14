@@ -3,6 +3,13 @@
     "title": "Reduce COD Returns by 40% | WhatsApp Verification Bot",
     "description": "Automated WhatsApp verification for Egyptian e-commerce stores. Save thousands of EGP monthly by reducing COD returns."
   },
+  "header": {
+    "tagline": "Confirm orders before shipping",
+    "features": "Features",
+    "pricing": "Pricing",
+    "faq": "FAQ",
+    "cta": "Start Now"
+  },
   "hero": {
     "title": "Reduce COD Returns",
     "highlight": "by 40%",
@@ -10,7 +17,15 @@
     "urgency": "🔥 Special Offer: First 20 stores only - 2 months free",
     "social_proof": "Join 47+ Egyptian stores already on the waitlist",
     "cta": "Reserve Now - Pay Only 1 EGP",
-    "scroll_down": "Scroll Down"
+    "scroll_down": "Scroll Down",
+    "rejected": "Rejected",
+    "confirmed": "Confirmed",
+    "mock_message": "Mock Message",
+    "stat_1": "Increase Success Rate",
+    "stat_2": "Save more than",
+    "stat_3": "Easy Integration",
+    "learn_more": "Learn More",
+    "rating": "Rating"
   },
   "problems": {
     "title": "Are You Facing These Problems Daily?",
