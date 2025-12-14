@@ -12,9 +12,9 @@ export function Hero() {
   const t = useTranslations('hero')
 
   const scrollToPricing = () => {
-    document.getElementById('pricing')?.scrollIntoView({ 
+    document.getElementById('pricing')?.scrollIntoView({
       behavior: 'smooth',
-      block: 'start'
+      block: 'start',
     })
   }
 
@@ -25,16 +25,16 @@ export function Hero() {
   ]
 
   return (
-    <section className="relative min-h-screen flex items-center overflow-hidden pt-20">
+    <section className="relative flex min-h-screen items-center overflow-hidden pt-20">
       {/* Enhanced animated background */}
       <div className="absolute inset-0 -z-10">
-        <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-secondary/5 to-background" />
+        <div className="from-primary/10 via-secondary/5 to-background absolute inset-0 bg-gradient-to-br" />
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(34,197,94,0.15),transparent_50%)]" />
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_80%,rgba(250,204,21,0.15),transparent_50%)]" />
-        
+
         {/* Grid pattern */}
         <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px]" />
-        
+
         {/* Floating orbs */}
         <motion.div
           animate={{
@@ -46,7 +46,7 @@ export function Hero() {
             repeat: Infinity,
             ease: 'easeInOut',
           }}
-          className="absolute top-20 start-10 w-32 h-32 bg-primary/20 rounded-full blur-3xl"
+          className="bg-primary/20 absolute start-10 top-20 h-32 w-32 rounded-full blur-3xl"
         />
         <motion.div
           animate={{
@@ -59,12 +59,12 @@ export function Hero() {
             ease: 'easeInOut',
             delay: 1,
           }}
-          className="absolute bottom-20 end-10 w-40 h-40 bg-secondary/20 rounded-full blur-3xl"
+          className="bg-secondary/20 absolute end-10 bottom-20 h-40 w-40 rounded-full blur-3xl"
         />
       </div>
 
       <Container>
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
+        <div className="grid items-center gap-12 lg:grid-cols-2">
           {/* Left Column - Content */}
           <div>
             {/* Urgency badge */}
@@ -74,11 +74,11 @@ export function Hero() {
               transition={{ duration: 0.5 }}
               className="mb-6 inline-block"
             >
-              <Badge 
-                variant="secondary" 
-                className="px-6 py-3 text-base font-semibold shadow-lg border-2 border-secondary-400 hover:scale-105 transition-transform cursor-default"
+              <Badge
+                variant="secondary"
+                className="border-secondary-400 cursor-default border-2 px-6 py-3 text-base font-semibold shadow-lg transition-transform hover:scale-105"
               >
-                <Sparkles className="w-4 h-4 me-2 inline animate-pulse" />
+                <Sparkles className="me-2 inline h-4 w-4 animate-pulse" />
                 {t('urgency')}
               </Badge>
             </motion.div>
@@ -88,11 +88,11 @@ export function Hero() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
-              className="text-5xl md:text-6xl lg:text-7xl font-black mb-6 leading-[1.1]"
+              className="mb-6 text-5xl leading-[1.1] font-black md:text-6xl lg:text-7xl"
             >
               {t('title')}{' '}
               <span className="relative inline-block">
-                <span className="bg-gradient-to-r from-primary-600 via-primary-500 to-primary-400 bg-clip-text text-transparent">
+                <span className="from-primary-600 via-primary-500 to-primary-400 bg-gradient-to-r bg-clip-text text-transparent">
                   {t('highlight')}
                 </span>
                 <motion.svg
@@ -120,7 +120,7 @@ export function Hero() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.4 }}
-              className="text-xl md:text-2xl text-muted-foreground mb-8 leading-relaxed"
+              className="text-muted-foreground mb-8 text-xl leading-relaxed md:text-2xl"
             >
               {t('subtitle')}
             </motion.p>
@@ -130,16 +130,20 @@ export function Hero() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.5 }}
-              className="grid grid-cols-3 gap-4 mb-8"
+              className="mb-8 grid grid-cols-3 gap-4"
             >
               {stats.map((stat, index) => (
                 <div
                   key={index}
-                  className="bg-white/50 backdrop-blur border border-border rounded-xl p-4 hover:shadow-lg transition-shadow"
+                  className="border-border rounded-xl border bg-white/50 p-4 backdrop-blur transition-shadow hover:shadow-lg"
                 >
-                  <stat.icon className="w-5 h-5 text-primary mb-2" />
-                  <div className="text-2xl font-bold text-foreground">{stat.value}</div>
-                  <div className="text-xs text-muted-foreground">{stat.label}</div>
+                  <stat.icon className="text-primary mb-2 h-5 w-5" />
+                  <div className="text-foreground text-2xl font-bold">
+                    {stat.value}
+                  </div>
+                  <div className="text-muted-foreground text-xs">
+                    {stat.label}
+                  </div>
                 </div>
               ))}
             </motion.div>
@@ -149,21 +153,21 @@ export function Hero() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.6 }}
-              className="flex flex-col sm:flex-row gap-4"
+              className="flex flex-col gap-4 sm:flex-row"
             >
               <Button
                 size="lg"
                 onClick={scrollToPricing}
-                className="text-lg px-8 py-6 shadow-2xl hover:shadow-primary/50 transition-all duration-300 hover:scale-105 relative group overflow-hidden"
+                className="hover:shadow-primary/50 group relative overflow-hidden px-8 py-6 text-lg shadow-2xl transition-all duration-300 hover:scale-105"
               >
                 <span className="relative z-10">{t('cta')}</span>
-                <div className="absolute inset-0 bg-gradient-to-r from-primary-600 to-primary opacity-0 group-hover:opacity-100 transition-opacity" />
+                <div className="from-primary-600 to-primary absolute inset-0 bg-gradient-to-r opacity-0 transition-opacity group-hover:opacity-100" />
               </Button>
               <Button
                 size="lg"
                 variant="outline"
                 onClick={() => scrollToSection('solution')}
-                className="text-lg px-8 py-6 hover:bg-accent transition-colors"
+                className="hover:bg-accent px-8 py-6 text-lg transition-colors"
               >
                 {t('learn_more')}
               </Button>
@@ -180,15 +184,19 @@ export function Hero() {
                 {[1, 2, 3, 4, 5].map((i) => (
                   <div
                     key={i}
-                    className="w-10 h-10 rounded-full border-4 border-background bg-gradient-to-br from-primary-400 to-primary-600 flex items-center justify-center text-white text-xs font-bold shadow-lg"
+                    className="border-background from-primary-400 to-primary-600 flex h-10 w-10 items-center justify-center rounded-full border-4 bg-gradient-to-br text-xs font-bold text-white shadow-lg"
                   >
                     {i}
                   </div>
                 ))}
               </div>
               <div className="text-sm">
-                <div className="font-semibold text-foreground">{t('social_proof')}</div>
-                <div className="text-muted-foreground">⭐⭐⭐⭐⭐ {t('rating')}</div>
+                <div className="text-foreground font-semibold">
+                  {t('social_proof')}
+                </div>
+                <div className="text-muted-foreground">
+                  ⭐⭐⭐⭐⭐ {t('rating')}
+                </div>
               </div>
             </motion.div>
           </div>
@@ -202,27 +210,31 @@ export function Hero() {
           >
             {/* Placeholder for phone mockup or dashboard screenshot */}
             <div className="relative aspect-square">
-              <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-secondary/20 rounded-3xl blur-3xl" />
-              <div className="relative bg-white/80 backdrop-blur border-2 border-border rounded-3xl shadow-2xl p-8 space-y-4">
+              <div className="from-primary/20 to-secondary/20 absolute inset-0 rounded-3xl bg-gradient-to-br blur-3xl" />
+              <div className="border-border relative space-y-4 rounded-3xl border-2 bg-white/80 p-8 shadow-2xl backdrop-blur">
                 {/* Mock WhatsApp message */}
-                <div className="bg-primary/10 rounded-2xl p-4 space-y-2">
+                <div className="bg-primary/10 space-y-2 rounded-2xl p-4">
                   <div className="flex items-center gap-2">
-                    <div className="w-8 h-8 bg-primary rounded-full" />
+                    <div className="bg-primary h-8 w-8 rounded-full" />
                     <div className="text-sm font-semibold">COD Bot</div>
                   </div>
-                  <div className="bg-white rounded-xl p-3 text-sm">
+                  <div className="rounded-xl bg-white p-3 text-sm">
                     {t('mock_message')}
                   </div>
                 </div>
                 {/* Stats */}
                 <div className="grid grid-cols-2 gap-4">
-                  <div className="bg-green-50 border border-green-200 rounded-xl p-4">
+                  <div className="rounded-xl border border-green-200 bg-green-50 p-4">
                     <div className="text-2xl font-bold text-green-600">85%</div>
-                    <div className="text-xs text-muted-foreground">{t('confirmed')}</div>
+                    <div className="text-muted-foreground text-xs">
+                      {t('confirmed')}
+                    </div>
                   </div>
-                  <div className="bg-red-50 border border-red-200 rounded-xl p-4">
+                  <div className="rounded-xl border border-red-200 bg-red-50 p-4">
                     <div className="text-2xl font-bold text-red-600">15%</div>
-                    <div className="text-xs text-muted-foreground">{t('rejected')}</div>
+                    <div className="text-muted-foreground text-xs">
+                      {t('rejected')}
+                    </div>
                   </div>
                 </div>
               </div>
@@ -235,14 +247,14 @@ export function Hero() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.6, delay: 1.2 }}
-          className="absolute bottom-8 start-1/2 -translate-x-1/2"
+          className="absolute start-1/2 bottom-8 -translate-x-1/2"
         >
           <button
             onClick={scrollToPricing}
-            className="text-muted-foreground hover:text-primary transition-colors flex flex-col items-center gap-2 group"
+            className="text-muted-foreground hover:text-primary group flex flex-col items-center gap-2 transition-colors"
           >
             <span className="text-sm font-medium">{t('scroll_down')}</span>
-            <ArrowDown className="w-5 h-5 animate-bounce" />
+            <ArrowDown className="h-5 w-5 animate-bounce" />
           </button>
         </motion.div>
       </Container>
