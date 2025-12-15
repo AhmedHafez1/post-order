@@ -79,8 +79,8 @@ export function Hero() {
         <div className="bg-size[64px_64px] absolute inset-0 bg-[linear-gradient(to_right,#80808008_1px,transparent_1px),linear-gradient(to_bottom,#80808008_1px,transparent_1px)]" />
       </div>
 
-      <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="mx-auto max-w-4xl text-center">
+      <div className="mx-auto w-full max-w-7xl px-4 pt-4 sm:px-6 lg:px-8 lg:pt-6">
+        <div className="mx-auto text-center">
           {/* Urgency Badge */}
           <motion.div
             initial={{ opacity: 0, y: -20 }}
@@ -100,9 +100,9 @@ export function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.1 }}
-            className="mb-6 text-5xl leading-[1.1] font-black sm:text-6xl lg:text-7xl"
+            className="mb-6 text-4xl leading-[1.1] font-black sm:text-5xl lg:text-6xl"
           >
-            {t('title')}{' '}
+            <div className="text-center my-2">{t('title')}{' '}</div>
             <span className="relative inline-block">
               <span className="relative z-10 bg-linear-to-r from-emerald-600 via-emerald-500 to-emerald-400 bg-clip-text text-transparent">
                 {t('highlight')}
@@ -111,7 +111,7 @@ export function Hero() {
                 initial={{ pathLength: 0, opacity: 0 }}
                 animate={{ pathLength: 1, opacity: 1 }}
                 transition={{ duration: 1, delay: 0.8 }}
-                className="absolute -bottom-2 left-0 w-full"
+                className="w-full mx-auto mt-4"
                 viewBox="0 0 300 12"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
