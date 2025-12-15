@@ -7,5 +7,6 @@ export interface SiteConfig {
     whatsapp: string
     facebook?: string
     instagram?: string
+    linkesdin?: string
   }
 }

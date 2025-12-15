@@ -1,267 +1,261 @@
 'use client'
 
-import { useTranslations } from 'next-intl'
-import { Button } from '@/components/ui/button'
-import { Container } from '@/components/ui/container'
-import { Badge } from '@/components/ui/badge'
-import { ArrowDown, Sparkles, CheckCircle2, TrendingUp } from 'lucide-react'
 import { motion } from 'framer-motion'
-import Image from 'next/image'
+import {
+  Sparkles,
+  TrendingUp,
+  Clock,
+  Users,
+  ChevronRight,
+  Star,
+  ArrowDown,
+  CheckCircle2,
+} from 'lucide-react'
+import { useTranslations } from 'next-intl'
 
 export function Hero() {
   const t = useTranslations('hero')
-
-  const scrollToPricing = () => {
-    document.getElementById('pricing')?.scrollIntoView({
-      behavior: 'smooth',
-      block: 'start',
-    })
+  const scrollToSection = (id: string) => {
+    document
+      .getElementById(id)
+      ?.scrollIntoView({ behavior: 'smooth', block: 'start' })
   }
 
   const stats = [
-    { label: t('stat_1'), value: '40%', icon: TrendingUp },
-    { label: t('stat_2'), value: '10K+', icon: CheckCircle2 },
-    { label: t('stat_3'), value: '5min', icon: CheckCircle2 },
+    {
+      label: t('stat_1_label'),
+      value: t('stat_1_value'),
+      icon: TrendingUp,
+      color: 'emerald',
+    },
+    {
+      label: t('stat_2_label'),
+      value: t('stat_2_value'),
+      icon: Users,
+      color: 'blue',
+    },
+    {
+      label: t('stat_3_label'),
+      value: t('stat_3_value'),
+      icon: Clock,
+      color: 'amber',
+    },
   ]
 
+  const benefits = [t('benefit_1'), t('benefit_2'), t('benefit_3')]
+
   return (
-    <section className="relative flex min-h-screen items-center overflow-hidden pt-20">
-      {/* Enhanced animated background */}
+    <section className="relative flex min-h-screen items-center overflow-hidden pt-20 pb-16">
+      {/* Enhanced Background */}
       <div className="absolute inset-0 -z-10">
-        <div className="from-primary/10 via-secondary/5 to-background absolute inset-0 bg-linear-to-br" />
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(34,197,94,0.15),transparent_50%)]" />
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_80%,rgba(250,204,21,0.15),transparent_50%)]" />
-
-        {/* Grid pattern */}
-        <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-size-[24px_24px]" />
-
-        {/* Floating orbs */}
+        {/* Gradient Orbs */}
+        <div className="absolute inset-0 bg-linear-to-br from-emerald-50 via-white to-blue-50" />
         <motion.div
           animate={{
-            y: [0, -20, 0],
-            opacity: [0.5, 0.8, 0.5],
-          }}
-          transition={{
-            duration: 6,
-            repeat: Infinity,
-            ease: 'easeInOut',
-          }}
-          className="bg-primary/20 absolute start-10 top-20 h-32 w-32 rounded-full blur-3xl"
-        />
-        <motion.div
-          animate={{
-            y: [0, 20, 0],
-            opacity: [0.5, 0.8, 0.5],
+            scale: [1, 1.2, 1],
+            opacity: [0.3, 0.5, 0.3],
           }}
           transition={{
             duration: 8,
             repeat: Infinity,
             ease: 'easeInOut',
-            delay: 1,
           }}
-          className="bg-secondary/20 absolute end-10 bottom-20 h-40 w-40 rounded-full blur-3xl"
+          className="absolute top-1/4 left-1/4 h-96 w-96 rounded-full bg-emerald-400/30 blur-3xl"
         />
+        <motion.div
+          animate={{
+            scale: [1.2, 1, 1.2],
+            opacity: [0.2, 0.4, 0.2],
+          }}
+          transition={{
+            duration: 10,
+            repeat: Infinity,
+            ease: 'easeInOut',
+          }}
+          className="absolute right-1/4 bottom-1/4 h-96 w-96 rounded-full bg-blue-400/20 blur-3xl"
+        />
+
+        {/* Grid Pattern */}
+        <div className="bg-size[64px_64px] absolute inset-0 bg-[linear-gradient(to_right,#80808008_1px,transparent_1px),linear-gradient(to_bottom,#80808008_1px,transparent_1px)]" />
       </div>
 
-      <Container>
-        <div className="grid items-center gap-12 lg:grid-cols-2">
-          {/* Left Column - Content */}
-          <div>
-            {/* Urgency badge */}
-            <motion.div
-              initial={{ opacity: 0, y: -20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5 }}
-              className="mb-6 inline-block"
-            >
-              <Badge
-                variant="secondary"
-                className="border-secondary-400 cursor-default border-2 px-6 py-3 text-base font-semibold shadow-lg transition-transform hover:scale-105"
-              >
-                <Sparkles className="me-2 inline h-4 w-4 animate-pulse" />
-                {t('urgency')}
-              </Badge>
-            </motion.div>
+      <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div className="mx-auto max-w-4xl text-center">
+          {/* Urgency Badge */}
+          <motion.div
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            className="mb-8 inline-block"
+          >
+            <div className="inline-flex items-center gap-2 rounded-full border-2 border-amber-500/50 bg-linear-to-r from-amber-400 to-orange-400 px-6 py-3 text-sm font-bold text-gray-900 shadow-lg">
+              <Sparkles className="h-4 w-4 animate-pulse" />
+              <span>{t('urgency')}</span>
+              <Sparkles className="h-4 w-4 animate-pulse" />
+            </div>
+          </motion.div>
 
-            {/* Headline */}
-            <motion.h1
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-              className="mb-6 text-5xl leading-[1.1] font-black md:text-6xl lg:text-7xl"
-            >
-              {t('title')}{' '}
-              <span className="relative inline-block">
-                <span className="from-primary-600 via-primary-500 to-primary-400 bg-linear-to-r bg-clip-text text-transparent">
-                  {t('highlight')}
-                </span>
-                <motion.svg
-                  initial={{ pathLength: 0 }}
-                  animate={{ pathLength: 1 }}
-                  transition={{ duration: 1, delay: 0.8 }}
-                  className="absolute -bottom-2 left-0 w-full"
-                  viewBox="0 0 300 12"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <motion.path
-                    d="M2 10C50 2 150 2 298 10"
-                    stroke="currentColor"
-                    strokeWidth="3"
-                    strokeLinecap="round"
-                    className="text-primary"
-                  />
-                </motion.svg>
+          {/* Main Headline */}
+          <motion.h1
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.1 }}
+            className="mb-6 text-5xl leading-[1.1] font-black sm:text-6xl lg:text-7xl"
+          >
+            {t('title')}{' '}
+            <span className="relative inline-block">
+              <span className="relative z-10 bg-linear-to-r from-emerald-600 via-emerald-500 to-emerald-400 bg-clip-text text-transparent">
+                {t('highlight')}
               </span>
-            </motion.h1>
+              <motion.svg
+                initial={{ pathLength: 0, opacity: 0 }}
+                animate={{ pathLength: 1, opacity: 1 }}
+                transition={{ duration: 1, delay: 0.8 }}
+                className="absolute -bottom-2 left-0 w-full"
+                viewBox="0 0 300 12"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <motion.path
+                  d="M2 10C50 2 150 2 298 10"
+                  stroke="currentColor"
+                  strokeWidth="4"
+                  strokeLinecap="round"
+                  className="text-emerald-500"
+                />
+              </motion.svg>
+            </span>
+          </motion.h1>
 
-            {/* Subtitle */}
-            <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.4 }}
-              className="text-muted-foreground mb-8 text-xl leading-relaxed md:text-2xl"
-            >
-              {t('subtitle')}
-            </motion.p>
+          {/* Subtitle */}
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="mx-auto mb-12 max-w-3xl text-xl leading-relaxed text-gray-700 sm:text-2xl"
+          >
+            {t('subtitle')}
+          </motion.p>
 
-            {/* Stats */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.5 }}
-              className="mb-8 grid grid-cols-3 gap-4"
-            >
-              {stats.map((stat, index) => (
-                <div
-                  key={index}
-                  className="border-border rounded-xl border bg-white/50 p-4 backdrop-blur transition-shadow hover:shadow-lg"
-                >
-                  <stat.icon className="text-primary mb-2 h-5 w-5" />
-                  <div className="text-foreground text-2xl font-bold">
+          {/* Stats Grid */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.3 }}
+            className="mx-auto mb-12 grid max-w-2xl grid-cols-3 gap-4"
+          >
+            {stats.map((stat, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, scale: 0.8 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.4, delay: 0.4 + index * 0.1 }}
+                className="group relative"
+              >
+                <div className="absolute inset-0 rounded-2xl bg-linear-to-br from-white to-gray-50 opacity-75 blur transition-opacity group-hover:opacity-100" />
+                <div className="relative rounded-2xl border-2 border-gray-200 bg-white/80 p-6 backdrop-blur-sm transition-all hover:border-emerald-300 hover:shadow-xl">
+                  <stat.icon
+                    className={`mx-auto mb-3 h-8 w-8 text-${stat.color}-600`}
+                  />
+                  <div className="mb-1 text-3xl font-black text-gray-900">
                     {stat.value}
                   </div>
-                  <div className="text-muted-foreground text-xs">
+                  <div className="text-sm font-medium text-gray-600">
                     {stat.label}
                   </div>
                 </div>
-              ))}
-            </motion.div>
+              </motion.div>
+            ))}
+          </motion.div>
 
-            {/* CTA Buttons */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.6 }}
-              className="flex flex-col gap-4 sm:flex-row"
-            >
-              <Button
-                size="lg"
-                onClick={scrollToPricing}
-                className="hover:shadow-primary/50 group relative overflow-hidden px-8 py-6 text-lg shadow-2xl transition-all duration-300 hover:scale-105"
-              >
-                <span className="relative z-10">{t('cta')}</span>
-                <div className="from-primary-600 to-primary absolute inset-0 bg-linear-to-r opacity-0 transition-opacity group-hover:opacity-100" />
-              </Button>
-              <Button
-                size="lg"
-                variant="outline"
-                onClick={() => scrollToSection('solution')}
-                className="hover:bg-accent px-8 py-6 text-lg transition-colors"
-              >
-                {t('learn_more')}
-              </Button>
-            </motion.div>
-
-            {/* Social Proof */}
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 0.6, delay: 0.8 }}
-              className="mt-8 flex items-center gap-4"
-            >
-              <div className="flex -space-x-3">
-                {[1, 2, 3, 4, 5].map((i) => (
-                  <div
-                    key={i}
-                    className="border-background from-primary-400 to-primary-600 flex h-10 w-10 items-center justify-center rounded-full border-4 bg-linear-to-br text-xs font-bold text-white shadow-lg"
-                  >
-                    {i}
-                  </div>
-                ))}
-              </div>
-              <div className="text-sm">
-                <div className="text-foreground font-semibold">
-                  {t('social_proof')}
-                </div>
-                <div className="text-muted-foreground">
-                  ⭐⭐⭐⭐⭐ {t('rating')}
-                </div>
-              </div>
-            </motion.div>
-          </div>
-
-          {/* Right Column - Visual/Mockup */}
+          {/* CTA Buttons */}
           <motion.div
-            initial={{ opacity: 0, x: 20 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8, delay: 0.4 }}
-            className="relative hidden lg:block"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.5 }}
+            className="mb-8 flex flex-col justify-center gap-4 sm:flex-row"
           >
-            {/* Placeholder for phone mockup or dashboard screenshot */}
-            <div className="relative aspect-square">
-              <div className="from-primary/20 to-secondary/20 absolute inset-0 rounded-3xl bg-linear-to-br blur-3xl" />
-              <div className="border-border relative space-y-4 rounded-3xl border-2 bg-white/80 p-8 shadow-2xl backdrop-blur">
-                {/* Mock WhatsApp message */}
-                <div className="bg-primary/10 space-y-2 rounded-2xl p-4">
-                  <div className="flex items-center gap-2">
-                    <div className="bg-primary h-8 w-8 rounded-full" />
-                    <div className="text-sm font-semibold">COD Bot</div>
-                  </div>
-                  <div className="rounded-xl bg-white p-3 text-sm">
-                    {t('mock_message')}
-                  </div>
+            <button
+              onClick={() => scrollToSection('pricing')}
+              className="group relative rounded-2xl bg-linear-to-r from-emerald-600 to-emerald-500 px-8 py-4 text-lg font-bold text-white shadow-2xl shadow-emerald-500/50 transition-all hover:scale-105 hover:shadow-emerald-500/70"
+            >
+              <span className="flex items-center justify-center gap-2">
+                {t('cta')}
+                <ChevronRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
+              </span>
+              <div className="absolute inset-0 -z-10 rounded-2xl bg-linear-to-r from-emerald-500 to-emerald-400 opacity-0 transition-opacity group-hover:opacity-100" />
+            </button>
+            <button
+              onClick={() => scrollToSection('demo')}
+              className="rounded-2xl border-2 border-gray-300 bg-white px-8 py-4 text-lg font-bold text-gray-900 transition-all hover:border-gray-400 hover:bg-gray-50"
+            >
+              {t('learn_more')}
+            </button>
+          </motion.div>
+
+          {/* Benefits */}
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.6, delay: 0.6 }}
+            className="flex flex-wrap items-center justify-center gap-6 text-sm text-gray-600"
+          >
+            {benefits.map((benefit, index) => (
+              <div key={index} className="flex items-center gap-2">
+                <CheckCircle2 className="h-5 w-5 text-emerald-600" />
+                <span className="font-medium">{benefit}</span>
+              </div>
+            ))}
+          </motion.div>
+
+          {/* Social Proof */}
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.6, delay: 0.7 }}
+            className="mt-12 inline-flex items-center gap-4 rounded-2xl border-2 border-gray-200 bg-white/80 px-6 py-4 shadow-lg backdrop-blur-sm"
+          >
+            <div className="flex -space-x-3">
+              {[1, 2, 3, 4, 5].map((i) => (
+                <div
+                  key={i}
+                  className="flex h-10 w-10 items-center justify-center rounded-full border-4 border-white bg-linear-to-br from-emerald-400 to-emerald-600 text-xs font-bold text-white shadow-lg"
+                >
+                  {i}
                 </div>
-                {/* Stats */}
-                <div className="grid grid-cols-2 gap-4">
-                  <div className="rounded-xl border border-green-200 bg-green-50 p-4">
-                    <div className="text-2xl font-bold text-green-600">85%</div>
-                    <div className="text-muted-foreground text-xs">
-                      {t('confirmed')}
-                    </div>
-                  </div>
-                  <div className="rounded-xl border border-red-200 bg-red-50 p-4">
-                    <div className="text-2xl font-bold text-red-600">15%</div>
-                    <div className="text-muted-foreground text-xs">
-                      {t('rejected')}
-                    </div>
-                  </div>
-                </div>
+              ))}
+            </div>
+            <div className="text-left">
+              <div className="font-bold text-gray-900">{t('social_proof')}</div>
+              <div className="flex items-center gap-1">
+                {[...Array(5)].map((_, i) => (
+                  <Star
+                    key={i}
+                    className="h-4 w-4 fill-amber-400 text-amber-400"
+                  />
+                ))}
+                <span className="ml-1 text-sm text-gray-600">
+                  {t('rating')}
+                </span>
               </div>
             </div>
           </motion.div>
-        </div>
 
-        {/* Scroll indicator */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.6, delay: 1.2 }}
-          className="absolute start-1/2 bottom-8 -translate-x-1/2"
-        >
-          <button
-            onClick={scrollToPricing}
-            className="text-muted-foreground hover:text-primary group flex flex-col items-center gap-2 transition-colors"
+          {/* Scroll Indicator */}
+          <motion.button
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.6, delay: 1 }}
+            onClick={() => scrollToSection('demo')}
+            className="mx-auto mt-16 flex flex-col items-center gap-2 text-gray-600 transition-colors hover:text-emerald-600"
           >
-            <span className="text-sm font-medium">{t('scroll_down')}</span>
+            <span className="text-sm font-semibold">{t('scroll_down')}</span>
             <ArrowDown className="h-5 w-5 animate-bounce" />
-          </button>
-        </motion.div>
-      </Container>
+          </motion.button>
+        </div>
+      </div>
     </section>
   )
 }
 
-function scrollToSection(id: string) {
-  document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' })
-}
+export default Hero

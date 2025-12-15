@@ -1,184 +1,169 @@
 'use client'
 
 import { useState } from 'react'
+import { useTranslations } from 'next-intl'
+import { Button } from '@/components/ui/button'
 import { useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
-import { useTranslations, useLocale } from 'next-intl'
-import { z } from 'zod'
-import { Input } from '@/components/ui/input'
-import { Label } from '@/components/ui/label'
-import { PhoneInput } from '@/components/ui/phone-input'
-import { LoadingButton } from '@/components/ui/loading-button'
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from '@/components/ui/select'
-import { toast } from 'react-hot-toast'
-import { WaitlistFormData } from '@/types'
+import * as z from 'zod'
 
 const formSchema = z.object({
-  name: z.string().min(2, 'Name too short'),
-  email: z.string().email('Invalid email'),
-  phone: z.string().regex(/^(20)?(10|11|12|15)[0-9]{8}$/, 'Invalid Egyptian phone'),
+  name: z.string().min(2, 'Name must be at least 2 characters'),
+  phone: z
+    .string()
+    .regex(/^(\+20|0)?1[0-2,5]\d{8}$/, 'Invalid Egyptian phone number'),
+  email: z.string().email('Invalid email address'),
   storeUrl: z.string().url().optional().or(z.literal('')),
-  monthlyOrders: z.string().min(1, 'Please select'),
+  monthlyOrders: z.string().min(1, 'Please select order volume'),
 })
+
+type FormData = z.infer<typeof formSchema>
 
 export function WaitlistForm() {
   const t = useTranslations('form')
-  const locale = useLocale()
   const [isSubmitting, setIsSubmitting] = useState(false)
 
   const {
     register,
     handleSubmit,
-    setValue,
     formState: { errors },
-  } = useForm<WaitlistFormData>({
+  } = useForm<FormData>({
     resolver: zodResolver(formSchema),
   })
 
-  const onSubmit = async (data: WaitlistFormData) => {
+  const onSubmit = async (data: FormData) => {
+    console.log(data)
     setIsSubmitting(true)
 
-    try {
-      // Step 1: Save to Google Sheets
-      const saveResponse = await fetch('/api/submit', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ ...data, locale }),
-      })
-
-      if (!saveResponse.ok) throw new Error('Failed to save')
-
-      // Step 2: Initiate payment
-      const paymentResponse = await fetch('/api/paymob', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          amount: 100, // 1 EGP
-          email: data.email,
-          phone: data.phone,
-          name: data.name,
-        }),
-      })
-
-      if (!paymentResponse.ok) throw new Error('Payment failed')
-
-      const { paymentUrl } = await paymentResponse.json()
-
-      // Redirect to payment
-      window.location.href = paymentUrl
-    } catch (error) {
-      console.error('Error:', error)
-      toast.error(t('error'))
-    } finally {
-      setIsSubmitting(false)
-    }
+    // TODO: Send data to actual API endpoint
   }
 
   return (
     <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
-      {/* Name */}
+      {/* Store Name */}
       <div>
-        <Label htmlFor="name">{t('name.label')}</Label>
-        <Input
+        <label
+          htmlFor="name"
+          className="mb-2 block text-sm font-bold text-gray-700"
+        >
+          {t('name.label')} *
+        </label>
+        <input
           id="name"
+          type="text"
           {...register('name')}
+          className="w-full rounded-lg border-2 border-gray-300 px-4 py-3 transition-colors focus:border-emerald-500 focus:outline-none"
           placeholder={t('name.placeholder')}
-          className="mt-2"
+          suppressHydrationWarning
         />
         {errors.name && (
-          <p className="text-sm text-destructive mt-1">
-            {t('name.required')}
-          </p>
+          <p className="mt-1 text-sm text-red-600">{t('name.required')}</p>
         )}
       </div>
 
-      {/* Phone */}
+      {/* Phone Number */}
       <div>
-        <Label htmlFor="phone">{t('phone.label')}</Label>
-        <PhoneInput
+        <label
+          htmlFor="phone"
+          className="mb-2 block text-sm font-bold text-gray-700"
+        >
+          {t('phone.label')} *
+        </label>
+        <input
           id="phone"
+          type="tel"
           {...register('phone')}
-          className="mt-2"
+          className="w-full rounded-lg border-2 border-gray-300 px-4 py-3 transition-colors focus:border-emerald-500 focus:outline-none"
+          placeholder={t('phone.placeholder')}
+          suppressHydrationWarning
         />
         {errors.phone && (
-          <p className="text-sm text-destructive mt-1">
-            {t('phone.invalid')}
-          </p>
+          <p className="mt-1 text-sm text-red-600">{t('phone.invalid')}</p>
         )}
       </div>
 
       {/* Email */}
       <div>
-        <Label htmlFor="email">{t('email.label')}</Label>
-        <Input
+        <label
+          htmlFor="email"
+          className="mb-2 block text-sm font-bold text-gray-700"
+        >
+          {t('email.label')} *
+        </label>
+        <input
           id="email"
           type="email"
           {...register('email')}
+          className="w-full rounded-lg border-2 border-gray-300 px-4 py-3 transition-colors focus:border-emerald-500 focus:outline-none"
           placeholder={t('email.placeholder')}
-          dir="ltr"
-          className="mt-2"
+          suppressHydrationWarning
         />
         {errors.email && (
-          <p className="text-sm text-destructive mt-1">
-            {t('email.invalid')}
-          </p>
+          <p className="mt-1 text-sm text-red-600">{t('email.invalid')}</p>
         )}
       </div>
 
-      {/* Store URL (optional) */}
+      {/* Store URL (Optional) */}
       <div>
-        <Label htmlFor="storeUrl">{t('storeUrl.label')}</Label>
-        <Input
+        <label
+          htmlFor="storeUrl"
+          className="mb-2 block text-sm font-bold text-gray-700"
+        >
+          {t('storeUrl.label')}
+        </label>
+        <input
           id="storeUrl"
+          type="url"
           {...register('storeUrl')}
+          className="w-full rounded-lg border-2 border-gray-300 px-4 py-3 transition-colors focus:border-emerald-500 focus:outline-none"
           placeholder={t('storeUrl.placeholder')}
-          dir="ltr"
-          className="mt-2"
+          suppressHydrationWarning
         />
       </div>
 
       {/* Monthly Orders */}
       <div>
-        <Label htmlFor="monthlyOrders">{t('monthlyOrders.label')}</Label>
-        <Select onValueChange={(value) => setValue('monthlyOrders', value)}>
-          <SelectTrigger className="mt-2">
-            <SelectValue placeholder={t('monthlyOrders.placeholder')} />
-          </SelectTrigger>
-          <SelectContent>
-            {['0-50', '50-200', '200-500', '500-1000', '1000+'].map((range) => (
-              <SelectItem key={range} value={range}>
-                {t(`monthlyOrders.options.${range}`)}
-              </SelectItem>
-            ))}
-          </SelectContent>
-        </Select>
+        <label
+          htmlFor="monthlyOrders"
+          className="mb-2 block text-sm font-bold text-gray-700"
+        >
+          {t('monthlyOrders.label')} *
+        </label>
+        <select
+          id="monthlyOrders"
+          {...register('monthlyOrders')}
+          className="w-full rounded-lg border-2 border-gray-300 px-4 py-3 transition-colors focus:border-emerald-500 focus:outline-none"
+          suppressHydrationWarning
+        >
+          <option value="">{t('monthlyOrders.placeholder')}</option>
+          <option value="0-50">{t('monthlyOrders.options.0-50')}</option>
+          <option value="50-200">{t('monthlyOrders.options.50-200')}</option>
+          <option value="200-500">{t('monthlyOrders.options.200-500')}</option>
+          <option value="500-1000">
+            {t('monthlyOrders.options.500-1000')}
+          </option>
+          <option value="1000+">{t('monthlyOrders.options.1000+')}</option>
+        </select>
         {errors.monthlyOrders && (
-          <p className="text-sm text-destructive mt-1">
+          <p className="mt-1 text-sm text-red-600">
             {t('monthlyOrders.required')}
           </p>
         )}
       </div>
 
-      {/* Submit */}
-      <LoadingButton
-        type="submit"
-        loading={isSubmitting}
-        loadingText={t('submitting')}
-        className="w-full"
-        size="lg"
-      >
-        {t('submit')}
-      </LoadingButton>
-
-      <p className="text-xs text-center text-muted-foreground">
+      {/* Info Text */}
+      <div className="rounded-lg bg-emerald-50 p-4 text-sm text-gray-700">
         {t('info')}
-      </p>
+      </div>
+
+      {/* Submit Button */}
+      <Button
+        type="submit"
+        disabled={isSubmitting}
+        className="w-full bg-linear-to-r from-emerald-600 to-emerald-500 py-4 text-lg font-bold shadow-lg transition-all hover:scale-105 hover:shadow-xl disabled:opacity-50"
+      >
+        {isSubmitting ? t('submitting') : t('submit')}
+      </Button>
     </form>
   )
 }

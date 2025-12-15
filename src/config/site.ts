@@ -1,14 +1,15 @@
 import { SiteConfig } from '@/types'
 
 export const siteConfig: SiteConfig = {
-  name: 'COD Verification Bot',
-  description: 'Reduce COD returns by 40% with automated WhatsApp verification',
+  name: 'Post Order',
+  description: 'Smart WhatsApp bot for COD order verification',
   url: process.env.NEXT_PUBLIC_APP_URL || 'http://localhost:3000',
   ogImage: '/images/og-image.jpg',
   links: {
     whatsapp: `https://wa.me/${process.env.NEXT_PUBLIC_CONTACT_WHATSAPP}`,
     facebook: 'https://facebook.com/yourpage',
     instagram: 'https://instagram.com/yourpage',
+    linkesdin: 'https://linkedin.com/company/yourpage',
   },
 }
 
@@ -17,7 +18,7 @@ export const pricing = {
     name: 'starter',
     price: 0.75,
     priceMonthly: null,
-    features: ['pay_per_use', 'no_minimum', 'basic_support'],
+    features: ['verifications', 'whatsapp', 'templates', 'support'],
   },
   pro: {
     name: 'pro',
@@ -26,10 +27,12 @@ export const pricing = {
     verifications: 500,
     perVerification: 0.6,
     features: [
-      'up_to_500',
-      'detailed_reports',
-      'priority_support',
-      'zapier_integration',
+      'everything',
+      'unlimited',
+      'analytics',
+      'priority',
+      'integrations',
+      'custom',
     ],
     popular: true,
   },
@@ -37,74 +40,41 @@ export const pricing = {
     name: 'enterprise',
     price: 799,
     priceMonthly: 799,
-    features: [
-      'unlimited_verifications',
-      'dedicated_manager',
-      'custom_integrations',
-      'white_label',
-    ],
+    features: ['everything', 'stores', 'dedicated', 'custom_ai', 'api', 'sla'],
   },
 }
 
 export const features = {
   problems: [
-    {
-      icon: '💸',
-      key: 'financial_loss',
-    },
-    {
-      icon: '📞',
-      key: 'time_wasted',
-    },
-    {
-      icon: '📦',
-      key: 'stock_locked',
-    },
-    {
-      icon: '😫',
-      key: 'constant_worry',
-    },
+    { key: 'loss', icon: '💸' },
+    { key: 'time', icon: '⏰' },
+    { key: 'customer', icon: '😞' },
+    { key: 'scale', icon: '📈' },
   ],
   solutions: [
-    {
-      icon: '💰',
-      key: 'save_money',
-    },
-    {
-      icon: '⚡',
-      key: 'easy_integration',
-    },
-    {
-      icon: '📊',
-      key: 'detailed_reports',
-    },
-    {
-      icon: '🇪🇬',
-      key: 'egypt_focused',
-    },
+    { key: 'auto', icon: '🤖' },
+    { key: 'response', icon: '⚡' },
+    { key: 'natural', icon: '💬' },
+    { key: 'analytics', icon: '📊' },
   ],
 }
 
 export const testimonials = [
   {
-    name: 'Mohamed Ahmed',
-    store: 'Electronics Store, Cairo',
-    orders: '500+',
-    quote: 'testimonial_1',
+    name: 'أحمد محمود',
+    store: 'متجر للإلكترونيات',
+    orders: '850+',
+  },
+  {
+    name: 'Ahmed Mahmoud',
+    store: 'Electronics Store',
+    orders: '850+',
   },
 ]
 
 export const faqs = [
-  {
-    key: 'money_back',
-  },
-  {
-    key: 'coding_required',
-  },
-  {
-    key: 'platforms',
-  },
-  {
-    key: 'why_pay_now',
-  },
+  { key: 'integration' },
+  { key: 'whatsapp' },
+  { key: 'arabic' },
+  { key: 'pricing' },
 ]

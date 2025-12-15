@@ -17,7 +17,7 @@ export function Section({
       className={cn(
         'py-16 md:py-24',
         variant === 'gradient' &&
-          'bg-gradient-to-b from-primary/5 via-background to-background',
+          'from-primary/5 via-background to-background bg-linear-to-b',
         variant === 'muted' && 'bg-muted/30',
         className
       )}

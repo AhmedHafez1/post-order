@@ -1,22 +1,18 @@
-'use client'
-
-import { Card, CardContent, CardFooter, CardHeader } from './card'
-import { Badge } from './badge'
+import { Card, CardContent } from './card'
 import { Button } from './button'
-import { Check } from 'lucide-react'
+import { CheckCircle2 } from 'lucide-react'
 import { cn } from '@/lib/utils'
-
 import { ReactNode } from 'react'
 
 export interface PricingCardProps {
-  name: string | ReactNode
-  price: number | string | ReactNode
-  period?: string | ReactNode
-  description?: string | ReactNode
-  features: (string | ReactNode)[]
+  name: string
+  price: string
+  period: string | ReactNode
+  description?: string
+  features: string[]
   popular?: boolean
   cta: string | ReactNode
-  onCtaClick: () => void
+  onCtaClick?: () => void
   className?: string
 }
 
@@ -26,7 +22,7 @@ export function PricingCard({
   period,
   description,
   features,
-  popular,
+  popular = false,
   cta,
   onCtaClick,
   className,
@@ -34,58 +30,42 @@ export function PricingCard({
   return (
     <Card
       className={cn(
-        'relative transition-all duration-300',
-        popular &&
-          'border-primary shadow-xl scale-105 bg-primary/5',
-        !popular && 'hover:shadow-lg hover:-translate-y-1',
+        'relative h-full border-2 bg-white shadow-xl transition-all hover:shadow-2xl',
+        popular ? 'border-emerald-500' : 'border-gray-200',
         className
       )}
     >
-      {popular && (
-        <Badge
-          className="absolute -top-3 start-1/2 -translate-x-1/2 bg-secondary text-secondary-foreground"
-          variant="default"
-        >
-          الأشهر 🔥
-        </Badge>
-      )}
-
-      <CardHeader className="text-center pb-4">
-        <h3 className="text-xl font-bold">{name}</h3>
-      </CardHeader>
-
-      <CardContent className="text-center">
-        <div className="mb-4">
-          <span className="text-4xl font-bold">{price}</span>
-          {period && (
-            <span className="text-muted-foreground text-base">/{period}</span>
+      <CardContent className="p-8">
+        <h3 className="mb-2 text-2xl font-black text-gray-900">{name}</h3>
+        <div className="mb-6">
+          <span className="text-5xl font-black text-gray-900">{price}</span>
+          {period && <div className="text-sm text-gray-600">/{period}</div>}
+          {description && (
+            <div className="mt-1 text-xs text-gray-500">{description}</div>
           )}
         </div>
 
-        {description && (
-          <p className="text-sm text-muted-foreground mb-6">{description}</p>
-        )}
-
-        <ul className="space-y-3 text-start">
+        <ul className="mb-8 space-y-4">
           {features.map((feature, index) => (
-            <li key={index} className="flex items-start gap-2">
-              <Check className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
-              <span className="text-sm">{feature}</span>
+            <li key={index} className="flex items-start gap-3">
+              <CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0 text-emerald-600" />
+              <span className="text-gray-700">{feature}</span>
             </li>
           ))}
         </ul>
-      </CardContent>
 
-      <CardFooter>
         <Button
           onClick={onCtaClick}
-          variant={popular ? 'default' : 'outline'}
-          className="w-full"
-          size="lg"
+          className={cn(
+            'w-full py-4 font-bold transition-all',
+            popular
+              ? 'bg-linear-to-r from-emerald-600 to-emerald-500 text-white shadow-lg hover:scale-105 hover:shadow-xl'
+              : 'bg-gray-100 text-gray-900 hover:bg-gray-200'
+          )}
         >
           {cta}
         </Button>
-      </CardFooter>
+      </CardContent>
     </Card>
   )
 }

@@ -1,166 +1,210 @@
 {
   "metadata": {
-    "title": "Reduce COD Returns by 40% | WhatsApp Verification Bot",
-    "description": "Automated WhatsApp verification for Egyptian e-commerce stores. Save thousands of EGP monthly by reducing COD returns."
+    "title": "Reduce COD Returns by 85% | Smart WhatsApp Bot",
+    "description": "Smart WhatsApp bot automatically confirms cash-on-delivery orders. Save thousands of EGP monthly from return shipping for Egyptian stores."
   },
   "header": {
-    "tagline": "Confirm orders before shipping",
+    "tagline": "Smart Verification",
     "features": "Features",
+    "demo": "Demo",
     "pricing": "Pricing",
     "faq": "FAQ",
-    "cta": "Start Now"
+    "cta": "Start Free Trial"
   },
   "hero": {
-    "title": "Reduce COD Returns",
-    "highlight": "by 40%",
-    "subtitle": "Automated WhatsApp bot confirms orders before shipping",
-    "urgency": "🔥 Special Offer: First 20 stores only - 2 months free",
-    "social_proof": "Join 47+ Egyptian stores already on the waitlist",
-    "cta": "Reserve Now - Pay Only 1 EGP",
-    "scroll_down": "Scroll Down",
-    "rejected": "Rejected",
-    "confirmed": "Confirmed",
-    "mock_message": "Mock Message",
-    "stat_1": "Increase Success Rate",
-    "stat_2": "Save more than",
-    "stat_3": "Easy Integration",
-    "learn_more": "Learn More",
-    "rating": "Rating"
+    "title": "Stop Losing Money on",
+    "highlight": "COD Returns",
+    "subtitle": "AI-powered WhatsApp bot automatically confirms orders before shipping. Reduce returns by 85% and save thousands monthly.",
+    "urgency": "Special Offer: First 20 stores get 2 months FREE",
+    "social_proof": "Join 47+ Egyptian stores",
+    "rating": "5.0 rating",
+    "cta": "Start Free Trial",
+    "learn_more": "See Live Demo",
+    "scroll_down": "See it in action",
+    "stat_1_label": "Confirmation Rate",
+    "stat_1_value": "85%",
+    "stat_2_label": "Orders Daily",
+    "stat_2_value": "10K+",
+    "stat_3_label": "Setup Time",
+    "stat_3_value": "5min",
+    "benefit_1": "No credit card required",
+    "benefit_2": "14-day free trial",
+    "benefit_3": "Cancel anytime"
+  },
+  "demo": {
+    "badge": "Live Demo",
+    "title": "See How It Works in",
+    "title_highlight": "Real-Time",
+    "subtitle": "Watch our AI bot handle a real customer conversation - automatically confirming orders, verifying addresses, and ensuring successful deliveries.",
+    "phone_status": "Online",
+    "bot_name": "Post Order Bot",
+    "typing_placeholder": "Type a message...",
+    "stats_title": "Real-Time Performance",
+    "stat_1_label": "Orders Confirmed",
+    "stat_1_value": "12,847",
+    "stat_2_label": "Average Response Time",
+    "stat_2_value": "< 3 sec",
+    "stat_3_label": "Money Saved",
+    "stat_3_value": "128K EGP",
+    "features_title": "What Makes It Smart?",
+    "feature_1": "Natural language understanding in Arabic & English",
+    "feature_2": "Automatic address verification",
+    "feature_3": "Smart delivery time scheduling",
+    "feature_4": "Real-time order status updates",
+    "feature_5": "Fallback to human agent when needed",
+    "chat": {
+      "bot_1": "Hello Ahmed! 👋",
+      "bot_2": "Thank you for your order! We'd like to confirm your delivery details.",
+      "bot_3": "📦 Order #12847\n🛍️ iPhone 15 Pro - Space Black\n💰 Total: 45,999 EGP",
+      "bot_4": "📍 Delivery Address:\n123 El Tahrir Street\nCairo, Egypt",
+      "bot_5": "Is this address correct?",
+      "user_1": "Yes, the address is correct",
+      "bot_6": "Perfect! ✅",
+      "bot_7": "When would you prefer delivery?",
+      "user_2": "Tomorrow afternoon would be great",
+      "bot_8": "Excellent! Your order is confirmed for delivery tomorrow afternoon. 🚚",
+      "bot_9": "We'll send you tracking details shortly. Thank you for shopping with us! 🎉"
+    }
   },
   "problems": {
-    "title": "Are You Facing These Problems Daily?",
-    "financial_loss": {
-      "title": "Losing Thousands of EGP Monthly",
-      "description": "30-40% of COD orders return - you pay shipping both ways for nothing"
+    "title": "Problems We Solve",
+    "loss": {
+      "title": "Massive Financial Losses",
+      "description": "30-40% of COD orders return due to lack of confirmation, costing you thousands monthly in wasted shipping"
     },
-    "time_wasted": {
-      "title": "Too Many Calls, Nobody Answers",
-      "description": "Waste hours daily calling customers - they don't answer or say 'I didn't order'"
+    "time": {
+      "title": "Wasted Time on Calls",
+      "description": "Hours daily wasted calling customers to confirm orders instead of focusing on growing your store"
     },
-    "stock_locked": {
-      "title": "Inventory Stuck and Cash Locked",
-      "description": "Products shipped and returned - your inventory is locked and can't be sold"
+    "customer": {
+      "title": "Poor Customer Experience",
+      "description": "Customers get annoyed by repeated calls and abandon their orders, affecting your store's reputation"
     },
-    "constant_worry": {
-      "title": "Constant Worry About Returns",
-      "description": "Every order you fear will return - especially large orders and distant areas"
+    "scale": {
+      "title": "Difficulty Scaling",
+      "description": "As your orders increase, confirmation chaos and rejection rates grow - you can't scale this way"
     },
-    "reality": "The Truth: If just 10% of your orders return, and each order averages 200 EGP, and you pay 50 EGP shipping roundtrip...",
-    "reality_highlight": "You're losing more than 7,500 EGP every month! 💔"
+    "reality": "The harsh truth: every rejected order costs you 50-80 EGP in shipping, packaging, and wasted time",
+    "reality_highlight": "Can you afford these losses?"
   },
   "solution": {
-    "title": "The Simple Solution",
-    "subtitle": "Automatic verification via WhatsApp - no effort from you",
+    "title": "Smart Solution for Your Store",
+    "subtitle": "Complete automation working 24/7 to increase your profits",
     "steps": {
       "1": {
-        "title": "Customer Orders",
-        "description": "Your customer orders from your Shopify or WooCommerce store"
+        "title": "New Order Arrives",
+        "description": "Bot receives the order automatically from your platform (Shopify, WooCommerce, etc.)"
       },
       "2": {
-        "title": "Bot Sends Automatically",
-        "description": "Instant WhatsApp message: 'Hi Ahmed, your order #1234 arrives tomorrow. Confirm?'"
+        "title": "Instant WhatsApp Send",
+        "description": "Professional message reaches customer within seconds to confirm address and order"
       },
       "3": {
-        "title": "Instant Savings",
-        "description": "If customer not interested or canceled - save shipping and product cost"
+        "title": "Automatic Confirmation",
+        "description": "Bot follows up on reply and updates order status - ready to ship or canceled"
       }
     },
-    "save_money": {
-      "title": "Save 10,000+ EGP Monthly",
-      "description": "Reduce returns from 35% to 15% - every saved order = more profit"
+    "auto": {
+      "title": "🤖 Smart Automation 24/7",
+      "description": "Bot works non-stop - no holidays, no sleep, no human errors"
     },
-    "easy_integration": {
-      "title": "5-Minute Integration",
-      "description": "Works with Shopify and WooCommerce - no coding, just simple code"
+    "response": {
+      "title": "⚡ Instant Response",
+      "description": "Messages arrive in seconds, 3x higher response rate than traditional calls"
     },
-    "detailed_reports": {
-      "title": "Detailed Reports",
-      "description": "Know who confirmed and who refused - clear data for every order"
+    "natural": {
+      "title": "💬 Natural Conversations",
+      "description": "Smart Arabic replies that understand customer intent - like a professional employee"
     },
-    "egypt_focused": {
-      "title": "Designed for Egyptian Market",
-      "description": "Messages in Arabic, rate-limited so not blocked, Egyptian support"
+    "analytics": {
+      "title": "📊 Advanced Analytics",
+      "description": "Dashboard shows everything: confirmation rates, reasons, best times"
     },
-    "testimonial_1": "Before the bot I had 40% returns. Now only 18%. Saved more than 15,000 EGP in two months!",
+    "testimonial_1": "After using Post Order, our confirmation rate went from 55% to 89%! We saved 15,000 EGP monthly from return shipping. The bot works better than 3 employees!",
     "orders_monthly": "orders monthly"
   },
   "pricing": {
-    "title": "Simple Pricing",
-    "subtitle": "No long contracts - no hidden fees",
-    "per_verification": "per verification",
+    "title": "Plans for Every Store",
+    "subtitle": "Try free for 14 days - no credit card required",
+    "per_verification": "per confirmation",
+    "month": "monthly",
     "select_plan": "Select Plan",
-    "month": "month",
     "starter": {
       "name": "Starter",
       "features": {
-        "pay_per_use": "Pay only when you use",
-        "no_minimum": "No minimum",
-        "basic_support": "Ideal for small stores"
+        "verifications": "100 confirmations monthly",
+        "whatsapp": "Smart WhatsApp bot",
+        "templates": "Ready message templates",
+        "support": "Email technical support"
       }
     },
     "pro": {
-      "name": "Pro",
-      "popular": "Most Popular 🔥",
-      "up_to": "Up to 500 verifications",
-      "per_verification": "0.60 EGP each",
+      "name": "Professional",
+      "popular": "Most Popular ⭐",
+      "up_to": "Up to 1000 confirmations monthly",
+      "per_verification": "per additional confirmation",
       "features": {
-        "up_to_500": "Save 20% vs regular usage",
-        "detailed_reports": "Detailed reports",
-        "priority_support": "Priority support",
-        "zapier_integration": "Zapier integration"
+        "everything": "All Starter features",
+        "unlimited": "Unlimited confirmations",
+        "analytics": "Advanced analytics",
+        "priority": "Priority technical support",
+        "integrations": "Integration with all platforms",
+        "custom": "Custom messages"
       }
     },
     "enterprise": {
       "name": "Enterprise",
       "features": {
-        "unlimited_verifications": "Unlimited verifications",
-        "dedicated_manager": "Dedicated account manager",
-        "custom_integrations": "Custom integrations",
-        "white_label": "White label"
+        "everything": "All Professional features",
+        "stores": "Multiple stores",
+        "dedicated": "Dedicated account manager",
+        "custom_ai": "Custom AI",
+        "api": "Open API",
+        "sla": "99.9% SLA guarantee"
       }
     },
-    "reserve_title": "Reserve Your Spot Now",
-    "reserve_subtitle": "First 20 stores: 2 months free + free setup (worth 500 EGP)",
+    "reserve_title": "🎁 Reserve at Founding Price",
+    "reserve_subtitle": "Last 8 spots remaining at reduced price - price increasing soon!",
     "trust_badges": {
-      "secure": "🔒 100% Secure",
-      "refund": "💳 Full Refund",
-      "support": "🇪🇬 Arabic Support"
+      "secure": "100% secure data",
+      "refund": "30-day refund",
+      "support": "Continuous technical support"
     }
   },
   "faq": {
     "title": "Frequently Asked Questions",
-    "money_back": {
-      "question": "What if it doesn't work for me?",
-      "answer": "Full refund in first 30 days - no questions asked"
+    "integration": {
+      "question": "How does it integrate with my store?",
+      "answer": "We integrate with all popular platforms: Shopify, WooCommerce, Zid, Salla, and others. Setup takes only 5 minutes via a simple Webhook."
     },
-    "coding_required": {
-      "question": "Do I need to know coding?",
-      "answer": "No, the opposite. We'll give you ready code to copy and paste in your store - that's it"
+    "whatsapp": {
+      "question": "Do I need a special WhatsApp number?",
+      "answer": "Yes, you need a WhatsApp Business number. We help you with setup and connecting to WhatsApp Business API completely."
     },
-    "platforms": {
-      "question": "Works with which platform?",
-      "answer": "Shopify, WooCommerce, and any other platform with Webhooks"
+    "arabic": {
+      "question": "Does the bot understand Arabic well?",
+      "answer": "Yes! The bot is specially trained on Egyptian dialect and Modern Standard Arabic. It understands different replies like 'tamam', 'mashi', 'mowafek', 'la shukran' and others."
     },
-    "why_pay_now": {
-      "question": "Why pay 1 EGP now?",
-      "answer": "To make sure you're serious. The 1 EGP will be deducted from your first subscription"
+    "pricing": {
+      "question": "What happens if I exceed the confirmation limit?",
+      "answer": "In the Professional plan, each additional confirmation is only 0.70 EGP. In the Starter plan, you can upgrade anytime."
     }
   },
   "form": {
     "name": {
-      "label": "Full Name",
-      "placeholder": "Mohamed Ahmed",
-      "required": "Name is required"
+      "label": "Store Name",
+      "placeholder": "Example: Electronics Store",
+      "required": "Store name is required"
     },
     "phone": {
       "label": "WhatsApp Number",
-      "placeholder": "01012345678",
+      "placeholder": "+20 1XX XXX XXXX",
       "required": "WhatsApp number is required",
-      "invalid": "Invalid Egyptian number (example: 01012345678)"
+      "invalid": "Invalid WhatsApp number"
     },
     "email": {
       "label": "Email",
-      "placeholder": "example@email.com",
+      "placeholder": "email@example.com",
       "required": "Email is required",
       "invalid": "Invalid email"
     },
@@ -169,7 +213,7 @@
       "placeholder": "https://mystore.com"
     },
     "monthlyOrders": {
-      "label": "Approximately how many orders monthly?",
+      "label": "Approximately how many monthly orders?",
       "placeholder": "Select...",
       "required": "Select number of orders",
       "options": {
@@ -180,26 +224,26 @@
         "1000+": "More than 1000"
       }
     },
-    "submit": "Reserve Now - Pay Only 1 EGP 💳",
-    "submitting": "Loading...",
-    "error": "An error occurred. Try again or contact us on WhatsApp",
-    "info": "The 1 EGP will be deducted from your first subscription. Full refund if you don't like the service."
+    "submit": "Reserve Your Spot Now 🎉",
+    "submitting": "Sending...",
+    "error": "An error occurred. Try again or contact us",
+    "info": "We'll contact you within 24 hours to start free setup"
   },
   "success": {
-    "title": "Reservation Successful!",
-    "subtitle": "Congratulations! You're now one of the first 20 stores to use the bot free for 2 months",
-    "next_title": "What's Next?",
+    "title": "Reservation Successful! 🎉",
+    "subtitle": "Congratulations! You're now among the first 20 stores to get 2 months free",
+    "next_title": "Next Steps",
     "next_steps": {
       "1": "We'll contact you within 24 hours on WhatsApp",
       "2": "We'll help you with setup (only 5 minutes)",
       "3": "You'll start saving money from the first week"
     },
     "important_title": "Very Important!",
-    "important_text": "Open WhatsApp and send us \"Ready\" at number:",
+    "important_text": "Open WhatsApp and send us 'Ready' at number:",
     "important_cta": "So we can start with you immediately",
     "cta": "Open WhatsApp Now 📱"
   },
   "footer": {
-    "copyright": "© 2024 COD Verification Bot - Made in Egypt 🇪🇬"
+    "copyright": "© 2024 Post Order. All rights reserved."
   }
 }

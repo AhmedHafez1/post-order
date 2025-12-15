@@ -28,7 +28,7 @@ export function Problem() {
   const t = useTranslations('problems')
 
   return (
-    <Section className="from-background to-background bg-linear-to-b via-red-50/30">
+    <Section className="bg-linear-to-b from-white via-red-50/30 to-white">
       <Container>
         <SectionHeader title={t('title')} centered />
 
@@ -41,15 +41,15 @@ export function Problem() {
         >
           {features.problems.map((problem) => (
             <motion.div key={problem.key} variants={item}>
-              <Card className="h-full border-s-4 border-s-red-500 bg-white/50 backdrop-blur transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
+              <Card className="h-full border-r-4 border-r-red-500 bg-white shadow-lg backdrop-blur transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
                 <CardContent className="p-6">
                   <div className="flex gap-4">
                     <div className="shrink-0 text-5xl">{problem.icon}</div>
                     <div>
-                      <h3 className="text-foreground mb-2 text-xl font-bold">
+                      <h3 className="mb-2 text-xl font-bold text-gray-900">
                         {t(`${problem.key}.title`)}
                       </h3>
-                      <p className="text-muted-foreground leading-relaxed">
+                      <p className="leading-relaxed text-gray-600">
                         {t(`${problem.key}.description`)}
                       </p>
                     </div>
@@ -67,15 +67,15 @@ export function Problem() {
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
         >
-          <Card className="border-2 border-red-500 bg-linear-to-br from-red-50 to-red-100/50 shadow-2xl backdrop-blur">
+          <Card className="border-2 border-red-400 bg-linear-to-br from-red-50 to-rose-100 shadow-2xl backdrop-blur">
             <CardContent className="p-8">
               <div className="flex items-start gap-4">
-                <AlertCircle className="mt-1 h-8 w-8 shrink-0 text-red-600" />
+                <AlertCircle className="mt-1 h-10 w-10 shrink-0 text-red-600" />
                 <div>
-                  <p className="mb-3 text-lg leading-relaxed text-gray-700">
+                  <p className="mb-3 text-lg leading-relaxed text-gray-800">
                     {t('reality')}
                   </p>
-                  <p className="text-2xl font-bold text-red-600">
+                  <p className="text-2xl font-black text-red-600">
                     {t('reality_highlight')}
                   </p>
                 </div>

@@ -1,19 +1,19 @@
 'use client'
 
 import { useState, useEffect } from 'react'
-import { useLocale, useTranslations } from 'next-intl'
-import { Button } from '@/components/ui/button'
-import { Container } from '@/components/ui/container'
+import { usePathname, useRouter } from 'next/navigation'
 import { motion, AnimatePresence } from 'framer-motion'
-import { Menu, X, Phone, Globe } from 'lucide-react'
-import Link from 'next/link'
-import { cn } from '@/lib/utils'
+import { Menu, X, Globe, Zap } from 'lucide-react'
+import { useTranslations } from 'next-intl'
 
 export function Header() {
-  const locale = useLocale()
   const t = useTranslations('header')
   const [isScrolled, setIsScrolled] = useState(false)
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
+  const pathname = usePathname()
+  const router = useRouter()
+  // Extract locale from pathname (assuming /[locale]/...)
+  const locale = pathname?.split('/')[1] === 'en' ? 'en' : 'ar'
 
   useEffect(() => {
     const handleScroll = () => {
@@ -30,50 +30,64 @@ export function Header() {
       const offset = 80
       const elementPosition = element.getBoundingClientRect().top
       const offsetPosition = elementPosition + window.pageYOffset - offset
-
-      window.scrollTo({
-        top: offsetPosition,
-        behavior: 'smooth',
-      })
+      window.scrollTo({ top: offsetPosition, behavior: 'smooth' })
     }
   }
 
   const navigation = [
     { name: t('features'), id: 'solution' },
+    { name: t('demo'), id: 'demo' },
     { name: t('pricing'), id: 'pricing' },
     { name: t('faq'), id: 'faq' },
   ]
 
+  // Change language by updating the locale in the URL
+  const handleLocaleChange = () => {
+    const newLocale = locale === 'ar' ? 'en' : 'ar'
+    // Remove current locale from pathname and add new one
+    const segments = pathname?.split('/') || []
+    if (segments.length > 1) {
+      segments[1] = newLocale
+      const newPath = segments.join('/') || '/'
+      router.push(newPath)
+    }
+  }
+
   return (
     <header
-      className={cn(
-        'fixed top-0 z-50 w-full transition-all duration-300',
+      className={`fixed top-0 z-50 w-full transition-all duration-500 ${
         isScrolled
-          ? 'bg-background/95 border-border border-b shadow-lg backdrop-blur-lg'
+          ? 'border-b border-gray-200/50 bg-white/80 shadow-lg backdrop-blur-xl'
           : 'bg-transparent'
-      )}
+      }`}
     >
-      <Container>
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="flex h-20 items-center justify-between">
           {/* Logo */}
           <motion.div
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
-            className="flex items-center gap-3"
+            className="group flex cursor-pointer items-center gap-3"
+            onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
           >
-            <div className="from-primary to-primary-600 flex h-10 w-10 items-center justify-center rounded-xl bg-linear-to-br shadow-lg">
-              <Phone className="h-6 w-6 text-white" />
+            <div className="relative">
+              <div className="absolute inset-0 rounded-2xl bg-linear-to-br from-emerald-500 to-emerald-600 opacity-50 blur-md transition-opacity group-hover:opacity-75" />
+              <div className="relative flex h-12 w-12 items-center justify-center rounded-2xl bg-linear-to-br from-emerald-500 to-emerald-600 shadow-lg">
+                <Zap className="h-6 w-6 text-white" fill="white" />
+              </div>
             </div>
             <div>
-              <h1 className="from-primary to-primary-600 bg-linear-to-r bg-clip-text text-xl font-bold text-transparent">
+              <h1 className="bg-linear-to-r from-emerald-600 to-emerald-500 bg-clip-text text-2xl font-black text-transparent">
                 Post Order
               </h1>
-              <p className="text-muted-foreground text-xs">{t('tagline')}</p>
+              <p className="text-xs font-medium text-gray-600">
+                {t('tagline')}
+              </p>
             </div>
           </motion.div>
 
           {/* Desktop Navigation */}
-          <nav className="hidden items-center gap-8 md:flex">
+          <nav className="hidden items-center gap-1 md:flex">
             {navigation.map((item, index) => (
               <motion.button
                 key={item.id}
@@ -81,44 +95,62 @@ export function Header() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: index * 0.1 }}
                 onClick={() => scrollToSection(item.id)}
-                className="text-foreground/80 hover:text-primary group relative text-sm font-medium transition-colors"
+                className="relative rounded-lg px-4 py-2 text-sm font-semibold text-gray-700 transition-colors hover:bg-emerald-50 hover:text-emerald-600"
               >
                 {item.name}
-                <span className="bg-primary absolute -bottom-1 left-0 h-0.5 w-0 transition-all group-hover:w-full" />
               </motion.button>
             ))}
           </nav>
 
-          {/* CTA + Language Switcher */}
-          <div className="hidden items-center gap-4 md:flex">
-            <Link href={locale === 'ar' ? '/en' : '/ar'}>
-              <Button variant="ghost" size="sm" className="gap-2">
-                <Globe className="h-4 w-4" />
-                {locale === 'ar' ? 'EN' : 'عربي'}
-              </Button>
-            </Link>
-            <Button
-              onClick={() => scrollToSection('pricing')}
-              size="sm"
-              className="shadow-lg transition-shadow hover:shadow-xl"
+          {/* CTA + Language */}
+          <div className="hidden items-center gap-3 md:flex">
+            <button
+              onClick={handleLocaleChange}
+              className="flex items-center gap-2 rounded-lg px-3 py-2 text-sm font-medium text-gray-700 transition-colors hover:bg-gray-100 hover:text-emerald-600"
             >
-              {t('cta')}
-            </Button>
+              <Globe className="h-4 w-4" />
+              <span>{locale === 'ar' ? 'EN' : 'عربي'}</span>
+            </button>
+            <button
+              onClick={() => scrollToSection('pricing')}
+              className="group relative overflow-hidden rounded-xl bg-linear-to-r from-emerald-600 to-emerald-500 px-6 py-2.5 text-sm font-bold text-white shadow-lg transition-all hover:scale-105 hover:shadow-xl"
+            >
+              <span className="relative z-10">{t('cta')}</span>
+              <div className="absolute inset-0 bg-linear-to-r from-emerald-500 to-emerald-400 opacity-0 transition-opacity group-hover:opacity-100" />
+            </button>
           </div>
 
           {/* Mobile Menu Button */}
           <button
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className="hover:bg-accent rounded-lg p-2 transition-colors md:hidden"
+            className="rounded-xl p-2 transition-colors hover:bg-gray-100 md:hidden"
           >
-            {isMobileMenuOpen ? (
-              <X className="h-6 w-6" />
-            ) : (
-              <Menu className="h-6 w-6" />
-            )}
+            <AnimatePresence mode="wait">
+              {isMobileMenuOpen ? (
+                <motion.div
+                  key="close"
+                  initial={{ rotate: -90, opacity: 0 }}
+                  animate={{ rotate: 0, opacity: 1 }}
+                  exit={{ rotate: 90, opacity: 0 }}
+                  transition={{ duration: 0.2 }}
+                >
+                  <X className="h-6 w-6" />
+                </motion.div>
+              ) : (
+                <motion.div
+                  key="menu"
+                  initial={{ rotate: 90, opacity: 0 }}
+                  animate={{ rotate: 0, opacity: 1 }}
+                  exit={{ rotate: -90, opacity: 0 }}
+                  transition={{ duration: 0.2 }}
+                >
+                  <Menu className="h-6 w-6" />
+                </motion.div>
+              )}
+            </AnimatePresence>
           </button>
         </div>
-      </Container>
+      </div>
 
       {/* Mobile Menu */}
       <AnimatePresence>
@@ -127,41 +159,45 @@ export function Header() {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
-            className="border-border bg-background/95 border-t backdrop-blur-lg md:hidden"
+            transition={{ duration: 0.3 }}
+            className="overflow-hidden border-t border-gray-200/50 bg-white/95 backdrop-blur-xl md:hidden"
           >
-            <Container>
-              <nav className="space-y-4 py-6">
-                {navigation.map((item) => (
-                  <button
+            <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+              <nav className="space-y-1 py-6">
+                {navigation.map((item, index) => (
+                  <motion.button
                     key={item.id}
+                    initial={{ opacity: 0, x: -20 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ delay: index * 0.05 }}
                     onClick={() => scrollToSection(item.id)}
-                    className="text-foreground/80 hover:text-primary block w-full py-2 text-start text-sm font-medium transition-colors"
+                    className="block w-full rounded-lg px-4 py-3 text-left text-base font-semibold text-gray-700 transition-colors hover:bg-emerald-50 hover:text-emerald-600"
                   >
                     {item.name}
-                  </button>
+                  </motion.button>
                 ))}
-                <div className="border-border space-y-3 border-t pt-4">
-                  <Link
-                    href={locale === 'ar' ? '/en' : '/ar'}
-                    className="block"
+                <div className="mt-4 space-y-3 border-t border-gray-200 pt-4">
+                  <button
+                    onClick={handleLocaleChange}
+                    className="flex w-full items-center justify-center gap-2 rounded-lg border-2 border-gray-300 px-4 py-3 text-base font-medium text-gray-700 transition-colors hover:bg-gray-50"
                   >
-                    <Button variant="outline" className="w-full gap-2">
-                      <Globe className="h-4 w-4" />
-                      {locale === 'ar' ? 'English' : 'عربي'}
-                    </Button>
-                  </Link>
-                  <Button
+                    <Globe className="h-5 w-5" />
+                    {locale === 'ar' ? 'English' : 'عربي'}
+                  </button>
+                  <button
                     onClick={() => scrollToSection('pricing')}
-                    className="w-full"
+                    className="w-full rounded-lg bg-linear-to-r from-emerald-600 to-emerald-500 px-4 py-3 text-base font-bold text-white shadow-lg"
                   >
-                    {t('cta')}
-                  </Button>
+                    Start Free Trial
+                  </button>
                 </div>
               </nav>
-            </Container>
+            </div>
           </motion.div>
         )}
       </AnimatePresence>
     </header>
   )
 }
+
+export default Header
