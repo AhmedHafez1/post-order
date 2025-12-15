@@ -6,22 +6,22 @@ import DynamicDemo from '@/components/sections/DynamicDemo'
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col gap-0 bg-linear-to-br from-emerald-50 via-white to-amber-50">
-      <div className="w-full">
+    <main className="flex min-h-screen flex-col gap-0 bg-linear-to-b from-emerald-50 via-white to-slate-50">
+      <section className="w-full">
         <Hero />
-      </div>
-      <div className="w-full border-t-2 border-gray-200">
+      </section>
+      <section className="w-full border-t border-emerald-100/60 bg-white/80 backdrop-blur">
         <DynamicDemo />
-      </div>
-      <div className="w-full border-t-2 border-gray-200">
+      </section>
+      <section className="w-full border-t border-emerald-100/60 bg-white">
         <Problem />
-      </div>
-      <div className="w-full border-t-2 border-gray-200">
+      </section>
+      <section className="w-full border-t border-emerald-100/60 bg-white">
         <Solution />
-      </div>
-      <div className="w-full border-t-2 border-gray-200">
+      </section>
+      <section className="w-full border-t border-emerald-100/60 bg-white/90 backdrop-blur">
         <Pricing />
-      </div>
+      </section>
     </main>
   )
 }

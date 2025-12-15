@@ -55,14 +55,14 @@ export function Header() {
 
   return (
     <header
-      className={`fixed top-0 z-50 w-full transition-all duration-500 ${
+      className={`fixed top-0 z-50 w-full transition-all duration-400 ${
         isScrolled
-          ? 'border-b border-gray-200/50 bg-white/80 shadow-lg backdrop-blur-xl'
-          : 'bg-transparent'
+          ? 'border-b border-emerald-100/70 bg-white/85 shadow-sm backdrop-blur-md'
+          : 'bg-white/60 backdrop-blur'
       }`}
     >
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="flex h-20 items-center justify-between">
+        <div className="flex h-16 items-center justify-between">
           {/* Logo */}
           <motion.div
             initial={{ opacity: 0, x: -20 }}
@@ -71,13 +71,13 @@ export function Header() {
             onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
           >
             <div className="relative">
-              <div className="absolute inset-0 rounded-2xl bg-linear-to-br from-emerald-500 to-emerald-600 opacity-50 blur-md transition-opacity group-hover:opacity-75" />
-              <div className="relative flex h-12 w-12 items-center justify-center rounded-2xl bg-linear-to-br from-emerald-500 to-emerald-600 shadow-lg">
+              <div className="absolute inset-0 rounded-2xl bg-linear-to-br from-emerald-500 to-emerald-600 opacity-30 blur-md transition-opacity group-hover:opacity-60" />
+              <div className="relative flex h-11 w-11 items-center justify-center rounded-2xl bg-linear-to-br from-emerald-500 to-emerald-600 shadow-md">
                 <Zap className="h-6 w-6 text-white" fill="white" />
               </div>
             </div>
             <div>
-              <h1 className="bg-linear-to-r from-emerald-600 to-emerald-500 bg-clip-text text-2xl font-black text-transparent">
+              <h1 className="bg-linear-to-r from-emerald-600 to-emerald-500 bg-clip-text text-xl font-black text-transparent">
                 Post Order
               </h1>
               <p className="text-xs font-medium text-gray-600">
@@ -87,7 +87,7 @@ export function Header() {
           </motion.div>
 
           {/* Desktop Navigation */}
-          <nav className="hidden items-center gap-1 md:flex">
+          <nav className="hidden items-center gap-2 md:flex">
             {navigation.map((item, index) => (
               <motion.button
                 key={item.id}
@@ -95,7 +95,7 @@ export function Header() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: index * 0.1 }}
                 onClick={() => scrollToSection(item.id)}
-                className="relative rounded-lg px-4 py-2 text-sm font-semibold text-gray-700 transition-colors hover:bg-emerald-50 hover:text-emerald-600"
+                className="rounded-lg px-3 py-2 text-sm font-semibold text-gray-700 transition-colors hover:bg-emerald-50 hover:text-emerald-700"
               >
                 {item.name}
               </motion.button>
@@ -106,14 +106,14 @@ export function Header() {
           <div className="hidden items-center gap-3 md:flex">
             <button
               onClick={handleLocaleChange}
-              className="flex items-center gap-2 rounded-lg px-3 py-2 text-sm font-medium text-gray-700 transition-colors hover:bg-gray-100 hover:text-emerald-600"
+              className="flex items-center gap-2 rounded-full border border-emerald-100/70 bg-white/80 px-3 py-1.5 text-sm font-semibold text-gray-700 transition-colors hover:border-emerald-200 hover:text-emerald-700"
             >
               <Globe className="h-4 w-4" />
               <span>{locale === 'ar' ? 'EN' : 'عربي'}</span>
             </button>
             <button
               onClick={() => scrollToSection('pricing')}
-              className="group relative overflow-hidden rounded-xl bg-linear-to-r from-emerald-600 to-emerald-500 px-6 py-2.5 text-sm font-bold text-white shadow-lg transition-all hover:scale-105 hover:shadow-xl"
+              className="group relative overflow-hidden rounded-lg bg-linear-to-r from-emerald-600 to-emerald-500 px-5 py-2.5 text-sm font-bold text-white shadow-md transition-all hover:translate-y-[-1px] hover:shadow-lg"
             >
               <span className="relative z-10">{t('cta')}</span>
               <div className="absolute inset-0 bg-linear-to-r from-emerald-500 to-emerald-400 opacity-0 transition-opacity group-hover:opacity-100" />

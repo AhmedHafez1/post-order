@@ -33,7 +33,7 @@ export function Solution() {
         <SectionHeader title={t('title')} subtitle={t('subtitle')} centered />
 
         {/* How it works - 3 steps */}
-        <div className="mb-20">
+        <div className="mb-16">
           <div className="grid gap-8 md:grid-cols-3">
             {['1', '2', '3'].map((step, i) => (
               <motion.div
@@ -46,25 +46,25 @@ export function Solution() {
               >
                 {/* Connector line */}
                 {step !== '3' && (
-                  <div className="absolute start-full top-8 -z-10 hidden h-0.5 w-full bg-linear-to-r from-emerald-500 to-transparent md:block" />
+                  <div className="absolute start-full top-8 -z-10 hidden h-0.5 w-full bg-linear-to-r from-emerald-400 to-transparent md:block" />
                 )}
 
-                <Card className="group relative h-full overflow-hidden border-2 transition-all duration-500 hover:border-emerald-500 hover:shadow-2xl">
+                <Card className="group relative h-full overflow-hidden border border-emerald-100 bg-white/90 transition-all duration-400 hover:-translate-y-1 hover:shadow-md">
                   {/* Number badge */}
-                  <div className="absolute -start-5 -top-5 flex h-14 w-14 items-center justify-center rounded-full bg-linear-to-br from-emerald-500 to-emerald-600 text-2xl font-black text-white shadow-lg transition-transform group-hover:scale-110">
+                  <div className="absolute -start-4 -top-4 flex h-12 w-12 items-center justify-center rounded-full bg-linear-to-br from-emerald-500 to-emerald-600 text-xl font-black text-white shadow-md transition-transform group-hover:scale-110">
                     {step}
                   </div>
 
-                  <CardContent className="px-6 pt-16 pb-8">
-                    <div className="mb-4 text-5xl transition-transform group-hover:scale-110">
+                  <CardContent className="px-6 pt-14 pb-8">
+                    <div className="mb-4 text-4xl transition-transform group-hover:scale-105">
                       {step === '1' && '🛒'}
                       {step === '2' && '📱'}
                       {step === '3' && '✅'}
                     </div>
-                    <h3 className="mb-3 text-xl font-bold">
+                    <h3 className="mb-2 text-lg font-bold text-slate-900">
                       {t(`steps.${step}.title`)}
                     </h3>
-                    <p className="leading-relaxed text-gray-600">
+                    <p className="text-sm leading-relaxed text-slate-700">
                       {t(`steps.${step}.description`)}
                     </p>
                   </CardContent>
@@ -83,21 +83,21 @@ export function Solution() {
           initial="hidden"
           whileInView="show"
           viewport={{ once: true, margin: '-100px' }}
-          className="mb-16 grid gap-6 md:grid-cols-2"
+          className="mb-14 grid gap-6 md:grid-cols-2"
         >
           {features.solutions.map((solution) => (
             <motion.div key={solution.key} variants={item}>
-              <Card className="group h-full border-2 bg-white/80 backdrop-blur transition-all duration-300 hover:-translate-y-2 hover:border-emerald-500 hover:shadow-xl">
-                <CardContent className="p-8">
+              <Card className="group h-full border border-emerald-100 bg-white/90 backdrop-blur transition-all duration-300 hover:-translate-y-1 hover:shadow-md">
+                <CardContent className="p-7">
                   <div className="flex items-start gap-4">
-                    <div className="text-5xl transition-transform group-hover:scale-110">
+                    <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-emerald-50 text-3xl transition-transform group-hover:scale-105">
                       {solution.icon}
                     </div>
                     <div className="flex-1">
-                      <h3 className="mb-2 text-xl font-bold transition-colors group-hover:text-emerald-600">
+                      <h3 className="mb-2 text-lg font-bold text-slate-900 transition-colors group-hover:text-emerald-600">
                         {t(`${solution.key}.title`)}
                       </h3>
-                      <p className="leading-relaxed text-gray-600">
+                      <p className="text-sm leading-relaxed text-slate-700">
                         {t(`${solution.key}.description`)}
                       </p>
                     </div>
@@ -117,22 +117,32 @@ export function Solution() {
           transition={{ duration: 0.6 }}
           className="mx-auto max-w-3xl"
         >
-          <div className="mb-6 flex justify-center gap-1">
+          <div className="mb-3 flex justify-center gap-1">
             {[...Array(5)].map((_, i) => (
               <Star key={i} className="h-6 w-6 fill-amber-400 text-amber-400" />
             ))}
           </div>
-          <Card className="border-2 border-emerald-200 bg-linear-to-br from-emerald-50 to-green-50 shadow-2xl">
-            <CardContent className="p-8">
-              <p className="mb-4 text-lg leading-relaxed text-gray-800 italic">
+          <Card className="border border-emerald-100 bg-white/90 shadow-md">
+            <CardContent className="p-7">
+              <div className="mb-4 flex items-center gap-3">
+                <div className="flex h-12 w-12 items-center justify-center rounded-full bg-emerald-50 text-lg font-bold text-emerald-700 shadow">
+                  {testimonials[0].name.charAt(0)}
+                </div>
+                <div>
+                  <div className="font-bold text-slate-900">
+                    {testimonials[0].name}
+                  </div>
+                  <div className="text-sm text-slate-600">
+                    {testimonials[0].store} • {testimonials[0].orders}{' '}
+                    {t.rich('orders_monthly', { default: 'أوردر شهرياً' })}
+                  </div>
+                </div>
+              </div>
+              <p className="mb-4 text-base leading-relaxed text-slate-800 italic">
                 {t('testimonial_1')}
               </p>
-              <div className="font-bold text-gray-900">
-                {testimonials[0].name}
-              </div>
-              <div className="text-sm text-gray-600">
-                {testimonials[0].store} • {testimonials[0].orders}{' '}
-                {t.rich('orders_monthly', { default: 'أوردر شهرياً' })}
+              <div className="mt-3 inline-flex items-center gap-2 rounded-full bg-emerald-50 px-3 py-1 text-xs font-semibold text-emerald-700 ring-1 ring-emerald-100">
+                +34% confirmations
               </div>
             </CardContent>
           </Card>

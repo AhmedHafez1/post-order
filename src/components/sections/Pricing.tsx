@@ -27,13 +27,13 @@ export function Pricing() {
   return (
     <Section
       id="pricing"
-      className="bg-linear-to-b from-white via-emerald-50/20 to-white"
+      className="bg-linear-to-b from-white via-emerald-25 to-white"
     >
       <Container>
         <SectionHeader title={t('title')} subtitle={t('subtitle')} centered />
 
         {/* Pricing cards */}
-        <div className="mb-16 grid gap-8 md:grid-cols-3">
+        <div className="mb-14 grid gap-8 md:grid-cols-3">
           {/* Starter */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -62,7 +62,7 @@ export function Pricing() {
             className="md:-translate-y-4"
           >
             <div className="absolute start-0 end-0 -top-5 z-10 flex justify-center">
-              <div className="rounded-full bg-linear-to-r from-amber-400 to-orange-400 px-6 py-2 text-sm font-bold text-gray-900 shadow-lg">
+              <div className="rounded-full bg-white px-4 py-1 text-xs font-semibold text-amber-700 ring-1 ring-amber-200 shadow-sm">
                 الأكثر شعبية ⭐
               </div>
             </div>
@@ -110,8 +110,8 @@ export function Pricing() {
           transition={{ duration: 0.6 }}
           className="mx-auto mb-16 max-w-2xl"
         >
-          <Card className="border-2 border-emerald-200 bg-white shadow-2xl backdrop-blur">
-            <CardContent className="p-8 md:p-12">
+          <Card className="border border-emerald-100 bg-white/95 shadow-md backdrop-blur">
+            <CardContent className="p-8 md:p-10">
               <div className="mb-8 text-center">
                 <h3 className="mb-3 text-3xl font-black">
                   {t('reserve_title')}
@@ -122,7 +122,7 @@ export function Pricing() {
               <WaitlistForm />
 
               {/* Trust badges */}
-              <div className="mt-8 flex flex-wrap items-center justify-center gap-6 text-sm text-gray-600">
+              <div className="mt-6 flex flex-wrap items-center justify-center gap-5 text-sm text-gray-700">
                 <div className="flex items-center gap-2">
                   <Shield className="h-5 w-5 text-emerald-600" />
                   <span>{t('trust_badges.secure')}</span>
@@ -147,13 +147,13 @@ export function Pricing() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="mx-auto max-w-3xl"
+          className="mx-auto max-w-3xl rounded-2xl border border-emerald-100 bg-white/90 p-6 shadow-sm"
         >
           <h3 className="mb-8 text-center text-3xl font-black">
             {tFaq('title')}
           </h3>
 
-          <Accordion type="single" collapsible className="space-y-4">
+          <Accordion type="single" collapsible className="space-y-3">
             {faqs.map((faq, index) => (
               <FAQItem
                 key={faq.key}

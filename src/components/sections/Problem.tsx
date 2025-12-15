@@ -28,7 +28,7 @@ export function Problem() {
   const t = useTranslations('problems')
 
   return (
-    <Section className="bg-linear-to-b from-white via-red-50/30 to-white">
+    <Section className="bg-linear-to-b from-white via-emerald-25 to-white">
       <Container>
         <SectionHeader title={t('title')} centered />
 
@@ -41,15 +41,17 @@ export function Problem() {
         >
           {features.problems.map((problem) => (
             <motion.div key={problem.key} variants={item}>
-              <Card className="h-full border-r-4 border-r-red-500 bg-white shadow-lg backdrop-blur transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
+              <Card className="h-full border border-emerald-100 bg-white/90 shadow-sm backdrop-blur transition-all duration-300 hover:-translate-y-1 hover:shadow-md">
                 <CardContent className="p-6">
                   <div className="flex gap-4">
-                    <div className="shrink-0 text-5xl">{problem.icon}</div>
-                    <div>
-                      <h3 className="mb-2 text-xl font-bold text-gray-900">
+                    <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-emerald-50 text-2xl">
+                      {problem.icon}
+                    </div>
+                    <div className="space-y-2">
+                      <h3 className="text-lg font-bold text-slate-900">
                         {t(`${problem.key}.title`)}
                       </h3>
-                      <p className="leading-relaxed text-gray-600">
+                      <p className="text-sm leading-relaxed text-slate-700">
                         {t(`${problem.key}.description`)}
                       </p>
                     </div>
@@ -67,15 +69,15 @@ export function Problem() {
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
         >
-          <Card className="border-2 border-red-400 bg-linear-to-br from-red-50 to-rose-100 shadow-2xl backdrop-blur">
-            <CardContent className="p-8">
+          <Card className="border border-emerald-100 bg-linear-to-r from-emerald-50 to-white shadow-md backdrop-blur">
+            <CardContent className="p-6 md:p-8">
               <div className="flex items-start gap-4">
-                <AlertCircle className="mt-1 h-10 w-10 shrink-0 text-red-600" />
-                <div>
-                  <p className="mb-3 text-lg leading-relaxed text-gray-800">
+                <AlertCircle className="mt-1 h-10 w-10 shrink-0 text-emerald-600" />
+                <div className="space-y-2">
+                  <p className="text-base leading-relaxed text-slate-800">
                     {t('reality')}
                   </p>
-                  <p className="text-2xl font-black text-red-600">
+                  <p className="text-xl font-black text-emerald-700">
                     {t('reality_highlight')}
                   </p>
                 </div>
