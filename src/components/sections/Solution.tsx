@@ -5,7 +5,15 @@ import { Container } from '@/components/ui/container'
 import { Section } from '@/components/ui/section'
 import { motion } from 'framer-motion'
 import { features, testimonials } from '@/config/site'
-import { CheckCircle2, Star, Sparkles, ArrowRight } from 'lucide-react'
+import {
+  CheckCircle2,
+  Star,
+  Sparkles,
+  ArrowRight,
+  TrendingUp,
+  Users,
+  Clock,
+} from 'lucide-react'
 
 const container = {
   hidden: { opacity: 0 },
@@ -26,6 +34,27 @@ export function Solution() {
   const t = useTranslations('solution')
 
   const stepEmojis = ['🛒', '📱', '✅']
+
+  const stats = [
+    {
+      label: t('stat_1_label'),
+      value: t('stat_1_value'),
+      icon: TrendingUp,
+      iconColor: 'text-emerald-600',
+    },
+    {
+      label: t('stat_2_label'),
+      value: t('stat_2_value'),
+      icon: Users,
+      iconColor: 'text-blue-600',
+    },
+    {
+      label: t('stat_3_label'),
+      value: t('stat_3_value'),
+      icon: Clock,
+      iconColor: 'text-amber-600',
+    },
+  ]
 
   return (
     <Section id="solution" variant="gradient">
@@ -152,6 +181,37 @@ export function Solution() {
 
                 {/* Decorative glow */}
                 <div className="absolute -right-8 -bottom-8 h-24 w-24 rounded-full bg-emerald-200/30 blur-2xl transition-opacity group-hover:opacity-60" />
+              </div>
+            </motion.div>
+          ))}
+        </motion.div>
+
+        {/* Stats Cards */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, delay: 0.5 }}
+          className="mx-auto grid max-w-3xl gap-4 sm:grid-cols-3"
+        >
+          {stats.map((stat, index) => (
+            <motion.div
+              key={stat.label}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.6 + index * 0.1 }}
+              className="group relative overflow-hidden rounded-2xl border border-emerald-100 bg-white p-6 shadow-sm transition-all hover:-translate-y-1 hover:shadow-md"
+            >
+              <div className="absolute inset-0 bg-linear-to-br from-emerald-50/50 to-transparent opacity-0 transition-opacity group-hover:opacity-100" />
+              <div className="relative">
+                <div className="mb-3 flex items-center justify-center">
+                  <stat.icon className={`h-8 w-8 ${stat.iconColor}`} />
+                </div>
+                <div className="mb-1 text-sm font-semibold text-slate-600">
+                  {stat.label}
+                </div>
+                <div className="text-3xl font-black text-slate-900">
+                  {stat.value}
+                </div>
               </div>
             </motion.div>
           ))}

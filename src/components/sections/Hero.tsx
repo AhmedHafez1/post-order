@@ -1,50 +1,33 @@
 'use client'
 
 import { motion } from 'framer-motion'
+import Image from 'next/image'
 import {
   Sparkles,
-  TrendingUp,
-  Clock,
-  Users,
   ChevronRight,
   Star,
   Zap,
+  ChevronLeft,
+  ChevronDownIcon,
 } from 'lucide-react'
 import { useTranslations } from 'next-intl'
+import { usePathname } from 'next/navigation'
 
 export function Hero() {
   const t = useTranslations('hero')
+  const pathname = usePathname()
+
+  // Extract locale from pathname (assuming /[locale]/...)
+  const locale = pathname?.split('/')[1] === 'en' ? 'en' : 'ar'
+
   const scrollToSection = (id: string) => {
     document
       .getElementById(id)
       ?.scrollIntoView({ behavior: 'smooth', block: 'start' })
   }
 
-  const stats = [
-    {
-      label: t('stat_1_label'),
-      value: t('stat_1_value'),
-      icon: TrendingUp,
-      iconColor: 'text-emerald-600',
-    },
-    {
-      label: t('stat_2_label'),
-      value: t('stat_2_value'),
-      icon: Users,
-      iconColor: 'text-blue-600',
-    },
-    {
-      label: t('stat_3_label'),
-      value: t('stat_3_value'),
-      icon: Clock,
-      iconColor: 'text-amber-600',
-    },
-  ]
-
-  const benefits = [t('benefit_1'), t('benefit_2'), t('benefit_3')]
-
   return (
-    <section className="relative overflow-hidden pt-32 pb-20 sm:pt-36 sm:pb-24">
+    <section className="relative min-h-screen overflow-hidden pt-28 pb-12 sm:pt-28 sm:pb-16">
       {/* Background */}
       <div className="to-emerald-25 absolute inset-0 -z-10 bg-linear-to-br from-emerald-50 via-white" />
       <div className="absolute top-10 -left-32 -z-10 h-96 w-96 rounded-full bg-emerald-300/20 blur-3xl" />
@@ -57,7 +40,7 @@ export function Hero() {
             initial={{ opacity: 0, y: -12 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
-            className="mb-8 inline-flex items-center gap-2 rounded-full bg-linear-to-r from-emerald-100 to-emerald-50 px-5 py-2.5 text-sm font-semibold text-emerald-800 shadow-sm ring-1 ring-emerald-200"
+            className="mb-10 inline-flex items-center gap-2 rounded-full bg-linear-to-r from-amber-100 to-emerald-50 px-5 py-2.5 text-sm font-semibold text-emerald-800 shadow-sm ring-1 ring-amber-100"
           >
             <Sparkles className="h-4 w-4 text-amber-500" />
             {t('urgency')}
@@ -68,9 +51,9 @@ export function Hero() {
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.1 }}
-            className="mb-6 space-y-2"
+            className="mb-10 space-y-2"
           >
-            <h1 className="text-5xl leading-tight font-black text-slate-900 sm:text-6xl lg:text-7xl">
+            <h1 className="text-3xl leading-tight font-black text-slate-900 sm:text-4xl lg:text-5xl">
               {t('title')}{' '}
               <span className="bg-linear-to-r from-emerald-600 to-emerald-400 bg-clip-text text-transparent">
                 {t('highlight')}
@@ -93,7 +76,7 @@ export function Hero() {
             initial={{ opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.3 }}
-            className="mb-8 flex flex-col items-center justify-center gap-4 sm:flex-row"
+            className="mb-4 flex flex-col items-center justify-center gap-4 sm:flex-row"
           >
             <button
               onClick={() => scrollToSection('pricing')}
@@ -101,7 +84,11 @@ export function Hero() {
             >
               <Zap className="h-5 w-5" />
               {t('cta')}
-              <ChevronRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
+              {locale === 'ar' ? (
+                <ChevronLeft className="h-5 w-5 transition-transform group-hover:-translate-x-1" />
+              ) : (
+                <ChevronRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
+              )}
             </button>
             <button
               onClick={() => scrollToSection('demo')}
@@ -111,63 +98,62 @@ export function Hero() {
             </button>
           </motion.div>
 
-          {/* Benefits */}
-          <motion.p
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.6, delay: 0.4 }}
-            className="mb-12 text-sm font-medium text-slate-600"
-          >
-            {benefits.join(' • ')}
-          </motion.p>
-
-          {/* Stats Cards */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.5 }}
-            className="mx-auto grid max-w-3xl gap-4 sm:grid-cols-3"
-          >
-            {stats.map((stat, index) => (
-              <motion.div
-                key={stat.label}
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.6 + index * 0.1 }}
-                className="group relative overflow-hidden rounded-2xl border border-emerald-100 bg-white p-6 shadow-sm transition-all hover:-translate-y-1 hover:shadow-md"
-              >
-                <div className="absolute inset-0 bg-linear-to-br from-emerald-50/50 to-transparent opacity-0 transition-opacity group-hover:opacity-100" />
-                <div className="relative">
-                  <div className="mb-3 flex items-center justify-center">
-                    <stat.icon className={`h-8 w-8 ${stat.iconColor}`} />
-                  </div>
-                  <div className="mb-1 text-sm font-semibold text-slate-600">
-                    {stat.label}
-                  </div>
-                  <div className="text-3xl font-black text-slate-900">
-                    {stat.value}
-                  </div>
-                </div>
-              </motion.div>
-            ))}
-          </motion.div>
-
           {/* Social Proof */}
           <motion.div
             initial={{ opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.8 }}
-            className="mt-12 inline-flex items-center gap-4 rounded-2xl border border-emerald-100 bg-white px-6 py-4 shadow-sm"
+            className="mt-10 mb-16 inline-flex items-center gap-4 rounded-2xl border border-emerald-100 bg-white px-6 py-4 shadow-sm"
           >
-            <div className="flex -space-x-2">
-              {[1, 2, 3, 4, 5].map((i) => (
-                <div
-                  key={i}
-                  className="flex h-10 w-10 items-center justify-center rounded-full border-2 border-white bg-linear-to-br from-emerald-400 to-emerald-600 text-sm font-bold text-white shadow"
-                >
-                  {i}
-                </div>
-              ))}
+            <div className="flex -space-x-3">
+              <Image
+                src="/images/landing/1.jpg"
+                alt="Customer 1"
+                width={40}
+                height={40}
+                className="h-10 w-10 rounded-full border-2 border-gray-200 object-cover shadow"
+                loading="lazy"
+                priority={false}
+              />
+              <Image
+                src="/images/landing/2.jpg"
+                alt="Customer 2"
+                width={40}
+                height={40}
+                className="h-10 w-10 rounded-full border-2 border-gray-200 object-cover shadow"
+                loading="lazy"
+                priority={false}
+              />
+              <Image
+                src="/images/landing/3.jpg"
+                alt="Customer 3"
+                width={40}
+                height={40}
+                className="h-10 w-10 rounded-full border-2 border-gray-200 object-cover shadow"
+                loading="lazy"
+                priority={false}
+              />
+              <Image
+                src="/images/landing/4.jpg"
+                alt="Customer 4"
+                width={40}
+                height={40}
+                className="h-10 w-10 rounded-full border-2 border-gray-200 object-cover shadow"
+                loading="lazy"
+                priority={false}
+              />
+              <Image
+                src="/images/landing/5.jpg"
+                alt="Customer 4"
+                width={40}
+                height={40}
+                className="h-10 w-10 rounded-full border-2 border-white object-cover shadow"
+                loading="lazy"
+                priority={false}
+              />
+              <div className="flex h-10 w-10 items-center justify-center rounded-full border-2 border-gray-200 bg-white text-sm font-bold text-emerald-600 shadow">
+                +43
+              </div>
             </div>
             <div className="text-left">
               <div className="font-bold text-slate-900">
@@ -183,6 +169,19 @@ export function Hero() {
                 <span className="ml-1 font-semibold">{t('rating')}</span>
               </div>
             </div>
+          </motion.div>
+
+          {/* Scroll Indicator */}
+          <motion.div
+            initial={{ opacity: 0, y: 12 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.3 }}
+            className="absolute bottom-8 left-1/2 -translate-x-1/2"
+          >
+            <ChevronDownIcon
+              className="h-8 w-8 animate-bounce text-emerald-600"
+              onClick={() => scrollToSection('demo')}
+            />
           </motion.div>
         </div>
       </div>

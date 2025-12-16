@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import { Bot, CheckCheck, Clock, Package, TrendingUp, Zap } from 'lucide-react'
+import { Bot, CheckCheck, Clock, TrendingUp, Zap } from 'lucide-react'
 import { DemoMessage } from '@/types/demo-message.model'
 import { useTranslations } from 'next-intl'
 
@@ -140,40 +140,6 @@ export function DynamicDemo() {
       </div>
 
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        {/* Section Header */}
-        <div className="mb-16 text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="mb-6 inline-flex items-center gap-2 rounded-full bg-linear-to-r from-emerald-100 to-emerald-50 px-4 py-2 text-sm font-semibold text-emerald-700 ring-1 ring-emerald-200"
-          >
-            <Bot className="h-4 w-4" />
-            {t('badge')}
-          </motion.div>
-          <motion.h2
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.1 }}
-            className="mb-4 text-4xl leading-tight font-black text-slate-900 sm:text-5xl"
-          >
-            {t('title')}{' '}
-            <span className="bg-linear-to-r from-emerald-600 to-emerald-500 bg-clip-text text-transparent">
-              {t('title_highlight')}
-            </span>
-          </motion.h2>
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.2 }}
-            className="mx-auto max-w-2xl text-lg leading-relaxed text-slate-600"
-          >
-            {t('subtitle')}
-          </motion.p>
-        </div>
-
         <div className="grid items-start gap-12 lg:grid-cols-2">
           {/* Chat Interface */}
           <motion.div
@@ -216,7 +182,7 @@ export function DynamicDemo() {
                   </div>
 
                   {/* Messages */}
-                  <div className="h-125 space-y-3 overflow-y-auto bg-slate-50 p-4">
+                  <div className="h-130 space-y-2 overflow-y-auto bg-slate-50 p-4">
                     <AnimatePresence>
                       {messages.map((message, index) => (
                         <motion.div
@@ -227,7 +193,7 @@ export function DynamicDemo() {
                           className={`flex ${message.type === 'user' ? 'justify-end' : 'justify-start'}`}
                         >
                           <div
-                            className={`max-w-[85%] rounded-2xl px-4 py-3 shadow-sm ${
+                            className={`max-w-[85%] rounded-2xl px-4 py-2 shadow-sm ${
                               message.type === 'user'
                                 ? 'rounded-br-md bg-linear-to-br from-emerald-500 to-emerald-600 text-white'
                                 : 'rounded-bl-md border border-emerald-100 bg-white text-slate-800'
@@ -296,6 +262,29 @@ export function DynamicDemo() {
 
           {/* Stats */}
           <div className="space-y-6">
+            {/* Title & Subtitle */}
+            <motion.h2
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.1 }}
+              className="mb-8 text-3xl leading-tight font-black text-slate-700 sm:text-4xl"
+            >
+              {t('title')}{' '}
+              <span className="bg-linear-to-r from-emerald-600 to-emerald-500 bg-clip-text text-transparent">
+                {t('title_highlight')}
+              </span>
+            </motion.h2>
+
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.2 }}
+              className="mx-auto max-w-2xl text-lg leading-relaxed text-slate-600"
+            >
+              {t('subtitle')}
+            </motion.p>
             <motion.div
               initial={{ opacity: 0, x: 20 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -338,7 +327,7 @@ export function DynamicDemo() {
             </motion.div>
 
             {/* Key Features */}
-            <motion.div
+            {/* <motion.div
               initial={{ opacity: 0, x: 20 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
@@ -372,7 +361,7 @@ export function DynamicDemo() {
                   </motion.li>
                 ))}
               </ul>
-            </motion.div>
+            </motion.div> */}
           </div>
         </div>
       </div>
