@@ -2,14 +2,7 @@
 
 import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import {
-  Bot,
-  CheckCheck,
-  Clock,
-  Package,
-  Phone,
-  ShoppingBag,
-} from 'lucide-react'
+import { Bot, CheckCheck, Clock, Package, TrendingUp, Zap } from 'lucide-react'
 import { DemoMessage } from '@/types/demo-message.model'
 import { useTranslations } from 'next-intl'
 
@@ -96,10 +89,8 @@ export function DynamicDemo() {
           setMessages((prev) => [...prev, message])
           setCurrentStep((prev) => prev + 1)
         }, message.delay)
-        // Clear typingTimer on cleanup
         return () => clearTimeout(typingTimer)
       }, 0)
-      // Clear typingStartTimer on cleanup
       return () => clearTimeout(typingStartTimer)
     } else {
       const userTimer = setTimeout(() => {
@@ -117,31 +108,34 @@ export function DynamicDemo() {
       value: t('stat_1_value'),
       icon: CheckCheck,
       color: 'from-green-500 to-emerald-500',
-      textColor: 'text-green-600',
+      bgColor: 'bg-green-50',
+      textColor: 'text-green-700',
     },
     {
       label: t('stat_2_label'),
       value: t('stat_2_value'),
       icon: Clock,
       color: 'from-blue-500 to-cyan-500',
-      textColor: 'text-blue-600',
+      bgColor: 'bg-blue-50',
+      textColor: 'text-blue-700',
     },
     {
       label: t('stat_3_label'),
       value: t('stat_3_value'),
-      icon: Package,
+      icon: TrendingUp,
       color: 'from-amber-500 to-orange-500',
-      textColor: 'text-amber-600',
+      bgColor: 'bg-amber-50',
+      textColor: 'text-amber-700',
     },
   ]
 
   return (
     <section
       id="demo"
-      className="relative overflow-hidden bg-linear-to-b from-white via-emerald-25 to-slate-50 py-24"
+      className="relative overflow-hidden bg-linear-to-b from-white via-emerald-50/30 to-white py-24"
     >
       <div className="absolute inset-0 -z-10">
-        <div className="absolute -left-24 top-16 h-72 w-72 rounded-full bg-emerald-200/20 blur-3xl" />
+        <div className="absolute top-16 -left-24 h-72 w-72 rounded-full bg-emerald-200/20 blur-3xl" />
         <div className="absolute right-[-10%] bottom-10 h-80 w-80 rounded-full bg-emerald-300/15 blur-3xl" />
       </div>
 
@@ -152,7 +146,7 @@ export function DynamicDemo() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="mb-6 inline-flex items-center gap-2 rounded-full bg-emerald-50 px-4 py-2 text-sm font-semibold text-emerald-700 ring-1 ring-emerald-100"
+            className="mb-6 inline-flex items-center gap-2 rounded-full bg-linear-to-r from-emerald-100 to-emerald-50 px-4 py-2 text-sm font-semibold text-emerald-700 ring-1 ring-emerald-200"
           >
             <Bot className="h-4 w-4" />
             {t('badge')}
@@ -162,7 +156,7 @@ export function DynamicDemo() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
-            className="mb-4 text-4xl font-black leading-tight text-slate-900 sm:text-5xl"
+            className="mb-4 text-4xl leading-tight font-black text-slate-900 sm:text-5xl"
           >
             {t('title')}{' '}
             <span className="bg-linear-to-r from-emerald-600 to-emerald-500 bg-clip-text text-transparent">
@@ -174,13 +168,13 @@ export function DynamicDemo() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.2 }}
-            className="mx-auto max-w-2xl text-lg leading-relaxed text-slate-700 sm:text-xl"
+            className="mx-auto max-w-2xl text-lg leading-relaxed text-slate-600"
           >
             {t('subtitle')}
           </motion.p>
         </div>
 
-        <div className="grid items-center gap-12 lg:grid-cols-2">
+        <div className="grid items-start gap-12 lg:grid-cols-2">
           {/* Chat Interface */}
           <motion.div
             initial={{ opacity: 0, x: -20 }}
@@ -189,149 +183,143 @@ export function DynamicDemo() {
             transition={{ delay: 0.3 }}
             className="relative"
           >
-            {/* Phone Frame */}
+            {/* iPhone-style Frame */}
             <div className="relative mx-auto max-w-sm">
-              <div className="absolute inset-0 rounded-[2.5rem] bg-linear-to-br from-emerald-400/15 to-emerald-200/10 blur-3xl" />
+              {/* Glow effect */}
+              <div className="absolute inset-0 rounded-[3rem] bg-linear-to-br from-emerald-400/20 to-emerald-200/10 blur-2xl" />
 
-              <div className="relative rounded-[2.5rem] border border-emerald-100 bg-white p-3 shadow-xl shadow-emerald-500/10">
-                <div className="flex items-center justify-between rounded-2xl bg-emerald-50 px-4 py-3">
-                  <div className="flex items-center gap-3">
-                    <div className="flex h-10 w-10 items-center justify-center rounded-full bg-white shadow">
-                      <Bot className="h-6 w-6 text-emerald-600" />
-                    </div>
-                    <div>
-                      <div className="font-semibold text-slate-900">Post Order Bot</div>
-                      <div className="flex items-center gap-1 text-xs text-emerald-600">
-                        <div className="h-2 w-2 rounded-full bg-green-500" />
-                        {t('phone_status')}
+              {/* Phone body */}
+              <div className="relative rounded-[3rem] border-8 border-slate-900 bg-slate-900 p-2 shadow-2xl">
+                {/* Notch */}
+                <div className="absolute top-2 left-1/2 z-20 h-6 w-32 -translate-x-1/2 rounded-full bg-slate-900" />
+
+                {/* Screen */}
+                <div className="relative overflow-hidden rounded-[2.2rem] bg-white">
+                  {/* Header */}
+                  <div className="flex items-center justify-between bg-linear-to-r from-emerald-500 to-emerald-600 px-4 py-4 pt-8">
+                    <div className="flex items-center gap-3">
+                      <div className="flex h-10 w-10 items-center justify-center rounded-full bg-white shadow-md">
+                        <Bot className="h-6 w-6 text-emerald-600" />
+                      </div>
+                      <div>
+                        <div className="font-bold text-white">Post Order</div>
+                        <div className="flex items-center gap-1 text-xs text-emerald-100">
+                          <div className="h-2 w-2 animate-pulse rounded-full bg-green-300" />
+                          {t('phone_status')}
+                        </div>
                       </div>
                     </div>
+                    <div className="flex items-center gap-2 text-xs font-medium text-white/80">
+                      <Clock className="h-4 w-4" />
+                      09:41
+                    </div>
                   </div>
-                  <div className="flex items-center gap-2 text-xs text-slate-500">
-                    <Clock className="h-4 w-4" />
-                    09:41
-                  </div>
-                </div>
 
-                <div className="h-125 space-y-3 overflow-y-auto bg-slate-50 p-4">
-                  <AnimatePresence>
-                    {messages.map((message, index) => (
-                      <motion.div
-                        key={index}
-                        initial={{ opacity: 0, y: 10 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.3 }}
-                        className={`flex ${message.type === 'user' ? 'justify-end' : 'justify-start'}`}
-                      >
-                        <div
-                          className={`max-w-[80%] rounded-2xl px-4 py-3 ${
-                            message.type === 'user'
-                              ? 'rounded-br-sm bg-emerald-500 text-white shadow-sm'
-                              : 'rounded-bl-sm border border-emerald-100 bg-white text-slate-900 shadow-sm'
-                          }`}
+                  {/* Messages */}
+                  <div className="h-125 space-y-3 overflow-y-auto bg-slate-50 p-4">
+                    <AnimatePresence>
+                      {messages.map((message, index) => (
+                        <motion.div
+                          key={index}
+                          initial={{ opacity: 0, y: 10, scale: 0.95 }}
+                          animate={{ opacity: 1, y: 0, scale: 1 }}
+                          transition={{ duration: 0.2 }}
+                          className={`flex ${message.type === 'user' ? 'justify-end' : 'justify-start'}`}
                         >
-                          <div className="text-sm whitespace-pre-line">
-                            {message.text}
-                          </div>
                           <div
-                            className={`mt-1 flex items-center justify-end gap-1 ${
+                            className={`max-w-[85%] rounded-2xl px-4 py-3 shadow-sm ${
                               message.type === 'user'
-                                ? 'text-emerald-100'
-                                : 'text-gray-400'
+                                ? 'rounded-br-md bg-linear-to-br from-emerald-500 to-emerald-600 text-white'
+                                : 'rounded-bl-md border border-emerald-100 bg-white text-slate-800'
                             }`}
                           >
-                            <span className="text-xs">
-                              09:4{(index % 5) + 1}
-                            </span>
-                            {message.type === 'user' && (
-                              <CheckCheck className="h-4 w-4" />
-                            )}
+                            <div className="text-sm leading-relaxed whitespace-pre-line">
+                              {message.text}
+                            </div>
+                            <div
+                              className={`mt-1 flex items-center justify-end gap-1 text-xs ${
+                                message.type === 'user'
+                                  ? 'text-emerald-100'
+                                  : 'text-gray-400'
+                              }`}
+                            >
+                              <span>09:4{(index % 5) + 1}</span>
+                              {message.type === 'user' && (
+                                <CheckCheck className="h-3 w-3" />
+                              )}
+                            </div>
+                          </div>
+                        </motion.div>
+                      ))}
+                    </AnimatePresence>
+
+                    {/* Typing Indicator */}
+                    {isTyping && (
+                      <motion.div
+                        initial={{ opacity: 0, y: 10 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        className="flex justify-start"
+                      >
+                        <div className="rounded-2xl rounded-bl-md border border-emerald-100 bg-white px-4 py-3 shadow-sm">
+                          <div className="flex gap-1">
+                            {[0, 0.2, 0.4].map((delay, i) => (
+                              <motion.div
+                                key={i}
+                                animate={{ scale: [1, 1.3, 1] }}
+                                transition={{
+                                  duration: 0.6,
+                                  repeat: Infinity,
+                                  delay,
+                                }}
+                                className="h-2 w-2 rounded-full bg-gray-400"
+                              />
+                            ))}
                           </div>
                         </div>
                       </motion.div>
-                    ))}
-                  </AnimatePresence>
+                    )}
+                  </div>
 
-                  {/* Typing Indicator */}
-                  {isTyping && (
-                    <motion.div
-                      initial={{ opacity: 0, y: 10 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      className="flex justify-start"
-                    >
-                      <div className="rounded-2xl rounded-bl-sm border border-emerald-100 bg-white px-4 py-3 shadow-sm">
-                        <div className="flex gap-1">
-                          <motion.div
-                            animate={{ scale: [1, 1.2, 1] }}
-                            transition={{
-                              duration: 0.6,
-                              repeat: Infinity,
-                              delay: 0,
-                            }}
-                            className="h-2 w-2 rounded-full bg-gray-400"
-                          />
-                          <motion.div
-                            animate={{ scale: [1, 1.2, 1] }}
-                            transition={{
-                              duration: 0.6,
-                              repeat: Infinity,
-                              delay: 0.2,
-                            }}
-                            className="h-2 w-2 rounded-full bg-gray-400"
-                          />
-                          <motion.div
-                            animate={{ scale: [1, 1.2, 1] }}
-                            transition={{
-                              duration: 0.6,
-                              repeat: Infinity,
-                              delay: 0.4,
-                            }}
-                            className="h-2 w-2 rounded-full bg-gray-400"
-                          />
-                        </div>
-                      </div>
-                    </motion.div>
-                  )}
-                </div>
-
-                <div className="rounded-b-[2rem] border-t border-emerald-100 bg-white px-4 py-3">
-                  <div className="flex items-center gap-2 rounded-full border border-emerald-100 bg-slate-50 px-4 py-2">
-                    <span className="flex-1 text-sm text-slate-400">
-                      {t('typing_placeholder')}
-                    </span>
-                    <Phone className="h-5 w-5 text-emerald-500" />
+                  {/* Input bar */}
+                  <div className="border-t border-gray-200 bg-white px-4 py-3">
+                    <div className="flex items-center gap-2 rounded-full border border-gray-200 bg-gray-50 px-4 py-2.5">
+                      <span className="flex-1 text-sm text-gray-400">
+                        {t('typing_placeholder')}
+                      </span>
+                      <Zap className="h-5 w-5 text-emerald-500" />
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
           </motion.div>
 
-          {/* Stats & Features */}
-          <div className="space-y-8">
-            {/* Live Stats */}
+          {/* Stats */}
+          <div className="space-y-6">
             <motion.div
               initial={{ opacity: 0, x: 20 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.4 }}
-              className="space-y-4"
             >
-              <h3 className="mb-6 text-2xl font-black">{t('stats_title')}</h3>
-              {stats.map((stat, index) => (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, x: 20 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: 0.5 + index * 0.1 }}
-                  className="group relative"
-                >
-                  <div className="relative rounded-2xl border border-emerald-100 bg-white/90 p-5 shadow-sm transition-all group-hover:shadow-md">
+              <h3 className="mb-6 text-2xl font-black text-slate-900">
+                {t('stats_title')}
+              </h3>
+              <div className="space-y-4">
+                {stats.map((stat, index) => (
+                  <motion.div
+                    key={index}
+                    initial={{ opacity: 0, x: 20 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: 0.5 + index * 0.1 }}
+                    className="group relative overflow-hidden rounded-2xl border border-emerald-100 bg-white p-5 shadow-sm transition-all hover:-translate-y-1 hover:shadow-md"
+                  >
                     <div className="flex items-center gap-4">
                       <div
-                        className={`rounded-xl bg-linear-to-br p-3 ${stat.color}`}
+                        className={`flex h-12 w-12 items-center justify-center rounded-xl ${stat.bgColor}`}
                       >
-                        <stat.icon className="h-6 w-6 text-white" />
+                        <stat.icon className={`h-6 w-6 ${stat.textColor}`} />
                       </div>
                       <div className="flex-1">
                         <div className="mb-1 text-sm font-medium text-gray-600">
@@ -344,9 +332,9 @@ export function DynamicDemo() {
                         </div>
                       </div>
                     </div>
-                  </div>
-                </motion.div>
-              ))}
+                  </motion.div>
+                ))}
+              </div>
             </motion.div>
 
             {/* Key Features */}
@@ -355,10 +343,10 @@ export function DynamicDemo() {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.8 }}
-              className="rounded-2xl border border-emerald-100 bg-linear-to-br from-emerald-50 to-white p-8 shadow-sm"
+              className="rounded-2xl border border-emerald-100 bg-linear-to-br from-emerald-50 to-white p-6 shadow-sm"
             >
-              <h3 className="mb-6 flex items-center gap-2 text-xl font-black text-slate-900">
-                <ShoppingBag className="h-6 w-6 text-emerald-600" />
+              <h3 className="mb-5 flex items-center gap-2 text-xl font-black text-slate-900">
+                <Package className="h-6 w-6 text-emerald-600" />
                 {t('features_title')}
               </h3>
               <ul className="space-y-3">
@@ -374,11 +362,13 @@ export function DynamicDemo() {
                     initial={{ opacity: 0, x: 20 }}
                     whileInView={{ opacity: 1, x: 0 }}
                     viewport={{ once: true }}
-                    transition={{ delay: 0.9 + index * 0.1 }}
-                    className="flex items-start gap-3 rounded-xl bg-white/80 p-3 text-slate-700 shadow-sm ring-1 ring-emerald-100/60"
+                    transition={{ delay: 0.9 + index * 0.05 }}
+                    className="flex items-start gap-3 text-sm text-slate-700"
                   >
                     <CheckCheck className="mt-0.5 h-5 w-5 shrink-0 text-emerald-600" />
-                    <span className="font-medium">{feature}</span>
+                    <span className="leading-relaxed font-medium">
+                      {feature}
+                    </span>
                   </motion.li>
                 ))}
               </ul>
