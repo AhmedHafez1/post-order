@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import { Bot, CheckCheck, Clock, TrendingUp, Zap } from 'lucide-react'
+import { Bot, CheckCheck, Clock, TrendingUp, Users, Zap } from 'lucide-react'
 import { DemoMessage } from '@/types/demo-message.model'
 import { useTranslations } from 'next-intl'
 
@@ -16,27 +16,7 @@ export function DynamicDemo() {
     {
       type: 'bot',
       text: t('chat.bot_1'),
-      delay: 500,
-    },
-    {
-      type: 'bot',
-      text: t('chat.bot_2'),
-      delay: 1000,
-    },
-    {
-      type: 'bot',
-      text: t('chat.bot_3'),
-      delay: 800,
-    },
-    {
-      type: 'bot',
-      text: t('chat.bot_4'),
-      delay: 800,
-    },
-    {
-      type: 'bot',
-      text: t('chat.bot_5'),
-      delay: 600,
+      delay: 700,
     },
     {
       type: 'user',
@@ -45,28 +25,23 @@ export function DynamicDemo() {
     },
     {
       type: 'bot',
-      text: t('chat.bot_6'),
-      delay: 500,
-    },
-    {
-      type: 'bot',
-      text: t('chat.bot_7'),
-      delay: 700,
+      text: t('chat.bot_3'),
+      delay: 1000,
     },
     {
       type: 'user',
       text: t('chat.user_2'),
-      delay: 1200,
+      delay: 1500,
     },
     {
       type: 'bot',
-      text: t('chat.bot_8'),
-      delay: 800,
+      text: t('chat.bot_5'),
+      delay: 1000,
     },
     {
       type: 'bot',
-      text: t('chat.bot_9'),
-      delay: 900,
+      text: t('chat.bot_6'),
+      delay: 500,
     },
   ]
 
@@ -75,7 +50,7 @@ export function DynamicDemo() {
       const resetTimer = setTimeout(() => {
         setMessages([])
         setCurrentStep(0)
-      }, 5000)
+      }, 13000)
       return () => clearTimeout(resetTimer)
     }
 
@@ -127,6 +102,31 @@ export function DynamicDemo() {
       bgColor: 'bg-amber-50',
       textColor: 'text-amber-700',
     },
+    {
+      label: t('stat_4_label'),
+      value: t('stat_4_value'),
+      icon: TrendingUp,
+      color: 'from-amber-500 to-orange-500',
+      bgColor: 'bg-amber-50',
+      textColor: 'text-amber-700',
+    },
+
+    {
+      label: t('stat_5_label'),
+      value: t('stat_5_value'),
+      icon: Users,
+      color: 'from-blue-500 to-cyan-500',
+      bgColor: 'bg-blue-50',
+      textColor: 'text-blue-700',
+    },
+    {
+      label: t('stat_6_label'),
+      value: t('stat_6_value'),
+      icon: Clock,
+      color: 'from-green-500 to-emerald-500',
+      bgColor: 'bg-green-50',
+      textColor: 'text-green-700',
+    },
   ]
 
   return (
@@ -150,14 +150,14 @@ export function DynamicDemo() {
             className="relative"
           >
             {/* iPhone-style Frame */}
-            <div className="relative mx-auto max-w-sm">
+            <div className="relative mx-auto max-w-90">
               {/* Glow effect */}
               <div className="absolute inset-0 rounded-[3rem] bg-linear-to-br from-emerald-400/20 to-emerald-200/10 blur-2xl" />
 
               {/* Phone body */}
               <div className="relative rounded-[3rem] border-8 border-slate-900 bg-slate-900 p-2 shadow-2xl">
                 {/* Notch */}
-                <div className="absolute top-2 left-1/2 z-20 h-6 w-32 -translate-x-1/2 rounded-full bg-slate-900" />
+                <div className="absolute top-3 left-1/2 z-20 h-6 w-32 -translate-x-1/2 rounded-full bg-slate-900" />
 
                 {/* Screen */}
                 <div className="relative overflow-hidden rounded-[2.2rem] bg-white">
@@ -182,7 +182,7 @@ export function DynamicDemo() {
                   </div>
 
                   {/* Messages */}
-                  <div className="h-130 space-y-2 overflow-y-auto bg-slate-50 p-4">
+                  <div className="h-130 space-y-3 overflow-y-auto bg-amber-50 p-4">
                     <AnimatePresence>
                       {messages.map((message, index) => (
                         <motion.div
@@ -285,6 +285,7 @@ export function DynamicDemo() {
             >
               {t('subtitle')}
             </motion.p>
+
             <motion.div
               initial={{ opacity: 0, x: 20 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -294,7 +295,7 @@ export function DynamicDemo() {
               <h3 className="mb-6 text-2xl font-black text-slate-900">
                 {t('stats_title')}
               </h3>
-              <div className="space-y-4">
+              <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
                 {stats.map((stat, index) => (
                   <motion.div
                     key={index}
@@ -302,11 +303,11 @@ export function DynamicDemo() {
                     whileInView={{ opacity: 1, x: 0 }}
                     viewport={{ once: true }}
                     transition={{ delay: 0.5 + index * 0.1 }}
-                    className="group relative overflow-hidden rounded-2xl border border-emerald-100 bg-white p-5 shadow-sm transition-all hover:-translate-y-1 hover:shadow-md"
+                    className="relative overflow-hidden rounded-2xl border border-emerald-100 bg-white p-5 shadow-sm transition-all hover:-translate-y-1 hover:shadow-md"
                   >
                     <div className="flex items-center gap-4">
                       <div
-                        className={`flex h-12 w-12 items-center justify-center rounded-xl ${stat.bgColor}`}
+                        className={`flex h-14 w-14 items-center justify-center rounded-xl ${stat.bgColor}`}
                       >
                         <stat.icon className={`h-6 w-6 ${stat.textColor}`} />
                       </div>

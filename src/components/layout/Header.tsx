@@ -107,6 +107,7 @@ export function Header() {
             <button
               onClick={handleLocaleChange}
               className="flex items-center gap-2 rounded-full border border-emerald-100/70 bg-white/80 px-3 py-1.5 text-sm font-semibold text-gray-700 transition-colors hover:border-emerald-200 hover:text-emerald-700"
+              suppressHydrationWarning
             >
               <Globe className="h-4 w-4" />
               <span>{locale === 'ar' ? 'EN' : 'عربي'}</span>

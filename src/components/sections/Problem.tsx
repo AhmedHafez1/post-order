@@ -5,7 +5,7 @@ import { Container } from '@/components/ui/container'
 import { Section } from '@/components/ui/section'
 import { motion } from 'framer-motion'
 import { features } from '@/config/site'
-import { AlertTriangle, TrendingDown } from 'lucide-react'
+import { ChevronDownIcon, TrendingDown } from 'lucide-react'
 
 const container = {
   hidden: { opacity: 0 },
@@ -25,20 +25,17 @@ const item = {
 export function Problem() {
   const t = useTranslations('problems')
 
+  const scrollToSection = (id: string) => {
+    document
+      .getElementById(id)
+      ?.scrollIntoView({ behavior: 'smooth', block: 'start' })
+  }
+
   return (
-    <Section className="bg-linear-to-b from-white via-rose-50/30 to-white">
+    <Section className="relative bg-linear-to-b from-white via-rose-50/30 to-white">
       <Container>
         {/* Section Header */}
         <div className="mb-16 text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="mb-6 inline-flex items-center gap-2 rounded-full bg-linear-to-r from-rose-100 to-rose-50 px-4 py-2 text-sm font-semibold text-rose-700 ring-1 ring-rose-200"
-          >
-            <AlertTriangle className="h-4 w-4" />
-            {t('title')}
-          </motion.div>
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -94,7 +91,7 @@ export function Problem() {
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5, delay: 0.3 }}
-          className="relative overflow-hidden rounded-3xl border-2 border-rose-200 bg-linear-to-br from-rose-50 via-white to-orange-50 p-8 shadow-xl md:p-10"
+          className="relative m-8 overflow-hidden rounded-3xl border-2 border-rose-200 bg-linear-to-br from-rose-50 via-white to-orange-50 p-8 shadow-xl md:p-10"
         >
           {/* Background pattern */}
           <div className="absolute inset-0 opacity-5">
@@ -131,6 +128,19 @@ export function Problem() {
           {/* Decorative glow */}
           <div className="absolute -top-12 -right-12 h-32 w-32 rounded-full bg-rose-300/30 blur-3xl" />
           <div className="absolute -bottom-12 -left-12 h-32 w-32 rounded-full bg-orange-300/30 blur-3xl" />
+        </motion.div>
+
+        {/* Scroll Indicator */}
+        <motion.div
+          initial={{ opacity: 0, y: 12 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.3 }}
+          className="absolute bottom-8 left-1/2 -translate-x-1/2"
+        >
+          <ChevronDownIcon
+            className="h-8 w-8 animate-bounce text-emerald-600"
+            onClick={() => scrollToSection('solution')}
+          />
         </motion.div>
       </Container>
     </Section>

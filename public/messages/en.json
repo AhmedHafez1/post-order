@@ -21,12 +21,7 @@
     "cta": "Start Free Trial",
     "learn_more": "See Live Demo",
     "scroll_down": "See it in action",
-    "stat_1_label": "Confirmation Rate",
-    "stat_1_value": "85%",
-    "stat_2_label": "Orders Daily",
-    "stat_2_value": "+10K",
-    "stat_3_label": "Setup Time",
-    "stat_3_value": "5min",
+
     "benefit_1": "No credit card required",
     "benefit_2": "14-day free trial",
     "benefit_3": "Cancel anytime"
@@ -46,6 +41,12 @@
     "stat_2_value": "< 3 sec",
     "stat_3_label": "Money Saved",
     "stat_3_value": "128K EGP",
+    "stat_4_label": "Confirmation Rate",
+    "stat_4_value": "85%",
+    "stat_5_label": "Orders Daily",
+    "stat_5_value": "+10K",
+    "stat_6_label": "Setup Time",
+    "stat_6_value": "5min",
     "features_title": "What Makes It Smart?",
     "feature_1": "Natural language understanding in Arabic & English",
     "feature_2": "Automatic address verification",
@@ -53,17 +54,12 @@
     "feature_4": "Real-time order status updates",
     "feature_5": "Fallback to human agent when needed",
     "chat": {
-      "bot_1": "Hello Ahmed! 👋",
-      "bot_2": "Thank you for your order! We'd like to confirm your delivery details.",
-      "bot_3": "📦 Order #12847\n🛍️ iPhone 15 Pro - Space Black\n💰 Total: 45,999 EGP",
-      "bot_4": "📍 Delivery Address:\n123 El Tahrir Street\nCairo, Egypt",
-      "bot_5": "Is this address correct?",
-      "user_1": "Yes, the address is correct",
-      "bot_6": "Perfect! ✅",
-      "bot_7": "When would you prefer delivery?",
-      "user_2": "Tomorrow afternoon would be great",
-      "bot_8": "Excellent! Your order is confirmed for delivery tomorrow afternoon. 🚚",
-      "bot_9": "We'll send you tracking details shortly. Thank you for shopping with us! 🎉"
+      "bot_1": "Hello Ahmed! 👋,\n Thank you for your order!\n We'd like to confirm your order details.\n\n📦 Order #12847\n🛍️ iPhone 15 Pro - Space Black\n💰 Total: 45,999 EGP.\n\n✅ Confirm the order?",
+      "user_1": "Yes, I confirm my order",
+      "bot_3": "📍 Delivery Address:\n123 El Tahrir Street\nCairo, Egypt\n\nIs this address correct?",
+      "user_2": "Yes, the address is correct",
+      "bot_5": "Excellent ✅! Your order is confirmed for delivery. 🚚",
+      "bot_6": "We'll send you tracking details shortly. Thank you for shopping with us! 🎉"
     }
   },
   "problems": {
