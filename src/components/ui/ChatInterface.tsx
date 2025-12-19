@@ -1,9 +1,9 @@
 'use client'
 
 import { AnimatePresence, motion } from 'framer-motion'
-import { Bot, CheckCheck, Clock, Zap } from 'lucide-react'
+import { Bot, CheckCheck, Clock, MapPin, Zap } from 'lucide-react'
 import { useTranslations } from 'next-intl'
-import { useEffect, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { DemoMessage } from '@/types/demo-message.model'
 
 export function ChatInterface() {
@@ -11,6 +11,20 @@ export function ChatInterface() {
   const [isTyping, setIsTyping] = useState(false)
   const [messages, setMessages] = useState<DemoMessage[]>([])
   const [currentStep, setCurrentStep] = useState(0)
+  const scrollAreaRef = useRef<HTMLDivElement>(null)
+
+  const scrollToBottom = () => {
+    if (scrollAreaRef.current) {
+      scrollAreaRef.current.scrollTo({
+        top: scrollAreaRef.current.scrollHeight,
+        behavior: 'smooth',
+      })
+    }
+  }
+
+  useEffect(() => {
+    scrollToBottom()
+  }, [messages, isTyping])
 
   const conversation: DemoMessage[] = [
     {
@@ -35,6 +49,22 @@ export function ChatInterface() {
     },
     {
       type: 'bot',
+      text: t('chat.request_location'),
+      delay: 1000,
+    },
+    {
+      type: 'user',
+      contentType: 'location',
+      text: t('chat.location_shared'),
+      locationData: {
+        lat: 30.0444,
+        lng: 31.2357,
+        address: '123 El Tahrir Street, Cairo',
+      },
+      delay: 2000,
+    },
+    {
+      type: 'bot',
       text: t('chat.bot_5'),
       delay: 1000,
     },
@@ -50,7 +80,7 @@ export function ChatInterface() {
       const resetTimer = setTimeout(() => {
         setMessages([])
         setCurrentStep(0)
-      }, 13000)
+      }, 15000)
       return () => clearTimeout(resetTimer)
     }
 
@@ -118,7 +148,10 @@ export function ChatInterface() {
             </div>
 
             {/* Messages */}
-            <div className="h-110 space-y-3 overflow-y-auto bg-amber-50 p-4">
+            <div 
+              ref={scrollAreaRef}
+              className="h-110 space-y-3 overflow-y-auto bg-amber-50 p-4 scroll-smooth"
+            >
               <AnimatePresence>
                 {messages.map((message, index) => (
                   <motion.div
@@ -129,21 +162,42 @@ export function ChatInterface() {
                     className={`flex ${message.type === 'user' ? 'justify-end' : 'justify-start'}`}
                   >
                     <div
-                      className={`max-w-[85%] rounded-2xl px-4 py-2 shadow-sm ${
+                      className={`max-w-[85%] rounded-2xl p-2 shadow-sm ${
                         message.type === 'user'
                           ? 'rounded-br-md bg-linear-to-br from-emerald-500 to-emerald-600 text-white'
                           : 'rounded-bl-md border border-emerald-100 bg-white text-slate-800'
                       }`}
                     >
-                      <div className="text-sm leading-relaxed whitespace-pre-line">
-                        {message.text}
-                      </div>
+                      {message.contentType === 'location' ? (
+                        <div className="overflow-hidden rounded-xl bg-slate-100">
+                          <div className="relative flex h-24 items-center justify-center bg-slate-200">
+                            {/* Simple map pattern/placeholder */}
+                            <div className="absolute inset-0 opacity-20" 
+                                 style={{ backgroundImage: 'radial-gradient(#94a3b8 1px, transparent 1px)', backgroundSize: '10px 10px' }} 
+                            />
+                            <div className="z-10 flex h-8 w-8 items-center justify-center rounded-full bg-red-500 shadow-lg">
+                              <MapPin className="h-5 w-5 text-white" fill="currentColor" />
+                            </div>
+                          </div>
+                          <div className="bg-white/90 p-2 backdrop-blur-sm">
+                            <div className="flex items-center gap-1 text-xs font-medium text-slate-700">
+                              <MapPin className="h-3 w-3" />
+                              {message.locationData?.address || 'Selected Location'}
+                            </div>
+                          </div>
+                        </div>
+                      ) : (
+                        <div className="px-2 py-1 text-sm leading-relaxed whitespace-pre-line">
+                          {message.text}
+                        </div>
+                      )}
+                      
                       <div
                         className={`mt-1 flex items-center justify-end gap-1 text-xs ${
                           message.type === 'user'
                             ? 'text-emerald-100'
                             : 'text-gray-400'
-                        }`}
+                        } px-2`}
                       >
                         <span>09:4{(index % 5) + 1}</span>
                         {message.type === 'user' && (
