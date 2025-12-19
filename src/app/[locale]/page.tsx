@@ -1,8 +1,8 @@
-import { Hero } from '@/components/sections/Hero'
-import { Problem } from '@/components/sections/Problem'
-import { Solution } from '@/components/sections/Solution'
-import { Pricing } from '@/components/sections/Pricing'
-import DynamicDemo from '@/components/sections/DynamicDemo'
+import Hero from '@/components/sections/Hero'
+import Problem from '@/components/sections/Problem'
+import Solution from '@/components/sections/Solution'
+import Pricing from '@/components/sections/Pricing'
+import Stats from '@/components/sections/Stats'
 
 export default function Home() {
   return (
@@ -11,7 +11,7 @@ export default function Home() {
         <Hero />
       </section>
       <section className="w-full border-t border-emerald-100/60 bg-white/80 backdrop-blur">
-        <DynamicDemo />
+        <Stats />
       </section>
       <section className="w-full border-t border-emerald-100/60 bg-white">
         <Problem />

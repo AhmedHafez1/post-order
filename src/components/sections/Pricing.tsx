@@ -13,7 +13,7 @@ import { pricing, faqs } from '@/config/site'
 import { Shield, CreditCard, Headphones } from 'lucide-react'
 import { WaitlistForm } from '@/components/forms/WaitlistForm'
 
-export function Pricing() {
+function Pricing() {
   const t = useTranslations('pricing')
   const tFaq = useTranslations('faq')
 
@@ -27,7 +27,7 @@ export function Pricing() {
   return (
     <Section
       id="pricing"
-      className="bg-linear-to-b from-white via-emerald-25 to-white"
+      className="via-emerald-25 bg-linear-to-b from-white to-white"
     >
       <Container>
         <SectionHeader title={t('title')} subtitle={t('subtitle')} centered />
@@ -62,7 +62,7 @@ export function Pricing() {
             className="md:-translate-y-4"
           >
             <div className="absolute start-0 end-0 -top-5 z-10 flex justify-center">
-              <div className="rounded-full bg-white px-4 py-1 text-xs font-semibold text-amber-700 ring-1 ring-amber-200 shadow-sm">
+              <div className="rounded-full bg-white px-4 py-1 text-xs font-semibold text-amber-700 shadow-sm ring-1 ring-amber-200">
                 الأكثر شعبية ⭐
               </div>
             </div>
@@ -168,3 +168,5 @@ export function Pricing() {
     </Section>
   )
 }
+
+export default Pricing

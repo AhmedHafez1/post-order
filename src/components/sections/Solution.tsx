@@ -5,15 +5,7 @@ import { Container } from '@/components/ui/container'
 import { Section } from '@/components/ui/section'
 import { motion } from 'framer-motion'
 import { features, testimonials } from '@/config/site'
-import {
-  CheckCircle2,
-  Star,
-  Sparkles,
-  ArrowRight,
-  TrendingUp,
-  Users,
-  Clock,
-} from 'lucide-react'
+import { CheckCircle2, Star, Sparkles, ArrowRight } from 'lucide-react'
 
 const container = {
   hidden: { opacity: 0 },

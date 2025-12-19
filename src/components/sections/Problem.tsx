@@ -22,7 +22,7 @@ const item = {
   show: { opacity: 1, y: 0 },
 }
 
-export function Problem() {
+function Problem() {
   const t = useTranslations('problems')
 
   const scrollToSection = (id: string) => {
