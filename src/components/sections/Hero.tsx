@@ -269,7 +269,7 @@ function Hero() {
         className="relative"
       >
         {/* iPhone-style Frame */}
-        <div className="relative mx-auto w-90">
+        <div className="relative mx-auto w-80">
           {/* Glow effect */}
           <div className="absolute inset-0 rounded-[3rem] bg-linear-to-br from-emerald-400/20 to-emerald-200/10 blur-2xl" />
 
@@ -301,7 +301,7 @@ function Hero() {
               </div>
 
               {/* Messages */}
-              <div className="h-130 space-y-3 overflow-y-auto bg-amber-50 p-4">
+              <div className="h-110 space-y-3 overflow-y-auto bg-amber-50 p-4">
                 <AnimatePresence>
                   {messages.map((message, index) => (
                     <motion.div
