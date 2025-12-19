@@ -61,14 +61,16 @@ export const features = {
 
 export const testimonials = [
   {
-    name: 'أحمد محمود',
-    store: 'متجر للإلكترونيات',
-    orders: '850+',
-  },
-  {
     name: 'Ahmed Mahmoud',
     store: 'Electronics Store',
     orders: '850+',
+    confirmationsRaise: '+34% Confirmations',
+  },
+  {
+    name: 'Omar Sayed',
+    store: 'Clothes Store',
+    orders: '600+',
+    confirmationsRaise: '+27% Confirmations',
   },
 ]
 

@@ -251,7 +251,7 @@ function Hero() {
             initial={{ opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.3 }}
-            className="absolute bottom-8 left-1/2 -translate-x-1/2"
+            className="absolute bottom-8 left-1/2 -translate-x-1/2 cursor-pointer"
           >
             <ChevronDownIcon
               className="h-8 w-8 animate-bounce text-emerald-600"
