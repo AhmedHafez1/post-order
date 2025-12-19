@@ -100,7 +100,7 @@ function Hero() {
   }
 
   return (
-    <section className="relative flex min-h-screen flex-wrap gap-8 overflow-hidden pt-28 pb-12 sm:pt-28 sm:pb-16">
+    <section className="relative flex min-h-screen justify-center gap-32 overflow-hidden pt-28 pb-12 sm:pt-28 sm:pb-16">
       {/* Background */}
       <div className="to-emerald-25 absolute inset-0 -z-10 bg-linear-to-br from-emerald-50 via-white" />
       <div className="absolute top-10 -left-32 -z-10 h-96 w-96 rounded-full bg-emerald-300/20 blur-3xl" />
@@ -269,7 +269,7 @@ function Hero() {
         className="relative"
       >
         {/* iPhone-style Frame */}
-        <div className="relative mx-auto max-w-90">
+        <div className="relative mx-auto w-90">
           {/* Glow effect */}
           <div className="absolute inset-0 rounded-[3rem] bg-linear-to-br from-emerald-400/20 to-emerald-200/10 blur-2xl" />
 

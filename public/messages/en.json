@@ -21,7 +21,14 @@
     "cta": "Start Free Trial",
     "learn_more": "See Live Demo",
     "scroll_down": "See it in action",
-
+    "chat": {
+      "bot_1": "Hello Ahmed! 👋,\n Thank you for your order!\n We'd like to confirm your order details.\n\n📦 Order #12847\n🛍️ iPhone 15 Pro - Space Black\n💰 Total: 45,999 EGP.\n\n✅ Confirm the order?",
+      "user_1": "Yes, I confirm my order",
+      "bot_3": "📍 Delivery Address:\n123 El Tahrir Street\nCairo, Egypt\n\nIs this address correct?",
+      "user_2": "Yes, the address is correct",
+      "bot_5": "Excellent ✅! Your order is confirmed for delivery. 🚚",
+      "bot_6": "We'll send you tracking details shortly. Thank you for shopping with us! 🎉"
+    },
     "benefit_1": "No credit card required",
     "benefit_2": "14-day free trial",
     "benefit_3": "Cancel anytime"
@@ -52,15 +59,7 @@
     "feature_2": "Automatic address verification",
     "feature_3": "Smart delivery time scheduling",
     "feature_4": "Real-time order status updates",
-    "feature_5": "Fallback to human agent when needed",
-    "chat": {
-      "bot_1": "Hello Ahmed! 👋,\n Thank you for your order!\n We'd like to confirm your order details.\n\n📦 Order #12847\n🛍️ iPhone 15 Pro - Space Black\n💰 Total: 45,999 EGP.\n\n✅ Confirm the order?",
-      "user_1": "Yes, I confirm my order",
-      "bot_3": "📍 Delivery Address:\n123 El Tahrir Street\nCairo, Egypt\n\nIs this address correct?",
-      "user_2": "Yes, the address is correct",
-      "bot_5": "Excellent ✅! Your order is confirmed for delivery. 🚚",
-      "bot_6": "We'll send you tracking details shortly. Thank you for shopping with us! 🎉"
-    }
+    "feature_5": "Fallback to human agent when needed"
   },
   "problems": {
     "title": "Problems We Solve",
