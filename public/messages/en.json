@@ -12,10 +12,10 @@
     "cta": "Start Free Trial"
   },
   "hero": {
-    "title": "Stop Losing Money on",
-    "highlight": "COD Returns",
-    "subtitle": "AI-powered WhatsApp bot automatically confirms orders before shipping. Reduce returns by 85% and save thousands monthly.",
-    "urgency": "Special Offer: First 20 stores get 2 months FREE",
+    "title": "Shipping is guaranteed.. and order is always",
+    "highlight": "Confirmed",
+    "subtitle": "Smart WhatsApp bot confirms orders, captures GPS Location from customer, and reduces returns by 85%.",
+    "urgency": "Special Offer: First 20 stores get 50 confirmations FREE",
     "social_proof": "Join +47 Egyptian stores",
     "rating": "5.0 rating",
     "cta": "Start Free Trial",
@@ -34,7 +34,7 @@
     "phone_status": "Online",
     "chat": {
       "bot_1": "Hello Ahmed! 👋,\n Thank you for your order!\n We'd like to confirm your order details.\n\n📦 Order #12847\n🛍️ iPhone 15 Pro - Space Black\n💰 Total: 45,999 EGP.\n\n✅ Confirm the order?",
-      "user_1": "Yes, I confirm my order",
+      "user_1": "Confirm Order",
       "bot_3": "📍 Delivery Address:\n123 El Tahrir Street\nCairo, Egypt\n\nIs this address correct?",
       "user_2": "Yes, the address is correct",
       "bot_5": "Excellent ✅! Your order is confirmed for delivery. 🚚",
@@ -42,10 +42,10 @@
       "request_location": "Can you share your location?",
       "location_shared": "Location shared",
       "buttons": {
-        "confirm": "Confirm",
+        "confirm": "Confirm Order",
         "cancel": "Cancel",
         "will_confirm_later": "Will Confirm Later",
-        "send_location": "Send Location"
+        "send_location": "Share Location"
       }
     },
     "bot_name": "Post Order Bot",
