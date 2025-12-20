@@ -14,17 +14,17 @@
   "hero": {
     "title": "Shipping is guaranteed.. and order is always",
     "highlight": "Confirmed",
-    "subtitle": "Smart WhatsApp bot confirms orders, captures GPS Location from customer, and reduces returns by 85%.",
+    "subtitle": "Smart WhatsApp bot confirms orders, captures GPS Location from customer, and reduces returns by 85%",
     "urgency": "Special Offer: First 20 stores get 50 confirmations FREE",
-    "social_proof": "Join +47 Egyptian stores",
+    "social_proof": "Join +500 Egyptian stores",
     "rating": "5.0 rating",
     "cta": "Start Free Trial",
     "learn_more": "See Live Demo",
     "scroll_down": "See it in action",
-
     "benefit_1": "No credit card required",
     "benefit_2": "14-day free trial",
-    "benefit_3": "Cancel anytime"
+    "benefit_3": "Cancel anytime",
+    "easy_integrated": "Easy Integrated with your platform"
   },
   "demo": {
     "badge": "Live Demo",
@@ -130,6 +130,7 @@
   "pricing": {
     "title": "Plans for Every Store",
     "subtitle": "Try free for 14 days - no credit card required",
+    "urgency": "Special Offer: First 20 stores get 50 confirmations FREE",
     "per_verification": "per confirmation",
     "month": "monthly",
     "select_plan": "Select Plan",

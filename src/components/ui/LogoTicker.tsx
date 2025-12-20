@@ -3,26 +3,29 @@
 import Image from 'next/image'
 import { motion } from 'framer-motion'
 import { usePathname } from 'next/navigation'
+import { useTranslations } from 'next-intl'
 
 const logos = [
+  { name: 'EasyOrder', src: '/images/landing/logos/easy-order.png' },
+  { name: 'YouCan', src: '/images/landing/logos/you-can.png' },
   { name: 'Shopify', src: '/images/landing/logos/shopify.png' },
   { name: 'WooCommerce', src: '/images/landing/logos/woo.png' },
+  { name: 'Salla', src: '/images/landing/logos/salla.png' },
   { name: 'Zid', src: '/images/landing/logos/zid.png' },
-  { name: 'YouCan', src: '/images/landing/logos/you-can.png' },
-  { name: 'EasyOrder', src: '/images/landing/logos/easy-order.png' },
   { name: 'ExpCart', src: '/images/landing/logos/exp-cart.png' },
 ]
 
 export function LogoTicker() {
   const pathname = usePathname()
+  const t = useTranslations('hero')
   const locale = pathname?.split('/')[1] === 'en' ? 'en' : 'ar'
   const isRtl = locale === 'ar'
 
   return (
-    <div
-      className="overflow-hidden border-y border-gray-200 bg-gradient-to-r from-gray-50 to-white py-8"
-      dir={isRtl ? 'rtl' : 'ltr'}
-    >
+    <motion.div className="overflow-hidden border-y border-gray-200 bg-gradient-to-r from-gray-50 to-white pb-4">
+      <h3 className="pt-4 pb-6 text-sm font-bold text-gray-600">
+        {t('easy_integrated')}
+      </h3>
       <div className="container mx-auto">
         <div className="flex overflow-hidden [mask-image:linear-gradient(to_right,transparent,black_10%,black_90%,transparent)]">
           <motion.div
@@ -48,13 +51,13 @@ export function LogoTicker() {
                   alt={logo.name}
                   width={140}
                   height={40}
-                  className="h-10 w-auto object-contain opacity-60 grayscale transition-all duration-300 hover:opacity-100 hover:grayscale-0"
+                  className="h-10 w-auto object-contain opacity-70 transition-all duration-300 hover:opacity-100"
                 />
               </div>
             ))}
           </motion.div>
         </div>
       </div>
-    </div>
+    </motion.div>
   )
 }

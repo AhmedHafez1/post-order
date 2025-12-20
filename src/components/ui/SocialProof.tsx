@@ -62,7 +62,7 @@ export function SocialProof() {
           priority={false}
         />
         <div className="flex h-10 w-10 items-center justify-center rounded-full border-2 border-gray-200 bg-white text-sm font-bold text-emerald-600 shadow">
-          +43
+          +499
         </div>
       </div>
       <div className="text-left">

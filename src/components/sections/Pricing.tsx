@@ -10,7 +10,7 @@ import { Accordion } from '@/components/ui/accordion'
 import { FAQItem } from '@/components/ui/faq-item'
 import { motion } from 'framer-motion'
 import { pricing, faqs } from '@/config/site'
-import { Shield, CreditCard, Headphones } from 'lucide-react'
+import { Shield, CreditCard, Headphones, Sparkles } from 'lucide-react'
 import { WaitlistForm } from '@/components/forms/WaitlistForm'
 
 function Pricing() {
@@ -30,6 +30,20 @@ function Pricing() {
       className="via-emerald-25 bg-linear-to-b from-white to-white"
     >
       <Container>
+        {/* Urgency Badge */}
+        <motion.div
+          initial={{ opacity: 0, y: -20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="mb-8 flex justify-center"
+        >
+          <div className="inline-flex items-center gap-2 rounded-full bg-linear-to-r from-amber-100 to-emerald-50 px-6 py-3 text-sm font-bold text-emerald-800 shadow-lg ring-2 ring-amber-200/50">
+            <Sparkles className="h-5 w-5 text-amber-500" />
+            {t('urgency')}
+          </div>
+        </motion.div>
+
         <SectionHeader title={t('title')} subtitle={t('subtitle')} centered />
 
         {/* Pricing cards */}
