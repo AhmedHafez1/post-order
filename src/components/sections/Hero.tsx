@@ -29,7 +29,7 @@ function Hero() {
   }
 
   return (
-    <section className="relative flex min-h-screen flex-col justify-center gap-8 overflow-hidden px-16 pt-28 pb-12 sm:pt-28 sm:pb-16 md:flex-row">
+    <section className="relative flex min-h-screen flex-col justify-center gap-24 overflow-hidden px-16 pt-28 pb-12 sm:pt-28 sm:pb-16 md:flex-row">
       {/* Background */}
       <div className="to-emerald-25 absolute inset-0 -z-10 bg-linear-to-br from-emerald-50 via-white" />
       <div className="absolute top-10 -left-32 -z-10 h-96 w-96 rounded-full bg-emerald-300/20 blur-3xl" />
@@ -55,7 +55,7 @@ function Hero() {
             transition={{ duration: 0.6, delay: 0.1 }}
             className="mb-10 space-y-2"
           >
-            <h1 className="text-3xl leading-tight font-black text-slate-900 sm:text-4xl lg:text-5xl">
+            <h1 className="text-2xl leading-tight font-black text-slate-900 sm:text-3xl lg:text-4xl">
               {t('title')}{' '}
               <span className="bg-linear-to-r from-emerald-600 to-emerald-400 bg-clip-text text-transparent">
                 {t('highlight')}
@@ -68,7 +68,7 @@ function Hero() {
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="mx-auto mb-10 max-w-2xl text-xl leading-relaxed text-slate-600 sm:text-2xl"
+            className="mx-auto mb-10 max-w-2xl text-lg leading-relaxed text-slate-600 sm:text-xl"
           >
             {t('subtitle')}
           </motion.p>
