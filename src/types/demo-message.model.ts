@@ -8,4 +8,9 @@ export interface DemoMessage {
     address?: string
   }
   delay: number
+  buttons?: {
+    text: string
+    action: string
+  }[]
+  selectedAction?: string
 }

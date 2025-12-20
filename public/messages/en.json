@@ -38,7 +38,15 @@
       "bot_3": "📍 Delivery Address:\n123 El Tahrir Street\nCairo, Egypt\n\nIs this address correct?",
       "user_2": "Yes, the address is correct",
       "bot_5": "Excellent ✅! Your order is confirmed for delivery. 🚚",
-      "bot_6": "We'll send you tracking details shortly. Thank you for shopping with us! 🎉"
+      "bot_6": "We'll send you tracking details shortly. Thank you for shopping with us! 🎉",
+      "request_location": "Can you share your location?",
+      "location_shared": "Location shared",
+      "buttons": {
+        "confirm": "Confirm",
+        "cancel": "Cancel",
+        "will_confirm_later": "Will Confirm Later",
+        "send_location": "Send Location"
+      }
     },
     "bot_name": "Post Order Bot",
     "typing_placeholder": "Type a message...",
