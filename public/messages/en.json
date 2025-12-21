@@ -12,8 +12,8 @@
     "cta": "Start Free Trial"
   },
   "hero": {
-    "title": "Shipping is guaranteed.. and order is always",
-    "highlight": "Confirmed",
+    "title": "Stop Burning Shipping Fees on Fake Orders",
+    "highlight": "",
     "subtitle": "Smart WhatsApp bot confirms orders, captures GPS Location from customer, and reduces returns by 85%",
     "urgency": "Special Offer: First 20 stores get 50 confirmations FREE",
     "social_proof": "Join +500 Egyptian stores",
@@ -24,7 +24,8 @@
     "benefit_1": "No credit card required",
     "benefit_2": "14-day free trial",
     "benefit_3": "Cancel anytime",
-    "easy_integrated": "Easy Integrated with your platform"
+    "easy_integrated": "Easy Integrated with your platform",
+    "no_credit_card": "No credit card required, Start in 60 seconds!"
   },
   "demo": {
     "badge": "Live Demo",

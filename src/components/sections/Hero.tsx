@@ -29,7 +29,7 @@ function Hero() {
       <div className="absolute top-10 -left-32 -z-10 h-96 w-96 rounded-full bg-emerald-300/20 blur-3xl" />
       <div className="absolute -right-20 bottom-20 -z-10 h-80 w-80 rounded-full bg-emerald-200/20 blur-3xl" />
 
-      <div className="mb-16 flex max-w-4xl flex-col items-center text-center sm:px-6 md:w-3/5 lg:mb-28 lg:px-8">
+      <div className="mb-8 flex max-w-4xl flex-col items-center text-center sm:px-6 md:w-3/5 lg:mb-16 lg:px-8">
         {/* Main Headline */}
         <motion.div
           initial={{ opacity: 0, y: 10 }}
@@ -55,14 +55,13 @@ function Hero() {
           {t('subtitle')}
         </motion.p>
 
-        {/* CTAs */}
+        {/* CTAs & Social Proof */}
         <motion.div
           initial={{ opacity: 0, y: 12 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.3 }}
-          className="mb-4 flex flex-col items-center justify-center gap-4 sm:flex-row"
+          className="mb-8 flex flex-col items-center justify-center gap-4 sm:flex-row"
         >
-          {/* Social Proof */}
           <SocialProof />
           <button
             onClick={() => scrollToSection('pricing')}
@@ -78,15 +77,33 @@ function Hero() {
             )}
           </button>
         </motion.div>
+        <motion.div
+          initial={{ opacity: 0, y: 12 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.3 }}
+          className="mb-8"
+        >
+          <p className="text-md font-bold text-slate-600">
+            {t('no_credit_card')}
+          </p>
+        </motion.div>
+
         {/* Spacer */}
         <div className="flex-1" />
-        {/* Logo Ticker */}
 
-        <LogoTicker />
+        {/* Logo Ticker */}
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.8, delay: 0.6 }}
+        >
+          <LogoTicker />
+        </motion.div>
       </div>
 
       {/* Chat Interface */}
       <ChatInterface />
+
       {/* Scroll Indicator */}
       <motion.div
         initial={{ opacity: 0, y: 12 }}

@@ -23,7 +23,7 @@ export function LogoTicker() {
 
   return (
     <motion.div className="overflow-hidden border-y border-gray-200 bg-gradient-to-r from-gray-50 to-white pb-4">
-      <h3 className="pt-4 pb-6 text-sm font-bold text-gray-600">
+      <h3 className="pt-4 pb-6 text-sm text-gray-600">
         {t('easy_integrated')}
       </h3>
       <div className="container mx-auto">
