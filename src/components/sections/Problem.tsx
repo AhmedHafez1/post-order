@@ -32,7 +32,7 @@ function Problem() {
   }
 
   return (
-    <Section className="relative bg-linear-to-b from-white via-rose-50/30 to-white">
+    <Section className="relative bg-linear-to-b from-gray-100 via-gray-50 to-gray-100 px-8 sm:px-12 md:px-16 lg:px-48">
       <Container>
         {/* Section Header */}
         <div className="mb-16 text-center">
@@ -62,23 +62,23 @@ function Problem() {
           initial="hidden"
           whileInView="show"
           viewport={{ once: true, margin: '-50px' }}
-          className="mb-12 grid gap-6 md:grid-cols-2"
+          className="mb-12 grid grid-cols-1 gap-12 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4"
         >
           {features.problems.map((problem) => (
             <motion.div key={problem.key} variants={item}>
-              <div className="group relative h-full overflow-hidden rounded-2xl border border-rose-100 bg-white p-6 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-rose-200 hover:shadow-lg">
+              <div className="group relative overflow-hidden rounded-2xl border border-rose-100 bg-white px-8 py-6 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-rose-200 hover:shadow-lg lg:min-h-80">
                 {/* Gradient overlay on hover */}
                 <div className="absolute inset-0 bg-linear-to-br from-rose-50/50 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
 
-                <div className="relative flex gap-4">
+                <div className="relative flex flex-col items-center gap-4">
                   {/* Icon */}
-                  <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-xl bg-linear-to-br from-rose-100 to-rose-50 text-3xl shadow-sm ring-1 ring-rose-200/50 transition-transform duration-300 group-hover:scale-110">
+                  <div className="flex h-24 w-24 items-center justify-center text-6xl transition-transform duration-300 group-hover:scale-110">
                     {problem.icon}
                   </div>
 
                   {/* Content */}
-                  <div className="flex-1 space-y-2">
-                    <h3 className="text-xl font-bold text-slate-900 transition-colors group-hover:text-rose-700">
+                  <div className="flex-1 space-y-3 text-center">
+                    <h3 className="text-xl font-bold text-slate-700 transition-colors group-hover:text-rose-700">
                       {t(`${problem.key}.title`)}
                     </h3>
                     <p className="text-sm leading-relaxed text-slate-600">

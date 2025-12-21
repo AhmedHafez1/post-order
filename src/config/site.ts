@@ -48,8 +48,8 @@ export const features = {
   problems: [
     { key: 'loss', icon: '💸' },
     { key: 'time', icon: '⏰' },
-    { key: 'customer', icon: '😞' },
     { key: 'scale', icon: '📈' },
+    { key: 'addresses', icon: '📍' },
   ],
   solutions: [
     { key: 'auto', icon: '🤖' },
