@@ -39,7 +39,7 @@ function Pricing() {
   return (
     <Section
       id="pricing"
-      className="via-emerald-25 relative bg-linear-to-b from-white to-white px-8 sm:px-12 md:px-16 lg:px-48"
+      className="via-emerald-25 relative px-8 sm:px-12 md:px-16 lg:px-48"
     >
       <Container>
         {/* Urgency Badge */}

@@ -5,7 +5,7 @@ import { Container } from '@/components/ui/container'
 import { Section } from '@/components/ui/section'
 import { motion } from 'framer-motion'
 import { features, testimonials } from '@/config/site'
-import { CheckCircle2, Sparkles } from 'lucide-react'
+import { CheckCircle2, ChevronDownIcon, Sparkles } from 'lucide-react'
 import Testimonial from '../ui/user-testimonial'
 
 const container = {
@@ -25,6 +25,12 @@ const item = {
 
 export function Solution() {
   const t = useTranslations('solution')
+
+  const scrollToSection = (id: string) => {
+    document
+      .getElementById(id)
+      ?.scrollIntoView({ behavior: 'smooth', block: 'start' })
+  }
 
   return (
     <Section
@@ -93,22 +99,17 @@ export function Solution() {
           ))}
         </motion.div>
 
-        {/* Highlighted Testimonial */}
+        {/* Scroll Indicator */}
         <motion.div
-          initial={{ opacity: 0, scale: 0.95 }}
-          whileInView={{ opacity: 1, scale: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5, delay: 0.3 }}
-          className="relative m-8 overflow-hidden"
+          initial={{ opacity: 0, y: 12 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.3 }}
+          className="absolute bottom-8 left-1/2 -translate-x-1/2 cursor-pointer"
         >
-          <div className="space-y-3 text-center">
-            {testimonials[0] && (
-              <Testimonial
-                key={testimonials[0].name}
-                testimonial={testimonials[0]}
-              />
-            )}
-          </div>
+          <ChevronDownIcon
+            className="h-8 w-8 animate-bounce text-emerald-600"
+            onClick={() => scrollToSection('how-it-works')}
+          />
         </motion.div>
       </Container>
     </Section>

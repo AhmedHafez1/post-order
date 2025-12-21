@@ -24,11 +24,6 @@ function Hero() {
 
   return (
     <section className="relative flex min-h-screen flex-col justify-center gap-24 overflow-hidden px-16 pt-28 pb-12 sm:pt-28 sm:pb-16 md:flex-row">
-      {/* Background */}
-      <div className="to-emerald-25 absolute inset-0 -z-10 bg-linear-to-br from-emerald-50 via-white" />
-      <div className="absolute top-10 -left-32 -z-10 h-96 w-96 rounded-full bg-emerald-300/20 blur-3xl" />
-      <div className="absolute -right-20 bottom-20 -z-10 h-80 w-80 rounded-full bg-emerald-200/20 blur-3xl" />
-
       <div className="mb-8 flex max-w-4xl flex-col items-center text-center sm:px-6 md:w-3/5 lg:mb-16 lg:px-8">
         {/* Main Headline */}
         <motion.div

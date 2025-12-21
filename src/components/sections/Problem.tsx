@@ -5,7 +5,7 @@ import { Container } from '@/components/ui/container'
 import { Section } from '@/components/ui/section'
 import { motion } from 'framer-motion'
 import { features } from '@/config/site'
-import { ChevronDownIcon, TrendingDown } from 'lucide-react'
+import { ChevronDownIcon } from 'lucide-react'
 
 const container = {
   hidden: { opacity: 0 },

@@ -25,7 +25,10 @@ function HowItWorks() {
   const t = useTranslations('how_it_works')
 
   return (
-    <Section className="relative px-8 sm:px-12 md:px-16 lg:px-48">
+    <Section
+      id="how-it-works"
+      className="relative px-8 sm:px-12 md:px-16 lg:px-48"
+    >
       <Container>
         {/* Section Header */}
         <div className="mb-16 text-center">
