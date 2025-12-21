@@ -90,8 +90,30 @@
       "title": "Difficulty Scaling",
       "description": "As your orders increase, confirmation chaos and rejection rates grow - you can't scale this way"
     },
-    "reality": "The harsh truth: every rejected order costs you 50-80 EGP in shipping, packaging, and wasted time",
-    "reality_highlight": "Can you afford these losses?"
+    "address": {
+      "title": "Address Verification",
+      "description": "The address you receive from the customer is not verified, leading to failed deliveries and lost orders"
+    },
+    "reality": "This is not a problem with the customer... This is not a problem with the system!",
+    "reality_highlight": "And the solution is in 'Akeed'"
+  },
+  "how_it_works": {
+    "title": "How It Works",
+    "subtitle": "Simple 3-step process to confirm your orders automatically",
+    "steps": {
+      "1": {
+        "title": "New Order Arrives",
+        "description": "Bot receives the order automatically from your platform (Shopify, WooCommerce, etc.)"
+      },
+      "2": {
+        "title": "Instant WhatsApp Send",
+        "description": "Professional message reaches customer within seconds to confirm address and order"
+      },
+      "3": {
+        "title": "Automatic Confirmation",
+        "description": "Bot follows up on reply and updates order status - ready to ship or canceled"
+      }
+    }
   },
   "solution": {
     "title": "Smart Solution for Your Store",

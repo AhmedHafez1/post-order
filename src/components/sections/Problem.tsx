@@ -32,7 +32,7 @@ function Problem() {
   }
 
   return (
-    <Section className="relative bg-linear-to-b from-gray-100 via-gray-50 to-gray-100 px-8 sm:px-12 md:px-16 lg:px-48">
+    <Section className="relative px-8 sm:px-12 md:px-16 lg:px-48">
       <Container>
         {/* Section Header */}
         <div className="mb-16 text-center">
@@ -62,11 +62,11 @@ function Problem() {
           initial="hidden"
           whileInView="show"
           viewport={{ once: true, margin: '-50px' }}
-          className="mb-12 grid grid-cols-1 gap-12 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4"
+          className="mb-12 grid grid-cols-1 gap-8 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 lg:gap-16 xl:grid-cols-4"
         >
           {features.problems.map((problem) => (
             <motion.div key={problem.key} variants={item}>
-              <div className="group relative overflow-hidden rounded-2xl border border-rose-100 bg-white px-8 py-6 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-rose-200 hover:shadow-lg lg:min-h-80">
+              <div className="group relative overflow-hidden rounded-2xl border border-rose-100 bg-white px-8 py-6 transition-all duration-300 hover:-translate-y-1 hover:border-rose-200 hover:shadow-lg lg:min-h-80">
                 {/* Gradient overlay on hover */}
                 <div className="absolute inset-0 bg-linear-to-br from-rose-50/50 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
 
@@ -100,43 +100,16 @@ function Problem() {
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5, delay: 0.3 }}
-          className="relative m-8 overflow-hidden rounded-3xl border-2 border-rose-200 bg-linear-to-br from-rose-50 via-white to-orange-50 p-8 shadow-xl md:p-10"
+          className="relative m-8 overflow-hidden"
         >
-          {/* Background pattern */}
-          <div className="absolute inset-0 opacity-5">
-            <div
-              className="absolute inset-0"
-              style={{
-                backgroundImage:
-                  'radial-gradient(circle, #f43f5e 1px, transparent 1px)',
-                backgroundSize: '24px 24px',
-              }}
-            />
+          <div className="space-y-3 text-center">
+            <p className="text-lg leading-relaxed text-slate-700 md:text-xl">
+              {t('reality')}
+            </p>
+            <p className="text-2xl font-black text-emerald-600 md:text-3xl">
+              {t('reality_highlight')}
+            </p>
           </div>
-
-          <div className="relative flex flex-col items-center gap-6 md:flex-row">
-            {/* Icon */}
-            <div className="flex h-20 w-20 shrink-0 items-center justify-center rounded-2xl bg-linear-to-br from-rose-500 to-orange-500 shadow-lg">
-              <TrendingDown
-                className="h-10 w-10 text-white"
-                strokeWidth={2.5}
-              />
-            </div>
-
-            {/* Content */}
-            <div className="flex-1 space-y-3 text-center md:text-left">
-              <p className="text-lg leading-relaxed text-slate-700 md:text-xl">
-                {t('reality')}
-              </p>
-              <p className="text-2xl font-black text-rose-600 md:text-3xl">
-                {t('reality_highlight')}
-              </p>
-            </div>
-          </div>
-
-          {/* Decorative glow */}
-          <div className="absolute -top-12 -right-12 h-32 w-32 rounded-full bg-rose-300/30 blur-3xl" />
-          <div className="absolute -bottom-12 -left-12 h-32 w-32 rounded-full bg-orange-300/30 blur-3xl" />
         </motion.div>
 
         {/* Scroll Indicator */}

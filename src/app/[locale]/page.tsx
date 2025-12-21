@@ -1,8 +1,8 @@
 import Hero from '@/components/sections/Hero'
 import Problem from '@/components/sections/Problem'
+import HowItWorks from '@/components/sections/HowItWorks'
 import Solution from '@/components/sections/Solution'
 import Pricing from '@/components/sections/Pricing'
-import Stats from '@/components/sections/Stats'
 
 export default function Home() {
   return (
@@ -10,16 +10,16 @@ export default function Home() {
       <section className="w-full">
         <Hero />
       </section>
-      <section className="w-full border-t border-emerald-100/60 bg-white/80 backdrop-blur">
-        <Stats />
-      </section>
-      <section className="w-full border-t border-emerald-100/60 bg-white">
+      <section className="w-full border-t bg-linear-to-b from-gray-100 via-gray-50 to-gray-100">
         <Problem />
       </section>
-      <section className="w-full border-t border-emerald-100/60 bg-white">
+      <section className="w-full border-t bg-linear-to-b from-gray-50 via-white to-gray-50">
         <Solution />
       </section>
-      <section className="w-full border-t border-emerald-100/60 bg-white/90 backdrop-blur">
+      <section className="w-full border-t bg-linear-to-b from-gray-100 via-gray-50 to-gray-100">
+        <HowItWorks />
+      </section>
+      <section className="w-full border-t bg-linear-to-b from-gray-50 via-white to-gray-50">
         <Pricing />
       </section>
     </main>

@@ -49,7 +49,12 @@ export const features = {
     { key: 'loss', icon: '💸' },
     { key: 'time', icon: '⏰' },
     { key: 'scale', icon: '📈' },
-    { key: 'addresses', icon: '📍' },
+    { key: 'address', icon: '📍' },
+  ],
+  howItWorks: [
+    { key: '1', icon: '🛒' },
+    { key: '2', icon: '📱' },
+    { key: '3', icon: '✅' },
   ],
   solutions: [
     { key: 'auto', icon: '🤖' },

@@ -26,8 +26,6 @@ const item = {
 export function Solution() {
   const t = useTranslations('solution')
 
-  const stepEmojis = ['🛒', '📱', '✅']
-
   return (
     <Section id="solution" variant="gradient">
       <Container>
@@ -51,54 +49,6 @@ export function Solution() {
           >
             {t('subtitle')}
           </motion.p>
-        </div>
-
-        {/* How it Works - 3 Steps */}
-        <div className="mb-16">
-          <div className="relative grid gap-8 md:grid-cols-3">
-            {/* Connection lines for desktop */}
-            <div className="absolute top-20 right-0 left-0 hidden h-1 md:block">
-              <div className="mx-auto h-full w-[calc(100%-8rem)] bg-linear-to-r from-emerald-500 via-emerald-400 to-emerald-500 opacity-20" />
-            </div>
-
-            {['1', '2', '3'].map((step, index) => (
-              <motion.div
-                key={step}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: index * 0.2 }}
-                className="relative"
-              >
-                <div className="group relative h-full overflow-hidden rounded-2xl border-2 border-emerald-100 bg-white p-6 shadow-sm transition-all duration-300 hover:-translate-y-2 hover:border-emerald-200 hover:shadow-xl">
-                  {/* Number Badge */}
-                  <div className="absolute -top-3 -left-3 z-10 flex h-16 w-16 items-center justify-center rounded-2xl bg-linear-to-br from-emerald-500 to-emerald-600 text-2xl font-black text-white shadow-lg ring-4 ring-white transition-transform duration-300 group-hover:scale-110 group-hover:rotate-3">
-                    {step}
-                  </div>
-
-                  {/* Emoji Icon */}
-                  <div className="mt-8 mb-6 flex items-center justify-center">
-                    <div className="flex h-20 w-20 items-center justify-center rounded-2xl bg-linear-to-br from-emerald-50 to-emerald-100 text-5xl transition-transform duration-300 group-hover:scale-110">
-                      {stepEmojis[index]}
-                    </div>
-                  </div>
-
-                  {/* Content */}
-                  <div className="space-y-3 text-center">
-                    <h3 className="text-xl font-bold text-slate-900 transition-colors group-hover:text-emerald-600">
-                      {t(`steps.${step}.title`)}
-                    </h3>
-                    <p className="text-sm leading-relaxed text-slate-600">
-                      {t(`steps.${step}.description`)}
-                    </p>
-                  </div>
-
-                  {/* Hover gradient */}
-                  <div className="absolute inset-0 bg-linear-to-t from-emerald-500/5 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
-                </div>
-              </motion.div>
-            ))}
-          </div>
         </div>
 
         {/* Features Grid */}
