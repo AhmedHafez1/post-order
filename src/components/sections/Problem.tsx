@@ -41,10 +41,19 @@ function Problem() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
-            className="text-4xl leading-tight font-black text-slate-900 sm:text-5xl"
+            className="mb-8 text-xl leading-tight font-black text-slate-700 sm:text-2xl lg:text-3xl"
           >
             {t('title')}
           </motion.h2>
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.2 }}
+            className="text-lg font-medium text-slate-600 sm:text-xl"
+          >
+            {t('subtitle')}
+          </motion.p>
         </div>
 
         {/* Problems Grid */}

@@ -79,7 +79,7 @@ function Stats() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.1 }}
-              className="mb-8 text-3xl leading-tight font-black text-slate-700 sm:text-4xl"
+              className="mb-8 text-xl leading-tight font-black text-slate-700 sm:text-2xl lg:text-3xl"
             >
               {t('title')}{' '}
               <span className="bg-linear-to-r from-emerald-600 to-emerald-500 bg-clip-text text-transparent">
@@ -137,43 +137,6 @@ function Stats() {
                 ))}
               </div>
             </motion.div>
-
-            {/* Key Features */}
-            {/* <motion.div
-              initial={{ opacity: 0, x: 20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.8 }}
-              className="rounded-2xl border border-emerald-100 bg-linear-to-br from-emerald-50 to-white p-6 shadow-sm"
-            >
-              <h3 className="mb-5 flex items-center gap-2 text-xl font-black text-slate-900">
-                <Package className="h-6 w-6 text-emerald-600" />
-                {t('features_title')}
-              </h3>
-              <ul className="space-y-3">
-                {[
-                  t('feature_1'),
-                  t('feature_2'),
-                  t('feature_3'),
-                  t('feature_4'),
-                  t('feature_5'),
-                ].map((feature, index) => (
-                  <motion.li
-                    key={index}
-                    initial={{ opacity: 0, x: 20 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ delay: 0.9 + index * 0.05 }}
-                    className="flex items-start gap-3 text-sm text-slate-700"
-                  >
-                    <CheckCheck className="mt-0.5 h-5 w-5 shrink-0 text-emerald-600" />
-                    <span className="leading-relaxed font-medium">
-                      {feature}
-                    </span>
-                  </motion.li>
-                ))}
-              </ul>
-            </motion.div> */}
           </div>
         </div>
       </div>

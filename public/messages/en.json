@@ -72,7 +72,8 @@
     "feature_5": "Fallback to human agent when needed"
   },
   "problems": {
-    "title": "Problems We Solve",
+    "title": "Delivery driver lost again? Customer not responding? Burning money on shipping?",
+    "subtitle": "Honestly, we know exactly how you feel",
     "loss": {
       "title": "Massive Financial Losses",
       "description": "30-40% of COD orders return due to lack of confirmation, costing you thousands monthly in wasted shipping"
