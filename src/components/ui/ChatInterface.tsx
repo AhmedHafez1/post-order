@@ -116,7 +116,7 @@ export function ChatInterface() {
       {/* iPhone-style Frame */}
       <div className="relative mx-auto w-80">
         {/* Glow effect */}
-        <div className="absolute inset-0 rounded-[3rem] bg-linear-to-br from-emerald-400/20 to-emerald-200/10 blur-2xl" />
+        <div className="/10 blur-1xl absolute inset-0 rounded-[3rem] bg-linear-to-br from-gray-400/20 to-gray-200" />
 
         {/* Phone body */}
         <div className="relative rounded-[3rem] border-8 border-slate-900 bg-slate-900 p-2 shadow-2xl">

@@ -7,19 +7,19 @@ import Pricing from '@/components/sections/Pricing'
 export default function Home() {
   return (
     <main className="flex min-h-screen flex-col gap-0">
-      <section className="w-full bg-linear-to-b from-gray-50 via-gray-100 to-gray-50">
+      <section className="w-full bg-linear-to-b from-gray-100 via-gray-200 to-gray-50">
         <Hero />
       </section>
-      <section className="w-full border-t bg-linear-to-b from-gray-100 via-gray-50 to-gray-100">
+      <section className="w-full border-t bg-linear-to-b from-gray-100 via-gray-200 to-gray-50">
         <Problem />
       </section>
-      <section className="w-full border-t bg-linear-to-b from-gray-50 via-gray-100 to-gray-50">
+      <section className="w-full border-t bg-linear-to-b from-gray-100 via-gray-200 to-gray-50">
         <Solution />
       </section>
-      <section className="w-full border-t bg-linear-to-b from-gray-100 via-gray-50 to-gray-100">
+      <section className="w-full border-t bg-linear-to-b from-gray-100 via-gray-200 to-gray-50">
         <HowItWorks />
       </section>
-      <section className="w-full border-t bg-linear-to-b from-gray-50 via-gray-100 to-gray-50">
+      <section className="w-full border-t bg-linear-to-b from-gray-100 via-gray-200 to-gray-50">
         <Pricing />
       </section>
     </main>
