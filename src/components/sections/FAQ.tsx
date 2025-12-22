@@ -21,10 +21,10 @@ function FAQ() {
           transition={{ duration: 0.6 }}
           className="mx-auto max-w-3xl rounded-2xl border border-emerald-100 bg-white/90 p-6 shadow-sm"
         >
-          <h3 className="mb-4 text-center text-3xl font-black">
+          <h3 className="mb-4 text-center text-xl leading-tight font-black text-slate-700 sm:text-2xl lg:text-3xl">
             {tFaq('section_title')}
           </h3>
-          <p className="mb-8 text-center text-lg text-slate-600">
+          <p className="mb-8 text-center text-lg font-medium text-slate-600 sm:text-xl lg:mb-16">
             {tFaq('section_description')}
           </p>
           <Accordion type="single" collapsible className="space-y-3">

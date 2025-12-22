@@ -35,13 +35,13 @@ function Problem() {
     <Section id="problem" className="relative px-8 sm:px-12 md:px-16 lg:px-48">
       <Container>
         {/* Section Header */}
-        <div className="mb-16 text-center">
+        <div className="mb-10 text-center">
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
-            className="mb-8 text-xl leading-tight font-black text-slate-700 sm:text-2xl lg:text-3xl"
+            className="mb-4 text-xl leading-tight font-black text-slate-700 sm:text-2xl lg:text-3xl"
           >
             {t('title')}
           </motion.h2>
@@ -50,7 +50,7 @@ function Problem() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.2 }}
-            className="text-lg font-medium text-slate-600 sm:text-xl"
+            className="mb-8 text-lg font-medium text-slate-600 sm:text-xl lg:mb-16"
           >
             {t('subtitle')}
           </motion.p>

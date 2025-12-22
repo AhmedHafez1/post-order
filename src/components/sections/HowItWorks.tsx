@@ -52,7 +52,7 @@ function HowItWorks() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.2 }}
-            className="text-lg font-medium text-slate-600 sm:text-xl"
+            className="mb-8 text-lg font-medium text-slate-600 sm:text-xl lg:mb-16"
           >
             {t('main_title')}
           </motion.p>
