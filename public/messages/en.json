@@ -290,6 +290,15 @@
     "important_cta": "So we can start with you immediately",
     "cta": "Open WhatsApp Now 📱"
   },
+
+  "roi_calculator": {
+    "section_title": "Calculate for yourself... How much can Akeed save you monthly?",
+    "orders": "Orders per month",
+    "returns_without": "Avg. returns (without Akeed)",
+    "returns_with": "Avg. returns (with Akeed)",
+    "savings": "Expected monthly shipping savings",
+    "currency": "EGP"
+  },
   "footer": {
     "copyright": "© 2024 Post Order. All rights reserved."
   }
