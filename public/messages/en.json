@@ -133,23 +133,39 @@
       }
     },
     "auto": {
-      "title": "🤖 Smart Automation 24/7",
+      "title": "Smart Automation 24/7",
       "description": "Bot works non-stop - no holidays, no sleep, no human errors"
     },
     "response": {
-      "title": "⚡ Instant Response",
+      "title": "Instant Response",
       "description": "Messages arrive in seconds, 3x higher response rate than traditional calls"
     },
     "natural": {
-      "title": "💬 Natural Conversations",
+      "title": "Natural Conversations",
       "description": "Smart Arabic replies that understand customer intent - like a professional employee"
     },
     "analytics": {
-      "title": "📊 Advanced Analytics",
+      "title": "Advanced Analytics",
       "description": "Dashboard shows everything: confirmation rates, reasons, best times"
     },
     "testimonial_1": "After using Post Order, our confirmation rate went from 55% to 89%! We saved 15,000 EGP monthly from return shipping. The bot works better than 3 employees!",
-    "orders_monthly": "orders monthly"
+    "orders_monthly": "orders monthly",
+    "fast-confirm": {
+      "title": "Faster Confirmation",
+      "description": "The customer feels valued by the brand and confirms their order in seconds while still excited"
+    },
+    "location": {
+      "title": "Pinpoint Location",
+      "description": "The 'Akeed' bot doesn't just talk to the customer, it asks them to 'Share Location' on WhatsApp. This way, the courier reaches the customer directly on the map, without getting lost or calling 100 times!"
+    },
+    "save-time": {
+      "title": "Save Your Time & Effort",
+      "description": "No more wasting time on boring confirmation calls. Focus on more important tasks and leave the endless confirmation and double-checking to 'Akeed'."
+    },
+    "integration": {
+      "title": "Seamless Integration",
+      "description": "Easily connects with popular e-commerce platforms - setup in minutes"
+    }
   },
   "pricing": {
     "title": "Plans for Every Store",

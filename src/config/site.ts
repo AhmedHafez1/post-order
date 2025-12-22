@@ -59,6 +59,10 @@ export const features = {
   solutions: [
     { key: 'auto', icon: '🤖' },
     { key: 'response', icon: '⚡' },
+    { key: 'fast-confirm', icon: '🚀' },
+    { key: 'location', icon: '🌍' },
+    { key: 'save-time', icon: '⌛' },
+    { key: 'integration', icon: '🔗' },
     { key: 'natural', icon: '💬' },
     { key: 'analytics', icon: '📊' },
   ],

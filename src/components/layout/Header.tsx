@@ -115,6 +115,7 @@ export function Header() {
             <button
               onClick={() => scrollToSection('pricing')}
               className="group relative overflow-hidden rounded-lg bg-linear-to-r from-emerald-600 to-emerald-500 px-5 py-2.5 text-sm font-bold text-white shadow-md transition-all hover:translate-y-[-1px] hover:shadow-lg"
+              suppressHydrationWarning
             >
               <span className="relative z-10">{t('cta')}</span>
               <div className="absolute inset-0 bg-linear-to-r from-emerald-500 to-emerald-400 opacity-0 transition-opacity group-hover:opacity-100" />
@@ -125,6 +126,7 @@ export function Header() {
           <button
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             className="rounded-xl p-2 transition-colors hover:bg-gray-100 md:hidden"
+            suppressHydrationWarning
           >
             <AnimatePresence mode="wait">
               {isMobileMenuOpen ? (
@@ -189,7 +191,7 @@ export function Header() {
                     onClick={() => scrollToSection('pricing')}
                     className="w-full rounded-lg bg-linear-to-r from-emerald-600 to-emerald-500 px-4 py-3 text-base font-bold text-white shadow-lg"
                   >
-                    Start Free Trial
+                    {t('cta')}
                   </button>
                 </div>
               </nav>
