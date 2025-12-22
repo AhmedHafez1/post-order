@@ -52,9 +52,9 @@ export const features = {
     { key: 'address', icon: '📍' },
   ],
   howItWorks: [
-    { key: '1', icon: '🛒' },
-    { key: '2', icon: '📱' },
-    { key: '3', icon: '✅' },
+    { key: 'connect', icon: '🔗' },
+    { key: 'automation', icon: '🤖' },
+    { key: 'ship', icon: '🚚' },
   ],
   solutions: [
     { key: 'auto', icon: '🤖' },

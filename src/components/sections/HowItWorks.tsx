@@ -5,6 +5,7 @@ import { Container } from '@/components/ui/container'
 import { Section } from '@/components/ui/section'
 import { motion } from 'framer-motion'
 import { features } from '@/config/site'
+import { usePathname } from 'next/navigation'
 
 const container = {
   hidden: { opacity: 0 },
@@ -23,6 +24,10 @@ const item = {
 
 function HowItWorks() {
   const t = useTranslations('how_it_works')
+  const pathname = usePathname()
+
+  // Extract locale from pathname (assuming /[locale]/...)
+  const locale = pathname?.split('/')[1] === 'en' ? 'en' : 'ar'
 
   return (
     <Section
@@ -31,15 +36,15 @@ function HowItWorks() {
     >
       <Container>
         {/* Section Header */}
-        <div className="mb-16 text-center">
+        <div className="mb-10 text-center">
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
-            className="mb-8 text-xl leading-tight font-black text-slate-700 sm:text-2xl lg:text-3xl"
+            className="mb-4 text-xl leading-tight font-black text-slate-700 sm:text-2xl lg:text-3xl"
           >
-            {t('title')}
+            {t('section_title')}
           </motion.h2>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
@@ -48,7 +53,7 @@ function HowItWorks() {
             transition={{ delay: 0.2 }}
             className="text-lg font-medium text-slate-600 sm:text-xl"
           >
-            {t('subtitle')}
+            {t('main_title')}
           </motion.p>
         </div>
 
@@ -58,18 +63,20 @@ function HowItWorks() {
           initial="hidden"
           whileInView="show"
           viewport={{ once: true, margin: '-50px' }}
-          className="mb-12 grid grid-cols-1 gap-8 sm:grid-cols-2 md:grid-cols-3 lg:gap-16"
+          className="mb-12 grid grid-cols-1 gap-8 sm:grid-cols-1 md:grid-cols-3 lg:gap-32"
         >
-          {features.howItWorks.map((step, index) => (
+          {features.howItWorks.map((step, idx) => (
             <motion.div key={step.key} variants={item}>
               <div className="group relative overflow-hidden rounded-2xl border border-emerald-100 bg-white px-8 py-6 transition-all duration-300 hover:-translate-y-1 hover:border-emerald-200 hover:shadow-lg lg:min-h-80">
                 {/* Gradient overlay on hover */}
                 <div className="absolute inset-0 bg-linear-to-br from-emerald-50/50 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
 
                 <div className="relative flex flex-col items-center gap-4">
-                  {/* Number Badge */}
-                  <div className="absolute -top-3 -left-3 z-10 flex h-16 w-16 items-center justify-center rounded-2xl bg-linear-to-br from-emerald-500 to-emerald-600 text-2xl font-black text-white shadow-lg ring-4 ring-white transition-transform duration-300 group-hover:scale-110 group-hover:rotate-3">
-                    {step.key}
+                  {/* Step Number Badge */}
+                  <div
+                    className={`absolute -top-3 ${locale === 'en' ? '-left-3' : '-right-3'} z-10 flex h-12 w-12 items-center justify-center rounded-xl bg-linear-to-br from-emerald-500 to-emerald-600 text-2xl font-black text-white shadow-lg ring-4 ring-white transition-transform duration-300 group-hover:scale-110 group-hover:rotate-3`}
+                  >
+                    {idx + 1}
                   </div>
 
                   {/* Icon */}

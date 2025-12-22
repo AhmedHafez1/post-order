@@ -98,20 +98,20 @@
     "reality_highlight": "And the solution is in 'Akeed'"
   },
   "how_it_works": {
-    "title": "How It Works",
-    "subtitle": "Simple 3-step process to confirm your orders automatically",
+    "section_title": "How Akeed Works?",
+    "main_title": "Just 3 Steps... Your Orders Are Safe.",
     "steps": {
-      "1": {
-        "title": "New Order Arrives",
-        "description": "Bot receives the order automatically from your platform (Shopify, WooCommerce, etc.)"
+      "connect": {
+        "title": "Connect Your Store (in 60 seconds)",
+        "description": "Whether on Shopify, WooCommerce, Salla, Zid, or others, integration is easy and simple. No code or programming needed, Akeed detects your orders as soon as they come in."
       },
-      "2": {
-        "title": "Instant WhatsApp Send",
-        "description": "Professional message reaches customer within seconds to confirm address and order"
+      "automation": {
+        "title": "Akeed Handles It All",
+        "description": "Right after the order, Akeed bot sends a friendly message to the customer (with your brand name), confirms order details, and requests their GPS Location."
       },
-      "3": {
-        "title": "Automatic Confirmation",
-        "description": "Bot follows up on reply and updates order status - ready to ship or canceled"
+      "ship": {
+        "title": "Ship With Confidence (Save Money)",
+        "description": "The order is updated in your store dashboard as 'Confirmed' with a map link. And those who didn’t confirm or send location? Akeed flags them so you don’t ship and save wasted shipping costs!"
       }
     }
   },
