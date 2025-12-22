@@ -217,6 +217,8 @@
     }
   },
   "faq": {
+    "section_title": "Frequently Asked Questions",
+    "section_description": "Everything you need to know about Akeed and our services. If you can't find your answer here, contact us directly!",
     "title": "Frequently Asked Questions",
     "integration": {
       "question": "How does it integrate with my store?",

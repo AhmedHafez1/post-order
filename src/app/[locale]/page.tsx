@@ -3,6 +3,7 @@ import Problem from '@/components/sections/Problem'
 import HowItWorks from '@/components/sections/HowItWorks'
 import Solution from '@/components/sections/Solution'
 import Pricing from '@/components/sections/Pricing'
+import FAQ from '@/components/sections/FAQ'
 
 export default function Home() {
   return (
@@ -21,6 +22,9 @@ export default function Home() {
       </section>
       <section className="w-full border-t bg-linear-to-b from-gray-100 via-gray-200 to-gray-50">
         <Pricing />
+      </section>
+      <section className="w-full border-t bg-linear-to-b from-gray-100 via-gray-200 to-gray-50">
+        <FAQ />
       </section>
     </main>
   )

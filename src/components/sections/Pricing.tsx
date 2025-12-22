@@ -6,15 +6,12 @@ import { Section } from '@/components/ui/section'
 import { motion } from 'framer-motion'
 import { PricingCard } from '@/components/ui/pricing-card'
 import { Card, CardContent } from '@/components/ui/card'
-import { Accordion } from '@/components/ui/accordion'
-import { FAQItem } from '@/components/ui/faq-item'
-import { pricing, faqs } from '@/config/site'
+import { pricing } from '@/config/site'
 import { Shield, CreditCard, Headphones, Sparkles } from 'lucide-react'
 import { WaitlistForm } from '@/components/forms/WaitlistForm'
 
 function Pricing() {
   const t = useTranslations('pricing')
-  const tFaq = useTranslations('faq')
 
   const handleCtaClick = () => {
     document.getElementById('waitlist-form')?.scrollIntoView({
@@ -176,30 +173,7 @@ function Pricing() {
           </Card>
         </motion.div>
 
-        {/* FAQ Section */}
-        <motion.div
-          id="faq"
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="mx-auto max-w-3xl rounded-2xl border border-emerald-100 bg-white/90 p-6 shadow-sm"
-        >
-          <h3 className="mb-8 text-center text-3xl font-black">
-            {tFaq('title')}
-          </h3>
-
-          <Accordion type="single" collapsible className="space-y-3">
-            {faqs.map((faq, index) => (
-              <FAQItem
-                key={faq.key}
-                value={`faq-${index}`}
-                question={tFaq(`${faq.key}.question`)}
-                answer={tFaq(`${faq.key}.answer`)}
-              />
-            ))}
-          </Accordion>
-        </motion.div>
+        {/* FAQ section moved to its own component */}
       </Container>
     </Section>
   )
