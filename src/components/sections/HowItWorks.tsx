@@ -74,7 +74,7 @@ function HowItWorks() {
                 <div className="relative flex flex-col items-center gap-4">
                   {/* Step Number Badge */}
                   <div
-                    className={`absolute -top-3 ${locale === 'en' ? '-left-3' : '-right-3'} z-10 flex h-12 w-12 items-center justify-center rounded-xl bg-linear-to-br from-emerald-500 to-emerald-600 text-2xl font-black text-white shadow-lg ring-4 ring-white transition-transform duration-300 group-hover:scale-110 group-hover:rotate-3`}
+                    className={`absolute -top-3 ${locale === 'en' ? '-left-3' : '-right-3'} z-10 flex h-12 w-12 items-center justify-center rounded-xl bg-linear-to-br from-orange-500 to-orange-600 text-xl font-semibold text-white shadow-lg ring-4 ring-white transition-transform duration-300 group-hover:scale-110 group-hover:rotate-3`}
                   >
                     {idx + 1}
                   </div>
