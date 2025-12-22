@@ -5,7 +5,7 @@ import { Container } from '@/components/ui/container'
 import { Section } from '@/components/ui/section'
 import { motion } from 'framer-motion'
 import { features } from '@/config/site'
-import { ChevronDownIcon } from 'lucide-react'
+import ScrollDownArrow from './ScrollDownArrow'
 
 const container = {
   hidden: { opacity: 0 },
@@ -32,7 +32,7 @@ function Problem() {
   }
 
   return (
-    <Section className="relative px-8 sm:px-12 md:px-16 lg:px-48">
+    <Section id="problem" className="relative px-8 sm:px-12 md:px-16 lg:px-48">
       <Container>
         {/* Section Header */}
         <div className="mb-16 text-center">
@@ -113,17 +113,7 @@ function Problem() {
         </motion.div>
 
         {/* Scroll Indicator */}
-        <motion.div
-          initial={{ opacity: 0, y: 12 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.3 }}
-          className="absolute bottom-8 left-1/2 -translate-x-1/2 cursor-pointer"
-        >
-          <ChevronDownIcon
-            className="h-8 w-8 animate-bounce text-emerald-600"
-            onClick={() => scrollToSection('solution')}
-          />
-        </motion.div>
+        <ScrollDownArrow to="solution" />
       </Container>
     </Section>
   )

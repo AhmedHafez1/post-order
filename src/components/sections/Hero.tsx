@@ -3,7 +3,8 @@
 import { AnimatePresence, motion } from 'framer-motion'
 import Image from 'next/image'
 import { SocialProof } from '../ui/SocialProof'
-import { ChevronRight, Zap, ChevronLeft, ChevronDownIcon } from 'lucide-react'
+import { ChevronRight, Zap, ChevronLeft } from 'lucide-react'
+import ScrollDownArrow from './ScrollDownArrow'
 import { useTranslations } from 'next-intl'
 import { usePathname } from 'next/navigation'
 import { ChatInterface } from '../ui/ChatInterface'
@@ -100,17 +101,7 @@ function Hero() {
       <ChatInterface />
 
       {/* Scroll Indicator */}
-      <motion.div
-        initial={{ opacity: 0, y: 12 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6, delay: 0.3 }}
-        className="absolute bottom-8 left-1/2 -translate-x-1/2 cursor-pointer"
-      >
-        <ChevronDownIcon
-          className="h-8 w-8 animate-bounce text-emerald-600"
-          onClick={() => scrollToSection('demo')}
-        />
-      </motion.div>
+      <ScrollDownArrow to="problem" />
     </section>
   )
 }

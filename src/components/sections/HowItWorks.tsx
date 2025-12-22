@@ -6,6 +6,7 @@ import { Section } from '@/components/ui/section'
 import { motion } from 'framer-motion'
 import { features } from '@/config/site'
 import { usePathname } from 'next/navigation'
+import ScrollDownArrow from './ScrollDownArrow'
 
 const container = {
   hidden: { opacity: 0 },
@@ -101,6 +102,8 @@ function HowItWorks() {
             </motion.div>
           ))}
         </motion.div>
+        {/* Scroll Indicator */}
+        <ScrollDownArrow to="pricing" />
       </Container>
     </Section>
   )

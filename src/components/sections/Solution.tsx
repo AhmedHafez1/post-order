@@ -5,7 +5,8 @@ import { Container } from '@/components/ui/container'
 import { Section } from '@/components/ui/section'
 import { motion } from 'framer-motion'
 import { features, testimonials } from '@/config/site'
-import { CheckCircle2, ChevronDownIcon, Sparkles } from 'lucide-react'
+import { CheckCircle2, Sparkles } from 'lucide-react'
+import ScrollDownArrow from './ScrollDownArrow'
 import Testimonial from '../ui/user-testimonial'
 
 const container = {
@@ -100,17 +101,7 @@ export function Solution() {
         </motion.div>
 
         {/* Scroll Indicator */}
-        <motion.div
-          initial={{ opacity: 0, y: 12 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.3 }}
-          className="absolute bottom-8 left-1/2 -translate-x-1/2 cursor-pointer"
-        >
-          <ChevronDownIcon
-            className="h-8 w-8 animate-bounce text-emerald-600"
-            onClick={() => scrollToSection('how-it-works')}
-          />
-        </motion.div>
+        <ScrollDownArrow to="how-it-works" />
       </Container>
     </Section>
   )

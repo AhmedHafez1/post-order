@@ -114,7 +114,7 @@ export function Header() {
             </button>
             <button
               onClick={() => scrollToSection('pricing')}
-              className="group relative overflow-hidden rounded-lg bg-linear-to-r from-emerald-600 to-emerald-500 px-5 py-2.5 text-sm font-bold text-white shadow-md transition-all hover:translate-y-[-1px] hover:shadow-lg"
+              className="group hover:-translate-y- relative overflow-hidden rounded-lg bg-linear-to-r from-emerald-600 to-emerald-500 px-5 py-2.5 text-sm font-bold text-white shadow-md transition-all hover:shadow-lg"
               suppressHydrationWarning
             >
               <span className="relative z-10">{t('cta')}</span>
