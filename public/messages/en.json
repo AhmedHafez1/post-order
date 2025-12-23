@@ -119,45 +119,27 @@
     "orders_monthly": "orders monthly"
   },
   "pricing": {
-    "title": "Plans for Every Store",
-    "subtitle": "Try free for 14 days - no credit card required",
-    "per_verification": "per confirmation",
-    "month": "monthly",
-    "select_plan": "Select Plan",
-    "starter": {
-      "name": "Starter",
-      "features": {
-        "verifications": "100 confirmations monthly",
-        "whatsapp": "Smart WhatsApp bot",
-        "templates": "Ready message templates",
-        "support": "Email technical support"
-      }
-    },
-    "pro": {
-      "name": "Professional",
-      "popular": "Most Popular ⭐",
-      "up_to": "Up to 1000 confirmations monthly",
-      "per_verification": "per additional confirmation",
-      "features": {
-        "everything": "All Starter features",
-        "unlimited": "Unlimited confirmations",
-        "analytics": "Advanced analytics",
-        "priority": "Priority technical support",
-        "integrations": "Integration with all platforms",
-        "custom": "Custom messages"
-      }
-    },
-    "enterprise": {
-      "name": "Enterprise",
-      "features": {
-        "everything": "All Professional features",
-        "stores": "Multiple stores",
-        "dedicated": "Dedicated account manager",
-        "custom_ai": "Custom AI",
-        "api": "Open API",
-        "sla": "99.9% SLA guarantee"
-      }
-    },
+    "title": "Pay as You Use.. The \"Recharge Card\" System Has Arrived at \"Post Order\"!",
+    "subtitle": "Your balance doesn't expire at month-end. Recharge and use whenever you want.",
+    "check_1": "No mandatory monthly subscription",
+    "check_2": "No hidden fees",
+    "check_3": "The more you recharge, the lower the per-order price",
+    "table_head_tier": "Tier",
+    "table_head_total": "Total Price",
+    "table_head_unit": "Price Per Order",
+    "currency": "EGP",
+    "free_badge": "FREE 20 orders gift",
+    "saving": "Save",
+    "cta_recharge": "Recharge Your Balance and Start Now",
+    "tiers": {
+      "trial": "Trial",
+      "pro": "Pro Tier",
+      "growth": "Growth Tier",
+      "merchant": "Small Merchant Tier",
+      "corporate": "Corporate Tier"
+    }
+  },
+  "reservation": {
     "reserve_title": "🎁 Reserve at Founding Price",
     "reserve_subtitle": "Last 8 spots remaining at reduced price - price increasing soon!",
     "trust_badges": {

@@ -14,34 +14,42 @@ export const siteConfig: SiteConfig = {
 }
 
 export const pricing = {
-  starter: {
-    name: 'starter',
-    price: 0.75,
-    priceMonthly: null,
-    features: ['verifications', 'whatsapp', 'templates', 'support'],
-  },
-  pro: {
-    name: 'pro',
-    price: 299,
-    priceMonthly: 299,
-    verifications: 500,
-    perVerification: 0.6,
-    features: [
-      'everything',
-      'unlimited',
-      'analytics',
-      'priority',
-      'integrations',
-      'custom',
-    ],
-    popular: true,
-  },
-  enterprise: {
-    name: 'enterprise',
-    price: 799,
-    priceMonthly: 799,
-    features: ['everything', 'stores', 'dedicated', 'custom_ai', 'api', 'sla'],
-  },
+  tiers: [
+    {
+      key: 'trial',
+      orders: 20,
+      price: 0,
+      perOrder: 0,
+      isFree: true,
+    },
+    {
+      key: 'pro',
+      orders: 200,
+      price: 500,
+      perOrder: 2.5,
+    },
+    {
+      key: 'growth',
+      orders: 500,
+      price: 1000,
+      perOrder: 2,
+      saving: 20,
+    },
+    {
+      key: 'merchant',
+      orders: 1000,
+      price: 1800,
+      perOrder: 1.8,
+      saving: 28,
+    },
+    {
+      key: 'corporate',
+      orders: 2000,
+      price: 3000,
+      perOrder: 1.5,
+      saving: 40,
+    },
+  ],
 }
 
 export const features = {
