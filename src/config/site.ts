@@ -1,4 +1,5 @@
 import { SiteConfig } from '@/types'
+import { Tier } from '@/types/tier.model'
 
 export const siteConfig: SiteConfig = {
   name: 'Post Order',
@@ -13,7 +14,7 @@ export const siteConfig: SiteConfig = {
   },
 }
 
-export const pricing = {
+export const pricing: { tiers: Tier[] } = {
   tiers: [
     {
       key: 'trial',
@@ -21,12 +22,14 @@ export const pricing = {
       price: 0,
       perOrder: 0,
       isFree: true,
+      ordersDisplay: null, // Will show free badge
     },
     {
       key: 'pro',
       orders: 200,
       price: 500,
       perOrder: 2.5,
+      ordersDisplay: '200',
     },
     {
       key: 'growth',
@@ -34,6 +37,7 @@ export const pricing = {
       price: 1000,
       perOrder: 2,
       saving: 20,
+      ordersDisplay: '500',
     },
     {
       key: 'merchant',
@@ -41,6 +45,7 @@ export const pricing = {
       price: 1800,
       perOrder: 1.8,
       saving: 28,
+      ordersDisplay: '1000',
     },
     {
       key: 'corporate',
@@ -48,6 +53,7 @@ export const pricing = {
       price: 3000,
       perOrder: 1.5,
       saving: 40,
+      ordersDisplay: '2000',
     },
   ],
 }

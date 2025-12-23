@@ -173,19 +173,17 @@
     "check_1": "No mandatory monthly subscription",
     "check_2": "No hidden fees",
     "check_3": "The more you recharge, the lower the per-order price",
-    "table_head_tier": "Tier",
-    "table_head_total": "Total Price",
-    "table_head_unit": "Price Per Order",
+    "orders_label": "orders",
     "currency": "EGP",
     "free_badge": "FREE 20 orders gift",
     "saving": "Save",
     "cta_recharge": "Recharge Your Balance and Start Now",
     "tiers": {
       "trial": "Trial",
-      "pro": "Pro Tier",
-      "growth": "Growth Tier",
-      "merchant": "Small Merchant Tier",
-      "corporate": "Corporate Tier"
+      "pro": "Pro Package",
+      "growth": "Growth Package",
+      "merchant": "Merchant Package",
+      "corporate": "Corporate Package"
     }
   },
   "reservation": {
