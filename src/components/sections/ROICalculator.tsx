@@ -39,7 +39,7 @@ export default function ROICalculator() {
             {t('section_title')}
           </h2>
         </div>
-        <div className="flex justify-center overflow-x-auto pb-12">
+        <div className="flex flex-col items-center justify-center gap-2 overflow-x-auto pb-12">
           <table className="min-w-4/5 rounded-xl border border-emerald-200 bg-white text-center">
             <thead className="bg-emerald-50">
               <tr>
@@ -70,6 +70,7 @@ export default function ROICalculator() {
               ))}
             </tbody>
           </table>
+          <p className="mt-4 text-sm text-slate-500">{t('note')}</p>
         </div>
 
         {/* Scroll Indicator */}
