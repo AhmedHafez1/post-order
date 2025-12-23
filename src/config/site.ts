@@ -56,12 +56,21 @@ export const features = {
   problems: [
     { key: 'loss', icon: '💸' },
     { key: 'time', icon: '⏰' },
-    { key: 'customer', icon: '😞' },
     { key: 'scale', icon: '📈' },
+    { key: 'address', icon: '📍' },
+  ],
+  howItWorks: [
+    { key: 'connect', icon: '🔗' },
+    { key: 'automation', icon: '🤖' },
+    { key: 'ship', icon: '🚚' },
   ],
   solutions: [
     { key: 'auto', icon: '🤖' },
     { key: 'response', icon: '⚡' },
+    { key: 'fast-confirm', icon: '🚀' },
+    { key: 'location', icon: '🌍' },
+    { key: 'save-time', icon: '⌛' },
+    { key: 'integration', icon: '🔗' },
     { key: 'natural', icon: '💬' },
     { key: 'analytics', icon: '📊' },
   ],

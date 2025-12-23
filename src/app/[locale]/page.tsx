@@ -1,26 +1,34 @@
 import Hero from '@/components/sections/Hero'
 import Problem from '@/components/sections/Problem'
+import HowItWorks from '@/components/sections/HowItWorks'
 import Solution from '@/components/sections/Solution'
 import Pricing from '@/components/sections/Pricing'
-import Stats from '@/components/sections/Stats'
+import FAQ from '@/components/sections/FAQ'
+import ROICalculator from '@/components/sections/ROICalculator'
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col gap-0 bg-linear-to-b from-emerald-50 via-white to-slate-50">
-      <section className="w-full">
+    <main className="flex min-h-screen flex-col gap-0">
+      <section className="w-full bg-linear-to-b from-gray-100 via-gray-200 to-gray-50">
         <Hero />
       </section>
-      <section className="w-full border-t border-emerald-100/60 bg-white/80 backdrop-blur">
-        <Stats />
-      </section>
-      <section className="w-full border-t border-emerald-100/60 bg-white">
+      <section className="w-full border-t bg-linear-to-b from-gray-100 via-gray-200 to-gray-50">
         <Problem />
       </section>
-      <section className="w-full border-t border-emerald-100/60 bg-white">
+      <section className="w-full border-t bg-linear-to-b from-gray-100 via-gray-200 to-gray-50">
         <Solution />
       </section>
-      <section className="w-full border-t border-emerald-100/60 bg-white/90 backdrop-blur">
+      <section className="w-full border-t bg-linear-to-b from-gray-100 via-gray-200 to-gray-50">
+        <HowItWorks />
+      </section>
+      <section className="w-full border-t bg-linear-to-b from-gray-100 via-gray-200 to-gray-50">
+        <ROICalculator />
+      </section>
+      <section className="w-full border-t bg-linear-to-b from-gray-100 via-gray-200 to-gray-50">
         <Pricing />
+      </section>
+      <section className="w-full border-t bg-linear-to-b from-gray-100 via-gray-200 to-gray-50">
+        <FAQ />
       </section>
     </main>
   )

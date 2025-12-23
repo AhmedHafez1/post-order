@@ -3,19 +3,15 @@
 import { useTranslations } from 'next-intl'
 import { Container } from '@/components/ui/container'
 import { Section } from '@/components/ui/section'
-import { SectionHeader } from '@/components/ui/section-header'
+import { motion } from 'framer-motion'
 import { PricingCard } from '@/components/ui/pricing-card'
 import { Card, CardContent } from '@/components/ui/card'
-import { Accordion } from '@/components/ui/accordion'
-import { FAQItem } from '@/components/ui/faq-item'
-import { motion } from 'framer-motion'
-import { pricing, faqs } from '@/config/site'
-import { Shield, CreditCard, Headphones } from 'lucide-react'
+import { pricing } from '@/config/site'
+import { Shield, CreditCard, Headphones, Sparkles } from 'lucide-react'
 import { WaitlistForm } from '@/components/forms/WaitlistForm'
 
 function Pricing() {
   const t = useTranslations('pricing')
-  const tFaq = useTranslations('faq')
 
   const handleCtaClick = () => {
     document.getElementById('waitlist-form')?.scrollIntoView({
@@ -24,23 +20,71 @@ function Pricing() {
     })
   }
 
+  // Animation variants for grid
+  const container = {
+    hidden: { opacity: 0 },
+    show: {
+      opacity: 1,
+      transition: { staggerChildren: 0.12 },
+    },
+  }
+  const item = {
+    hidden: { opacity: 0, y: 20 },
+    show: { opacity: 1, y: 0 },
+  }
+
   return (
     <Section
       id="pricing"
-      className="via-emerald-25 bg-linear-to-b from-white to-white"
+      className="via-emerald-25 relative px-8 sm:px-12 md:px-16 lg:px-48"
     >
       <Container>
-        <SectionHeader title={t('title')} subtitle={t('subtitle')} centered />
+        {/* Urgency Badge */}
+        <motion.div
+          initial={{ opacity: 0, y: -20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="mb-8 flex justify-center"
+        >
+          <div className="inline-flex items-center gap-2 rounded-full bg-linear-to-r from-amber-100 to-emerald-50 px-6 py-3 text-sm font-bold text-emerald-800 shadow-lg ring-2 ring-amber-200/50">
+            <Sparkles className="h-5 w-5 text-amber-500" />
+            {t('urgency')}
+          </div>
+        </motion.div>
 
-        {/* Pricing cards */}
-        <div className="mb-14 grid gap-8 md:grid-cols-3">
-          {/* Starter */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
+        {/* Section Header (consistent with Problem/Solution) */}
+        <div className="mb-10 text-center">
+          <motion.h2
+            initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
+            transition={{ delay: 0.1 }}
+            className="mb-4 text-xl leading-tight font-black text-slate-700 sm:text-2xl lg:text-3xl"
           >
+            {t('title')}
+          </motion.h2>
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.2 }}
+            className="mb-8 text-lg font-medium text-slate-600 sm:text-xl lg:mb-16"
+          >
+            {t('subtitle')}
+          </motion.p>
+        </div>
+
+        {/* Pricing cards grid - consistent and responsive */}
+        <motion.div
+          variants={container}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true, margin: '-50px' }}
+          className="mb-14 grid grid-cols-1 gap-8 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 lg:gap-16 xl:grid-cols-3"
+        >
+          {/* Starter */}
+          <motion.div variants={item}>
             <PricingCard
               name={t('starter.name')}
               price={`${pricing.starter.price} جنيه`}
@@ -54,13 +98,7 @@ function Pricing() {
           </motion.div>
 
           {/* Pro - Popular */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 0.2 }}
-            className="md:-translate-y-4"
-          >
+          <motion.div variants={item} className="relative">
             <div className="absolute start-0 end-0 -top-5 z-10 flex justify-center">
               <div className="rounded-full bg-white px-4 py-1 text-xs font-semibold text-amber-700 shadow-sm ring-1 ring-amber-200">
                 الأكثر شعبية ⭐
@@ -82,12 +120,7 @@ function Pricing() {
           </motion.div>
 
           {/* Enterprise */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 0.4 }}
-          >
+          <motion.div variants={item}>
             <PricingCard
               name={t('enterprise.name')}
               price={`${pricing.enterprise.price} جنيه`}
@@ -99,7 +132,7 @@ function Pricing() {
               onCtaClick={handleCtaClick}
             />
           </motion.div>
-        </div>
+        </motion.div>
 
         {/* Waitlist form */}
         <motion.div
@@ -140,30 +173,7 @@ function Pricing() {
           </Card>
         </motion.div>
 
-        {/* FAQ Section */}
-        <motion.div
-          id="faq"
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="mx-auto max-w-3xl rounded-2xl border border-emerald-100 bg-white/90 p-6 shadow-sm"
-        >
-          <h3 className="mb-8 text-center text-3xl font-black">
-            {tFaq('title')}
-          </h3>
-
-          <Accordion type="single" collapsible className="space-y-3">
-            {faqs.map((faq, index) => (
-              <FAQItem
-                key={faq.key}
-                value={`faq-${index}`}
-                question={tFaq(`${faq.key}.question`)}
-                answer={tFaq(`${faq.key}.answer`)}
-              />
-            ))}
-          </Accordion>
-        </motion.div>
+        {/* FAQ section moved to its own component */}
       </Container>
     </Section>
   )

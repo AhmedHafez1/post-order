@@ -12,26 +12,20 @@
     "cta": "Start Free Trial"
   },
   "hero": {
-    "title": "Stop Losing Money on",
-    "highlight": "COD Returns",
-    "subtitle": "AI-powered WhatsApp bot automatically confirms orders before shipping. Reduce returns by 85% and save thousands monthly.",
-    "urgency": "Special Offer: First 20 stores get 2 months FREE",
-    "social_proof": "Join +47 Egyptian stores",
+    "title": "Stop Burning Shipping Fees on Fake Orders",
+    "highlight": "",
+    "subtitle": "Smart WhatsApp bot confirms orders, captures GPS Location from customer, and reduces returns by 85%",
+    "urgency": "Special Offer: First 20 stores get 50 confirmations FREE",
+    "social_proof": "Join +500 Egyptian stores",
     "rating": "5.0 rating",
     "cta": "Start Free Trial",
     "learn_more": "See Live Demo",
     "scroll_down": "See it in action",
-    "chat": {
-      "bot_1": "Hello Ahmed! 👋,\n Thank you for your order!\n We'd like to confirm your order details.\n\n📦 Order #12847\n🛍️ iPhone 15 Pro - Space Black\n💰 Total: 45,999 EGP.\n\n✅ Confirm the order?",
-      "user_1": "Yes, I confirm my order",
-      "bot_3": "📍 Delivery Address:\n123 El Tahrir Street\nCairo, Egypt\n\nIs this address correct?",
-      "user_2": "Yes, the address is correct",
-      "bot_5": "Excellent ✅! Your order is confirmed for delivery. 🚚",
-      "bot_6": "We'll send you tracking details shortly. Thank you for shopping with us! 🎉"
-    },
     "benefit_1": "No credit card required",
     "benefit_2": "14-day free trial",
-    "benefit_3": "Cancel anytime"
+    "benefit_3": "Cancel anytime",
+    "easy_integrated": "Easy Integrated with your platform",
+    "no_credit_card": "No credit card required, Start in 60 seconds!"
   },
   "demo": {
     "badge": "Live Demo",
@@ -39,6 +33,22 @@
     "title_highlight": "Real-Time",
     "subtitle": "Watch our AI bot handle a real customer conversation - automatically confirming orders, verifying addresses, and ensuring successful deliveries.",
     "phone_status": "Online",
+    "chat": {
+      "bot_1": "Hello Ahmed! 👋,\n Thank you for your order!\n We'd like to confirm your order details.\n\n📦 Order #12847\n🛍️ iPhone 15 Pro - Space Black\n💰 Total: 45,999 EGP.\n\n✅ Confirm the order?",
+      "user_1": "Confirm Order",
+      "bot_3": "📍 Delivery Address:\n123 El Tahrir Street\nCairo, Egypt\n\nIs this address correct?",
+      "user_2": "Yes, the address is correct",
+      "bot_5": "Excellent ✅! Your order is confirmed for delivery. 🚚",
+      "bot_6": "We'll send you tracking details shortly. Thank you for shopping with us! 🎉",
+      "request_location": "Can you share your location?",
+      "location_shared": "Location shared",
+      "buttons": {
+        "confirm": "Confirm Order",
+        "cancel": "Cancel",
+        "will_confirm_later": "Will Confirm Later",
+        "send_location": "Share Location"
+      }
+    },
     "bot_name": "Post Order Bot",
     "typing_placeholder": "Type a message...",
     "stats_title": "Real-Time Performance",
@@ -62,7 +72,8 @@
     "feature_5": "Fallback to human agent when needed"
   },
   "problems": {
-    "title": "Problems We Solve",
+    "title": "Delivery driver lost again? Customer not responding? Burning money on shipping?",
+    "subtitle": "Honestly, we know exactly how you feel",
     "loss": {
       "title": "Massive Financial Losses",
       "description": "30-40% of COD orders return due to lack of confirmation, costing you thousands monthly in wasted shipping"
@@ -79,8 +90,30 @@
       "title": "Difficulty Scaling",
       "description": "As your orders increase, confirmation chaos and rejection rates grow - you can't scale this way"
     },
-    "reality": "The harsh truth: every rejected order costs you 50-80 EGP in shipping, packaging, and wasted time",
-    "reality_highlight": "Can you afford these losses?"
+    "address": {
+      "title": "Address Verification",
+      "description": "The address you receive from the customer is not verified, leading to failed deliveries and lost orders"
+    },
+    "reality": "This is not a problem with the customer... This is not a problem with the system!",
+    "reality_highlight": "And the solution is in 'Akeed'"
+  },
+  "how_it_works": {
+    "section_title": "How Akeed Works?",
+    "main_title": "Just 3 Steps... Your Orders Are Safe.",
+    "steps": {
+      "connect": {
+        "title": "Connect Your Store (in 60 seconds)",
+        "description": "Whether on Shopify, WooCommerce, Salla, Zid, or others, integration is easy and simple. No code or programming needed, Akeed detects your orders as soon as they come in."
+      },
+      "automation": {
+        "title": "Akeed Handles It All",
+        "description": "Right after the order, Akeed bot sends a friendly message to the customer (with your brand name), confirms order details, and requests their GPS Location."
+      },
+      "ship": {
+        "title": "Ship With Confidence (Save Money)",
+        "description": "The order is updated in your store dashboard as 'Confirmed' with a map link. And those who didn’t confirm or send location? Akeed flags them so you don’t ship and save wasted shipping costs!"
+      }
+    }
   },
   "solution": {
     "title": "Smart Solution for Your Store",
@@ -100,23 +133,39 @@
       }
     },
     "auto": {
-      "title": "🤖 Smart Automation 24/7",
+      "title": "Smart Automation 24/7",
       "description": "Bot works non-stop - no holidays, no sleep, no human errors"
     },
     "response": {
-      "title": "⚡ Instant Response",
+      "title": "Instant Response",
       "description": "Messages arrive in seconds, 3x higher response rate than traditional calls"
     },
     "natural": {
-      "title": "💬 Natural Conversations",
+      "title": "Natural Conversations",
       "description": "Smart Arabic replies that understand customer intent - like a professional employee"
     },
     "analytics": {
-      "title": "📊 Advanced Analytics",
+      "title": "Advanced Analytics",
       "description": "Dashboard shows everything: confirmation rates, reasons, best times"
     },
     "testimonial_1": "After using Post Order, our confirmation rate went from 55% to 89%! We saved 15,000 EGP monthly from return shipping. The bot works better than 3 employees!",
-    "orders_monthly": "orders monthly"
+    "orders_monthly": "orders monthly",
+    "fast-confirm": {
+      "title": "Faster Confirmation",
+      "description": "The customer feels valued by the brand and confirms their order in seconds while still excited"
+    },
+    "location": {
+      "title": "Pinpoint Location",
+      "description": "The 'Akeed' bot doesn't just talk to the customer, it asks them to 'Share Location' on WhatsApp. This way, the courier reaches the customer directly on the map, without getting lost or calling 100 times!"
+    },
+    "save-time": {
+      "title": "Save Your Time & Effort",
+      "description": "No more wasting time on boring confirmation calls. Focus on more important tasks and leave the endless confirmation and double-checking to 'Akeed'."
+    },
+    "integration": {
+      "title": "Seamless Integration",
+      "description": "Easily connects with popular e-commerce platforms - setup in minutes"
+    }
   },
   "pricing": {
     "title": "Pay as You Use.. The \"Recharge Card\" System Has Arrived at \"Post Order\"!",
@@ -149,6 +198,8 @@
     }
   },
   "faq": {
+    "section_title": "Frequently Asked Questions",
+    "section_description": "Everything you need to know about Akeed and our services. If you can't find your answer here, contact us directly!",
     "title": "Frequently Asked Questions",
     "integration": {
       "question": "How does it integrate with my store?",
@@ -219,6 +270,14 @@
     "important_text": "Open WhatsApp and send us 'Ready' at number:",
     "important_cta": "So we can start with you immediately",
     "cta": "Open WhatsApp Now 📱"
+  },
+  "roi_calculator": {
+    "section_title": "Calculate for yourself... How much can Akeed save you monthly?",
+    "orders": "Orders per month",
+    "returns_without": "Avg. returns (without Akeed)",
+    "returns_with": "Avg. returns (with Akeed)",
+    "savings": "Expected monthly shipping savings",
+    "currency": "EGP"
   },
   "footer": {
     "copyright": "© 2024 Post Order. All rights reserved."
