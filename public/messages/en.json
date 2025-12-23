@@ -277,7 +277,8 @@
     "returns_without": "Avg. returns (without Akeed)",
     "returns_with": "Avg. returns (with Akeed)",
     "savings": "Expected monthly shipping savings",
-    "currency": "EGP"
+    "currency": "EGP",
+    "note": "Note: Average shipping cost burned per order is around 60 EGP (round trip)."
   },
   "footer": {
     "copyright": "© 2024 Post Order. All rights reserved."
