@@ -30,7 +30,23 @@ export default function Pricing() {
         </div>
 
         {/* Pricing Grid */}
-        <div className="mb-12 grid grid-cols-1 gap-4 divide-x divide-gray-200 overflow-hidden md:grid-cols-5 md:gap-8">
+        <div className="mb-12 grid grid-cols-1 gap-4 divide-x divide-gray-200 overflow-hidden md:grid-cols-6 md:gap-8">
+          <div className="flex flex-col rounded-xl border-gray-200 bg-white text-center">
+            {/* Tier Name */}
+            <div className="flex h-20 justify-center rounded-t-xl border-b bg-slate-100/50 p-3 font-bold md:flex-col md:items-center">
+              <span className="mb-1 text-base">{t('tier')}</span>
+            </div>
+
+            {/* Total Price */}
+            <div className="flex min-h-28 justify-center border-b bg-slate-100/50 p-3 font-bold md:flex-col md:items-center">
+              <span>{t('total_price')}</span>
+            </div>
+
+            {/* Per Order Price */}
+            <div className="flex h-20 justify-center rounded-b-xl bg-slate-100/50 p-3 font-bold md:flex-col md:items-center">
+              <span>{t('price_per_order')}</span>
+            </div>
+          </div>
           {tiers.map((tier: Tier, idx: number) => (
             <div
               key={tier.key}
@@ -49,11 +65,16 @@ export default function Pricing() {
               {/* Total Price */}
               <div className="flex min-h-28 flex-col items-center justify-center border-b p-5">
                 {tier.isFree ? (
-                  <span className="inline-block rounded-lg bg-emerald-500 px-4 py-2 text-base font-bold text-white">
-                    {t('free_badge')}
-                  </span>
+                  <>
+                    <span className="mb-2 inline-block rounded-lg bg-emerald-500 px-4 py-2 text-base font-bold text-white">
+                      {t('free')}
+                    </span>
+                    <span className="text-md font-semibold">
+                      {t('free_badge')}
+                    </span>
+                  </>
                 ) : (
-                  <span className="text-2xl font-black text-emerald-600">
+                  <span className="text-2xl font-semibold text-emerald-600">
                     {tier.price} {t('currency')}
                   </span>
                 )}
@@ -62,8 +83,8 @@ export default function Pricing() {
               {/* Per Order Price */}
               <div className="flex h-20 flex-col items-center justify-center p-4">
                 {tier.isFree ? (
-                  <span className="text-sm font-bold text-emerald-500">
-                    {t('free_badge')}
+                  <span className="text-lg font-bold text-emerald-500">
+                    {t('free')}
                   </span>
                 ) : (
                   <div className="flex flex-col items-center gap-1 text-sm font-medium">

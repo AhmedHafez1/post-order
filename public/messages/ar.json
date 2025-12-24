@@ -175,7 +175,11 @@
     "check_3": "كل ما تشحن أكتر، سعر الأوردر يقل",
     "orders_label": "طلب",
     "currency": "ج.م",
-    "free_badge": "مجاناً 20 أوردر هدية",
+    "free_badge": "20 أوردر هدية",
+    "free": "مجاناً",
+    "price_per_order": "سعر الأوردر",
+    "total_price": "السعر الإجمالي",
+    "tier": "الباقة",
     "saving": "توفير",
     "cta_recharge": "اشحن رصيدك وابدأ الآن",
     "tiers": {
