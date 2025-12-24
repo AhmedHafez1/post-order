@@ -9,10 +9,13 @@ import { useTranslations } from 'next-intl'
 import { usePathname } from 'next/navigation'
 import { ChatInterface } from '../ui/ChatInterface'
 import { LogoTicker } from '../ui'
+import { useState } from 'react'
+import { ReservationModal } from './ReservationModal'
 
 function Hero() {
   const t = useTranslations('hero')
   const pathname = usePathname()
+  const [isReservationModalOpen, setIsReservationModalOpen] = useState(false)
 
   // Extract locale from pathname (assuming /[locale]/...)
   const locale = pathname?.split('/')[1] === 'en' ? 'en' : 'ar'
@@ -60,7 +63,7 @@ function Hero() {
         >
           <SocialProof />
           <button
-            onClick={() => scrollToSection('pricing')}
+            onClick={() => setIsReservationModalOpen(true)}
             className="group relative inline-flex items-center justify-center gap-2 rounded-xl bg-linear-to-r from-emerald-600 to-emerald-500 px-8 py-6 text-lg font-bold text-white shadow-sm shadow-emerald-500/30 transition-all hover:-translate-y-0.5 hover:shadow-gray-400/70"
             suppressHydrationWarning
           >
@@ -102,6 +105,10 @@ function Hero() {
 
       {/* Scroll Indicator */}
       <ScrollDownArrow to="problem" />
+      <ReservationModal
+        isOpen={isReservationModalOpen}
+        onClose={() => setIsReservationModalOpen(false)}
+      />
     </section>
   )
 }

@@ -6,10 +6,13 @@ import { pricing } from '@/config/site'
 import { CheckCircle2 } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { Tier } from '@/types/tier.model'
+import { useState } from 'react'
+import { ReservationModal } from './ReservationModal'
 
 export default function Pricing() {
   const t = useTranslations('pricing')
   const { tiers } = pricing
+  const [isReservationModalOpen, setIsReservationModalOpen] = useState(false)
 
   const checks = [t('check_1'), t('check_2'), t('check_3')]
 
@@ -107,16 +110,16 @@ export default function Pricing() {
           <Button
             size="lg"
             className="h-14 rounded-xl bg-emerald-500 px-12 font-bold text-white hover:bg-emerald-600"
-            onClick={() =>
-              document
-                .getElementById('reserve')
-                ?.scrollIntoView({ behavior: 'smooth' })
-            }
+            onClick={() => setIsReservationModalOpen(true)}
           >
             {t('cta_recharge')}
           </Button>
         </div>
       </Container>
+      <ReservationModal
+        isOpen={isReservationModalOpen}
+        onClose={() => setIsReservationModalOpen(false)}
+      />
     </Section>
   )
 }

@@ -3,9 +3,18 @@
 import { useState } from 'react'
 import { useTranslations } from 'next-intl'
 import { Button } from '@/components/ui/button'
-import { useForm } from 'react-hook-form'
+import { Input } from '@/components/ui/input'
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from '@/components/ui/select'
+import { useForm, Controller } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
 import * as z from 'zod'
+import { usePathname } from 'next/navigation'
 
 const formSchema = z.object({
   name: z.string().min(2, 'Name must be at least 2 characters'),
@@ -22,24 +31,27 @@ type FormData = z.infer<typeof formSchema>
 export function WaitlistForm() {
   const t = useTranslations('form')
   const [isSubmitting, setIsSubmitting] = useState(false)
+  const pathname = usePathname()
+  const locale = pathname.split('/')[1]
 
   const {
     register,
     handleSubmit,
+    control,
     formState: { errors },
   } = useForm<FormData>({
     resolver: zodResolver(formSchema),
   })
 
   const onSubmit = async (data: FormData) => {
-    console.log(data)
+    console.log({ ...data, locale })
     setIsSubmitting(true)
 
     // TODO: Send data to actual API endpoint
   }
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
+    <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
       {/* Store Name */}
       <div>
         <label
@@ -48,11 +60,10 @@ export function WaitlistForm() {
         >
           {t('name.label')} *
         </label>
-        <input
+        <Input
           id="name"
           type="text"
           {...register('name')}
-          className="w-full rounded-lg border-2 border-gray-300 px-4 py-3 transition-colors focus:border-emerald-500 focus:outline-none"
           placeholder={t('name.placeholder')}
           suppressHydrationWarning
         />
@@ -69,11 +80,10 @@ export function WaitlistForm() {
         >
           {t('phone.label')} *
         </label>
-        <input
+        <Input
           id="phone"
           type="tel"
           {...register('phone')}
-          className="w-full rounded-lg border-2 border-gray-300 px-4 py-3 transition-colors focus:border-emerald-500 focus:outline-none"
           placeholder={t('phone.placeholder')}
           suppressHydrationWarning
         />
@@ -90,11 +100,10 @@ export function WaitlistForm() {
         >
           {t('email.label')} *
         </label>
-        <input
+        <Input
           id="email"
           type="email"
           {...register('email')}
-          className="w-full rounded-lg border-2 border-gray-300 px-4 py-3 transition-colors focus:border-emerald-500 focus:outline-none"
           placeholder={t('email.placeholder')}
           suppressHydrationWarning
         />
@@ -111,11 +120,10 @@ export function WaitlistForm() {
         >
           {t('storeUrl.label')}
         </label>
-        <input
+        <Input
           id="storeUrl"
           type="url"
           {...register('storeUrl')}
-          className="w-full rounded-lg border-2 border-gray-300 px-4 py-3 transition-colors focus:border-emerald-500 focus:outline-none"
           placeholder={t('storeUrl.placeholder')}
           suppressHydrationWarning
         />
@@ -129,21 +137,34 @@ export function WaitlistForm() {
         >
           {t('monthlyOrders.label')} *
         </label>
-        <select
-          id="monthlyOrders"
-          {...register('monthlyOrders')}
-          className="w-full rounded-lg border-2 border-gray-300 px-4 py-3 transition-colors focus:border-emerald-500 focus:outline-none"
-          suppressHydrationWarning
-        >
-          <option value="">{t('monthlyOrders.placeholder')}</option>
-          <option value="0-50">{t('monthlyOrders.options.0-50')}</option>
-          <option value="50-200">{t('monthlyOrders.options.50-200')}</option>
-          <option value="200-500">{t('monthlyOrders.options.200-500')}</option>
-          <option value="500-1000">
-            {t('monthlyOrders.options.500-1000')}
-          </option>
-          <option value="1000+">{t('monthlyOrders.options.1000+')}</option>
-        </select>
+        <Controller
+          name="monthlyOrders"
+          control={control}
+          render={({ field }) => (
+            <Select onValueChange={field.onChange} defaultValue={field.value}>
+              <SelectTrigger suppressHydrationWarning>
+                <SelectValue placeholder={t('monthlyOrders.placeholder')} />
+              </SelectTrigger>
+              <SelectContent>
+                <SelectItem value="0-50">
+                  {t('monthlyOrders.options.0-50')}
+                </SelectItem>
+                <SelectItem value="50-200">
+                  {t('monthlyOrders.options.50-200')}
+                </SelectItem>
+                <SelectItem value="200-500">
+                  {t('monthlyOrders.options.200-500')}
+                </SelectItem>
+                <SelectItem value="500-1000">
+                  {t('monthlyOrders.options.500-1000')}
+                </SelectItem>
+                <SelectItem value="1000+">
+                  {t('monthlyOrders.options.1000+')}
+                </SelectItem>
+              </SelectContent>
+            </Select>
+          )}
+        />
         {errors.monthlyOrders && (
           <p className="mt-1 text-sm text-red-600">
             {t('monthlyOrders.required')}
