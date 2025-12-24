@@ -22,10 +22,10 @@ export default function Pricing() {
         <div className="mb-12 text-center">
           <h2 className="mb-4 text-3xl font-black md:text-4xl">{t('title')}</h2>
           <p className="mb-8 text-gray-600">{t('subtitle')}</p>
-          <div className="flex flex-wrap justify-center gap-6 text-sm font-bold text-gray-700">
+          <div className="text-md flex flex-wrap justify-center gap-6 font-bold text-gray-700">
             {checks.map((c, i) => (
               <div key={i} className="flex items-center gap-2">
-                <CheckCircle2 className="h-5 w-5 text-emerald-500" />
+                <CheckCircle2 className="h-6 w-6 text-emerald-500" />
                 <span>{c}</span>
               </div>
             ))}
@@ -33,10 +33,10 @@ export default function Pricing() {
         </div>
 
         {/* Pricing Grid */}
-        <div className="mb-12 grid grid-cols-1 gap-2 overflow-hidden md:grid-cols-6 md:gap-4">
-          <div className="flex flex-col rounded-xl border-gray-200 bg-white text-center">
+        <div className="relative mt-12 mb-12 grid grid-cols-1 gap-2 md:grid-cols-6 md:gap-4">
+          <div className="flex flex-col rounded-xl border-gray-200 text-center">
             {/* Tier Name */}
-            <div className="flex h-20 justify-center rounded-t-xl border-b bg-slate-100/50 p-3 font-bold md:flex-col md:items-center">
+            <div className="flex h-20 flex-col justify-center rounded-t-xl border-b bg-slate-100/50 p-3 font-bold md:flex-col md:items-center">
               <span className="mb-1 text-base">{t('tier')}</span>
             </div>
 
@@ -53,12 +53,12 @@ export default function Pricing() {
           {tiers.map((tier: Tier, idx: number) => (
             <div
               key={tier.key}
-              className={`flex flex-col rounded-xl bg-white text-center transition-transform ${tier.isFree ? 'bg-gray-50/70' : ''} ${tier.key === 'growth' ? 'relative z-10 scale-105 border-2 border-emerald-500 shadow-xl' : 'border border-gray-200'}`}
+              className={`flex flex-col rounded-xl bg-white text-center transition-transform ${tier.isFree ? 'bg-gray-50/70' : ''} ${tier.key === 'growth' ? 'relative z-10 border-2 border-emerald-500 shadow-xl' : 'border border-gray-200'}`}
             >
               {/* Most Popular Badge */}
               {tier.key === 'growth' && (
                 <div className="absolute -top-4 left-1/2 z-20 -translate-x-1/2">
-                  <span className="rounded-full bg-linear-to-r from-emerald-500 to-emerald-600 px-4 py-1.5 text-xs font-bold text-white shadow-lg">
+                  <span className="rounded-full bg-linear-to-r from-emerald-500 to-emerald-600 px-3 py-1 text-xs font-bold text-white shadow-lg">
                     {t('most_popular')}
                   </span>
                 </div>
