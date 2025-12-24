@@ -1,6 +1,7 @@
 'use client'
 
 import { useTranslations } from 'next-intl'
+import { usePathname } from 'next/navigation'
 import { Container } from '@/components/ui/container'
 import { Section } from '@/components/ui/section'
 import { motion } from 'framer-motion'
@@ -24,6 +25,9 @@ const item = {
 
 function Problem() {
   const t = useTranslations('problems')
+  const pathname = usePathname()
+  const locale = pathname?.split('/')[1] === 'ar' ? 'ar' : 'en'
+  const isRTL = locale === 'ar'
 
   const scrollToSection = (id: string) => {
     document
@@ -32,16 +36,19 @@ function Problem() {
   }
 
   return (
-    <Section id="problem" className="relative px-8 sm:px-12 md:px-16 lg:px-48">
+    <Section
+      id="problem"
+      className="relative px-6 sm:px-8 md:px-12 lg:px-16 xl:px-48"
+    >
       <Container>
         {/* Section Header */}
-        <div className="mb-10 text-center">
+        <div className="mb-8 text-center sm:mb-10 lg:mb-12">
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
-            className="mb-4 text-xl leading-tight font-black text-slate-700 sm:text-2xl lg:text-3xl"
+            className="mb-3 text-2xl leading-tight font-black text-slate-700 sm:mb-4 sm:text-3xl md:text-4xl lg:text-5xl"
           >
             {t('title')}
           </motion.h2>
@@ -50,7 +57,7 @@ function Problem() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.2 }}
-            className="mb-8 text-lg font-medium text-slate-600 sm:text-xl lg:mb-16"
+            className="mb-6 text-base font-medium text-slate-600 sm:mb-8 sm:text-lg md:text-xl lg:mb-12"
           >
             {t('subtitle')}
           </motion.p>
@@ -62,23 +69,25 @@ function Problem() {
           initial="hidden"
           whileInView="show"
           viewport={{ once: true, margin: '-50px' }}
-          className="mb-12 grid grid-cols-1 gap-8 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 lg:gap-16 xl:grid-cols-4"
+          className="mb-8 grid grid-cols-1 gap-4 sm:mb-10 sm:grid-cols-2 sm:gap-6 md:gap-8 lg:mb-12 lg:grid-cols-3 lg:gap-10 xl:grid-cols-4"
         >
           {features.problems.map((problem) => (
             <motion.div key={problem.key} variants={item}>
-              <div className="group relative overflow-hidden rounded-2xl border border-rose-100 bg-white px-8 py-6 transition-all duration-300 hover:-translate-y-1 hover:border-rose-200 hover:shadow-lg lg:min-h-80">
+              <div className="group relative overflow-hidden rounded-2xl border border-rose-100 bg-white px-4 py-5 transition-all duration-300 hover:-translate-y-1 hover:border-rose-200 hover:shadow-lg sm:px-6 sm:py-6 lg:min-h-80 lg:px-8">
                 {/* Gradient overlay on hover */}
                 <div className="absolute inset-0 bg-linear-to-br from-rose-50/50 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
 
-                <div className="relative flex flex-col items-center gap-4">
+                <div className="relative flex flex-row items-start gap-3 sm:flex-col sm:items-center sm:gap-4">
                   {/* Icon */}
-                  <div className="flex h-24 w-24 items-center justify-center text-6xl transition-transform duration-300 group-hover:scale-110">
+                  <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-xl bg-linear-to-br from-rose-50 to-rose-100 text-4xl shadow-sm transition-transform duration-300 group-hover:scale-110 group-hover:shadow-md sm:h-20 sm:w-20 sm:text-6xl lg:h-24 lg:w-24">
                     {problem.icon}
                   </div>
 
                   {/* Content */}
-                  <div className="flex-1 space-y-3 text-center">
-                    <h3 className="text-xl font-bold text-slate-700 transition-colors group-hover:text-rose-700">
+                  <div
+                    className={`flex-1 space-y-1 sm:space-y-2 sm:text-center lg:space-y-3 ${isRTL ? 'text-right' : 'text-left'}`}
+                  >
+                    <h3 className="text-base font-bold text-slate-700 transition-colors group-hover:text-rose-700 sm:text-lg lg:text-xl">
                       {t(`${problem.key}.title`)}
                     </h3>
                     <p className="text-sm leading-relaxed text-slate-600">
@@ -100,13 +109,13 @@ function Problem() {
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5, delay: 0.3 }}
-          className="relative m-8 overflow-hidden"
+          className="relative mx-4 overflow-hidden sm:mx-6 lg:mx-8"
         >
-          <div className="space-y-3 text-center">
-            <p className="text-lg leading-relaxed text-slate-700 md:text-xl">
+          <div className="space-y-2 text-center sm:space-y-3">
+            <p className="text-base leading-relaxed text-slate-700 sm:text-lg md:text-xl">
               {t('reality')}
             </p>
-            <p className="text-2xl font-black text-emerald-600 md:text-3xl">
+            <p className="text-xl font-black text-emerald-600 sm:text-2xl md:text-3xl lg:text-4xl">
               {t('reality_highlight')}
             </p>
           </div>
