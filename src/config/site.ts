@@ -25,14 +25,14 @@ export const pricing: { tiers: Tier[] } = {
       ordersDisplay: null, // Will show free badge
     },
     {
-      key: 'pro',
+      key: 'growth',
       orders: 200,
       price: 500,
       perOrder: 2.5,
       ordersDisplay: '200',
     },
     {
-      key: 'growth',
+      key: 'pro',
       orders: 500,
       price: 1000,
       perOrder: 2,
