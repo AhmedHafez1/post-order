@@ -15,6 +15,7 @@ import { useForm, Controller } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
 import * as z from 'zod'
 import { usePathname } from 'next/navigation'
+import { Phone, Store, Package, CheckCircle, AlertCircle } from 'lucide-react'
 
 const formSchema = z.object({
   name: z.string().min(2, 'Name must be at least 2 characters'),
@@ -30,6 +31,7 @@ type FormData = z.infer<typeof formSchema>
 export function WaitlistForm() {
   const t = useTranslations('form')
   const [isSubmitting, setIsSubmitting] = useState(false)
+  const [isSuccess, setIsSuccess] = useState(false)
   const pathname = usePathname()
   const locale = pathname.split('/')[1]
 
@@ -47,17 +49,38 @@ export function WaitlistForm() {
     setIsSubmitting(true)
 
     // TODO: Send data to actual API endpoint
+    setTimeout(() => {
+      setIsSubmitting(false)
+      setIsSuccess(true)
+    }, 1500)
+  }
+
+  if (isSuccess) {
+    return (
+      <div className="py-6 text-center">
+        <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-emerald-100">
+          <CheckCircle className="h-8 w-8 text-emerald-600" />
+        </div>
+        <h3 className="mb-2 text-xl font-bold text-gray-900">
+          {t('success_title') || 'تم التسجيل بنجاح! 🎉'}
+        </h3>
+        <p className="text-sm text-gray-600">
+          {t('success_message') || 'سنتواصل معك خلال 24 ساعة على الواتساب'}
+        </p>
+      </div>
+    )
   }
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
+    <div className="space-y-4">
       {/* Store Name */}
       <div>
         <label
           htmlFor="name"
-          className="mb-2 block text-sm font-bold text-gray-700"
+          className="mb-2 flex items-center gap-2 text-sm font-bold text-gray-700"
         >
-          {t('name.label')} *
+          <Store className="h-4 w-4 shrink-0 text-gray-500" />
+          <span>{t('name.label')} *</span>
         </label>
         <Input
           id="name"
@@ -65,10 +88,15 @@ export function WaitlistForm() {
           {...register('name')}
           placeholder={t('name.placeholder')}
           suppressHydrationWarning
-          className={errors.name ? 'border-red-500' : ''}
+          className={`h-12 text-base transition-colors ${
+            errors.name ? 'border-red-500 focus-visible:ring-red-500' : ''
+          }`}
         />
         {errors.name && (
-          <p className="mt-1 text-sm text-red-600">{t('name.required')}</p>
+          <div className="mt-2 flex items-center gap-1 text-sm text-red-600">
+            <AlertCircle className="h-4 w-4 shrink-0" />
+            <span>{t('name.required')}</span>
+          </div>
         )}
       </div>
 
@@ -76,9 +104,10 @@ export function WaitlistForm() {
       <div>
         <label
           htmlFor="phone"
-          className="mb-2 block text-sm font-bold text-gray-700"
+          className="mb-2 flex items-center gap-2 text-sm font-bold text-gray-700"
         >
-          {t('phone.label')} *
+          <Phone className="h-4 w-4 shrink-0 text-gray-500" />
+          <span>{t('phone.label')} *</span>
         </label>
         <Input
           id="phone"
@@ -86,10 +115,16 @@ export function WaitlistForm() {
           {...register('phone')}
           placeholder={t('phone.placeholder')}
           suppressHydrationWarning
-          className={errors.phone ? 'border-red-500' : ''}
+          dir="ltr"
+          className={`h-12 text-base transition-colors ${
+            errors.phone ? 'border-red-500 focus-visible:ring-red-500' : ''
+          }`}
         />
         {errors.phone && (
-          <p className="mt-1 text-sm text-red-600">{t('phone.invalid')}</p>
+          <div className="mt-2 flex items-center gap-1 text-sm text-red-600">
+            <AlertCircle className="h-4 w-4 shrink-0" />
+            <span>{t('phone.invalid')}</span>
+          </div>
         )}
       </div>
 
@@ -97,9 +132,10 @@ export function WaitlistForm() {
       <div>
         <label
           htmlFor="monthlyOrders"
-          className="mb-2 block text-sm font-bold text-gray-700"
+          className="mb-2 flex items-center gap-2 text-sm font-bold text-gray-700"
         >
-          {t('monthlyOrders.label')} *
+          <Package className="h-4 w-4 shrink-0 text-gray-500" />
+          <span>{t('monthlyOrders.label')} *</span>
         </label>
         <Controller
           name="monthlyOrders"
@@ -108,7 +144,9 @@ export function WaitlistForm() {
             <Select onValueChange={field.onChange} defaultValue={field.value}>
               <SelectTrigger
                 suppressHydrationWarning
-                className={errors.monthlyOrders ? 'border-red-500' : ''}
+                className={`h-12 text-base ${
+                  errors.monthlyOrders ? 'border-red-500' : ''
+                }`}
               >
                 <SelectValue placeholder={t('monthlyOrders.placeholder')} />
               </SelectTrigger>
@@ -133,20 +171,59 @@ export function WaitlistForm() {
           )}
         />
         {errors.monthlyOrders && (
-          <p className="mt-1 text-sm text-red-600">
-            {t('monthlyOrders.required')}
-          </p>
+          <div className="mt-2 flex items-center gap-1 text-sm text-red-600">
+            <AlertCircle className="h-4 w-4 shrink-0" />
+            <span>{t('monthlyOrders.required')}</span>
+          </div>
         )}
       </div>
 
       {/* Submit Button */}
       <Button
-        type="submit"
+        onClick={handleSubmit(onSubmit)}
         disabled={isSubmitting}
-        className="mt-6 w-full bg-linear-to-r from-emerald-600 to-emerald-500 py-6 text-lg font-bold text-white shadow-lg transition-all hover:scale-105 hover:shadow-xl disabled:opacity-50"
+        className="mt-6 w-full bg-gradient-to-r from-emerald-600 to-emerald-500 py-6 text-base font-bold shadow-lg transition-all hover:scale-[1.02] hover:shadow-xl active:scale-100 disabled:cursor-not-allowed disabled:opacity-50 sm:text-lg"
       >
-        {isSubmitting ? t('submitting') : t('submit')}
+        {isSubmitting ? (
+          <span className="flex items-center justify-center gap-2">
+            <svg className="h-5 w-5 animate-spin" viewBox="0 0 24 24">
+              <circle
+                className="opacity-25"
+                cx="12"
+                cy="12"
+                r="10"
+                stroke="currentColor"
+                strokeWidth="4"
+                fill="none"
+              />
+              <path
+                className="opacity-75"
+                fill="currentColor"
+                d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
+              />
+            </svg>
+            {t('submitting')}
+          </span>
+        ) : (
+          t('submit')
+        )}
       </Button>
-    </form>
+
+      {/* Trust Indicators */}
+      <div className="mt-4 grid grid-cols-1 gap-2 text-center text-xs text-gray-500 sm:grid-cols-3">
+        <div className="flex items-center justify-center gap-1">
+          <CheckCircle className="h-3 w-3 shrink-0 text-emerald-500" />
+          <span>{t('trust.secure') || 'بيانات آمنة 100%'}</span>
+        </div>
+        <div className="flex items-center justify-center gap-1">
+          <CheckCircle className="h-3 w-3 shrink-0 text-emerald-500" />
+          <span>{t('trust.no_fees') || 'بدون رسوم خفية'}</span>
+        </div>
+        <div className="flex items-center justify-center gap-1">
+          <CheckCircle className="h-3 w-3 shrink-0 text-emerald-500" />
+          <span>{t('trust.cancel_anytime') || 'إلغاء في أي وقت'}</span>
+        </div>
+      </div>
+    </div>
   )
 }

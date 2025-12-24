@@ -44,7 +44,7 @@ export function LogoTicker() {
             {[...logos, ...logos].map((logo, index) => (
               <div
                 key={`${logo.name}-${index}`}
-                className="flex flex-shrink-0 items-center"
+                className="flex shrink-0 items-center"
               >
                 <Image
                   src={logo.src}
