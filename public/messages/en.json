@@ -175,7 +175,11 @@
     "check_3": "The more you recharge, the lower the per-order price",
     "orders_label": "orders",
     "currency": "EGP",
-    "free_badge": "FREE 20 orders gift",
+    "free_badge": "First 50 confirmations!",
+    "free": "Free",
+    "price_per_order": "Price per Order",
+    "total_price": "Total Price",
+    "tier": "Tier",
     "saving": "Save",
     "cta_recharge": "Recharge Your Balance and Start Now",
     "tiers": {

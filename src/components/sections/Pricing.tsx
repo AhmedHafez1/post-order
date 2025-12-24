@@ -30,7 +30,7 @@ export default function Pricing() {
         </div>
 
         {/* Pricing Grid */}
-        <div className="mb-12 grid grid-cols-1 gap-4 divide-x divide-gray-200 overflow-hidden md:grid-cols-6 md:gap-8">
+        <div className="mb-12 grid grid-cols-1 gap-2 divide-x divide-gray-200 overflow-hidden md:grid-cols-6 md:gap-4">
           <div className="flex flex-col rounded-xl border-gray-200 bg-white text-center">
             {/* Tier Name */}
             <div className="flex h-20 justify-center rounded-t-xl border-b bg-slate-100/50 p-3 font-bold md:flex-col md:items-center">
@@ -87,12 +87,12 @@ export default function Pricing() {
                     {t('free')}
                   </span>
                 ) : (
-                  <div className="flex flex-col items-center gap-1 text-sm font-medium">
+                  <div className="text-md flex flex-col items-center gap-1 font-medium md:flex-row md:gap-2">
                     <span>
                       {tier.perOrder} {t('currency')}
                     </span>
                     {tier.saving && (
-                      <span className="mt-1 rounded-full bg-emerald-100 px-2 py-0.5 text-[11px] font-bold text-emerald-700">
+                      <span className="mt-1 rounded-full bg-emerald-100 px-3 py-1 text-[11px] font-bold text-emerald-700">
                         {t('saving')} {tier.saving}%
                       </span>
                     )}
