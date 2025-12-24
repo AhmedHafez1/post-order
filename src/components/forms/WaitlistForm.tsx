@@ -21,7 +21,6 @@ const formSchema = z.object({
   phone: z
     .string()
     .regex(/^(\+20|0)?1[0-2,5]\d{8}$/, 'Invalid Egyptian phone number'),
-  email: z.string().email('Invalid email address'),
   storeUrl: z.string().url().optional().or(z.literal('')),
   monthlyOrders: z.string().min(1, 'Please select order volume'),
 })
@@ -91,27 +90,6 @@ export function WaitlistForm() {
         />
         {errors.phone && (
           <p className="mt-1 text-sm text-red-600">{t('phone.invalid')}</p>
-        )}
-      </div>
-
-      {/* Email */}
-      <div>
-        <label
-          htmlFor="email"
-          className="mb-2 block text-sm font-bold text-gray-700"
-        >
-          {t('email.label')} *
-        </label>
-        <Input
-          id="email"
-          type="email"
-          {...register('email')}
-          placeholder={t('email.placeholder')}
-          suppressHydrationWarning
-          className={errors.email ? 'border-red-500' : ''}
-        />
-        {errors.email && (
-          <p className="mt-1 text-sm text-red-600">{t('email.invalid')}</p>
         )}
       </div>
 

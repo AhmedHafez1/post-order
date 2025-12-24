@@ -33,7 +33,7 @@ export default function Pricing() {
         </div>
 
         {/* Pricing Grid */}
-        <div className="mb-12 grid grid-cols-1 gap-2 divide-x divide-gray-200 overflow-hidden md:grid-cols-6 md:gap-4">
+        <div className="mb-12 grid grid-cols-1 gap-2 overflow-hidden md:grid-cols-6 md:gap-4">
           <div className="flex flex-col rounded-xl border-gray-200 bg-white text-center">
             {/* Tier Name */}
             <div className="flex h-20 justify-center rounded-t-xl border-b bg-slate-100/50 p-3 font-bold md:flex-col md:items-center">
@@ -53,8 +53,16 @@ export default function Pricing() {
           {tiers.map((tier: Tier, idx: number) => (
             <div
               key={tier.key}
-              className={`flex flex-col rounded-xl bg-white text-center ${idx !== tiers.length - 1 ? 'border-gray-200' : ''} ${tier.isFree ? 'bg-gray-50/70' : ''}`}
+              className={`flex flex-col rounded-xl bg-white text-center transition-transform ${tier.isFree ? 'bg-gray-50/70' : ''} ${tier.key === 'growth' ? 'relative z-10 scale-105 border-2 border-emerald-500 shadow-xl' : 'border border-gray-200'}`}
             >
+              {/* Most Popular Badge */}
+              {tier.key === 'growth' && (
+                <div className="absolute -top-4 left-1/2 z-20 -translate-x-1/2">
+                  <span className="rounded-full bg-linear-to-r from-emerald-500 to-emerald-600 px-4 py-1.5 text-xs font-bold text-white shadow-lg">
+                    {t('most_popular')}
+                  </span>
+                </div>
+              )}
               {/* Tier Name */}
               <div className="flex h-20 flex-col justify-center rounded-t-xl border-b bg-slate-100/50 p-3 font-bold">
                 <span className="mb-1 text-base">{t(`tiers.${tier.key}`)}</span>
