@@ -22,12 +22,12 @@ export function LogoTicker() {
   const isRtl = locale === 'ar'
 
   return (
-    <motion.div className="overflow-hidden border-y border-gray-200 bg-gradient-to-r from-gray-50 to-white pb-4">
+    <motion.div className="overflow-hidden border-y border-gray-200 bg-linear-to-r from-gray-50 to-white pb-4">
       <h3 className="pt-4 pb-6 text-sm text-gray-600">
         {t('easy_integrated')}
       </h3>
       <div className="container mx-auto">
-        <div className="flex overflow-hidden [mask-image:linear-gradient(to_right,transparent,black_10%,black_90%,transparent)]">
+        <div className="flex overflow-hidden mask-[linear-gradient(to_right,transparent,black_10%,black_90%,transparent)]">
           <motion.div
             className="flex flex-none gap-16 px-8" // Use px instead of pr to keep spacing even on both sides
             animate={{

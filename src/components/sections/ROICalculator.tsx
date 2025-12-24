@@ -88,7 +88,7 @@ export default function ROICalculator() {
               </div>
 
               {/* Savings */}
-              <div className="rounded-lg bg-gradient-to-r from-emerald-500 to-emerald-600 p-4 text-center">
+              <div className="rounded-lg bg-linear-to-r from-emerald-500 to-emerald-600 p-4 text-center">
                 <div className="mb-1 flex items-center justify-center gap-1 text-xs font-medium text-emerald-100">
                   <DollarSign className="h-3 w-3" />
                   <span>{t('savings')}</span>
@@ -106,7 +106,7 @@ export default function ROICalculator() {
           <div className="overflow-x-auto">
             <table className="w-full text-center">
               <thead>
-                <tr className="bg-gradient-to-r from-emerald-50 to-emerald-100">
+                <tr className="bg-linear-to-r from-emerald-50 to-emerald-100">
                   <th className="px-4 py-4 text-sm font-bold text-slate-700 lg:px-6 lg:text-base">
                     {t('orders')}
                   </th>
@@ -151,7 +151,7 @@ export default function ROICalculator() {
                         {row.returnsWith}
                       </div>
                     </td>
-                    <td className="bg-gradient-to-r from-emerald-50 to-emerald-100 px-4 py-4 lg:px-6">
+                    <td className="bg-linear-to-r from-emerald-50 to-emerald-100 px-4 py-4 lg:px-6">
                       <div className="flex flex-col items-center">
                         <span className="text-xl font-black text-emerald-700 lg:text-2xl">
                           {row.savings}

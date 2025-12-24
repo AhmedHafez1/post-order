@@ -182,7 +182,7 @@ export function WaitlistForm() {
       <Button
         onClick={handleSubmit(onSubmit)}
         disabled={isSubmitting}
-        className="mt-6 w-full bg-gradient-to-r from-emerald-600 to-emerald-500 py-6 text-base font-bold shadow-lg transition-all hover:scale-[1.02] hover:shadow-xl active:scale-100 disabled:cursor-not-allowed disabled:opacity-50 sm:text-lg"
+        className="mt-6 w-full bg-linear-to-r from-emerald-600 to-emerald-500 py-6 text-base font-bold shadow-lg transition-all hover:scale-[1.02] hover:shadow-xl active:scale-100 disabled:cursor-not-allowed disabled:opacity-50 sm:text-lg"
       >
         {isSubmitting ? (
           <span className="flex items-center justify-center gap-2">
@@ -208,22 +208,6 @@ export function WaitlistForm() {
           t('submit')
         )}
       </Button>
-
-      {/* Trust Indicators */}
-      <div className="mt-4 grid grid-cols-1 gap-2 text-center text-xs text-gray-500 sm:grid-cols-3">
-        <div className="flex items-center justify-center gap-1">
-          <CheckCircle className="h-3 w-3 shrink-0 text-emerald-500" />
-          <span>{t('trust.secure') || 'بيانات آمنة 100%'}</span>
-        </div>
-        <div className="flex items-center justify-center gap-1">
-          <CheckCircle className="h-3 w-3 shrink-0 text-emerald-500" />
-          <span>{t('trust.no_fees') || 'بدون رسوم خفية'}</span>
-        </div>
-        <div className="flex items-center justify-center gap-1">
-          <CheckCircle className="h-3 w-3 shrink-0 text-emerald-500" />
-          <span>{t('trust.cancel_anytime') || 'إلغاء في أي وقت'}</span>
-        </div>
-      </div>
     </div>
   )
 }

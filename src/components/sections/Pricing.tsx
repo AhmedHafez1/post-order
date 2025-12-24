@@ -55,7 +55,7 @@ export default function Pricing() {
               {/* Most Popular Badge */}
               {tier.key === 'growth' && (
                 <div className="absolute -top-3 left-1/2 -translate-x-1/2">
-                  <span className="flex items-center gap-1 rounded-full bg-gradient-to-r from-emerald-500 to-emerald-600 px-3 py-1 text-xs font-bold text-white shadow-lg">
+                  <span className="flex items-center gap-1 rounded-full bg-linear-to-r from-emerald-500 to-emerald-600 px-3 py-1 text-xs font-bold text-white shadow-lg">
                     <Zap className="h-3 w-3" />
                     {t('most_popular')}
                   </span>
@@ -134,7 +134,7 @@ export default function Pricing() {
                 {tiers.map((tier: Tier) => (
                   <div key={tier.key} className="flex justify-center">
                     {tier.key === 'growth' && (
-                      <span className="inline-flex items-center gap-1 rounded-full bg-gradient-to-r from-emerald-500 to-emerald-600 px-3 py-1 text-xs font-bold text-white shadow-lg">
+                      <span className="inline-flex items-center gap-1 rounded-full bg-linear-to-r from-emerald-500 to-emerald-600 px-3 py-1 text-xs font-bold text-white shadow-lg">
                         <Zap className="h-3 w-3" />
                         {t('most_popular')}
                       </span>
