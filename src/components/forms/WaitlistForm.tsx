@@ -66,6 +66,7 @@ export function WaitlistForm() {
           {...register('name')}
           placeholder={t('name.placeholder')}
           suppressHydrationWarning
+          className={errors.name ? 'border-red-500' : ''}
         />
         {errors.name && (
           <p className="mt-1 text-sm text-red-600">{t('name.required')}</p>
@@ -86,6 +87,7 @@ export function WaitlistForm() {
           {...register('phone')}
           placeholder={t('phone.placeholder')}
           suppressHydrationWarning
+          className={errors.phone ? 'border-red-500' : ''}
         />
         {errors.phone && (
           <p className="mt-1 text-sm text-red-600">{t('phone.invalid')}</p>
@@ -106,27 +108,11 @@ export function WaitlistForm() {
           {...register('email')}
           placeholder={t('email.placeholder')}
           suppressHydrationWarning
+          className={errors.email ? 'border-red-500' : ''}
         />
         {errors.email && (
           <p className="mt-1 text-sm text-red-600">{t('email.invalid')}</p>
         )}
-      </div>
-
-      {/* Store URL (Optional) */}
-      <div>
-        <label
-          htmlFor="storeUrl"
-          className="mb-2 block text-sm font-bold text-gray-700"
-        >
-          {t('storeUrl.label')}
-        </label>
-        <Input
-          id="storeUrl"
-          type="url"
-          {...register('storeUrl')}
-          placeholder={t('storeUrl.placeholder')}
-          suppressHydrationWarning
-        />
       </div>
 
       {/* Monthly Orders */}
@@ -142,7 +128,10 @@ export function WaitlistForm() {
           control={control}
           render={({ field }) => (
             <Select onValueChange={field.onChange} defaultValue={field.value}>
-              <SelectTrigger suppressHydrationWarning>
+              <SelectTrigger
+                suppressHydrationWarning
+                className={errors.monthlyOrders ? 'border-red-500' : ''}
+              >
                 <SelectValue placeholder={t('monthlyOrders.placeholder')} />
               </SelectTrigger>
               <SelectContent>
@@ -172,16 +161,11 @@ export function WaitlistForm() {
         )}
       </div>
 
-      {/* Info Text */}
-      <div className="rounded-lg bg-emerald-50 p-4 text-sm text-gray-700">
-        {t('info')}
-      </div>
-
       {/* Submit Button */}
       <Button
         type="submit"
         disabled={isSubmitting}
-        className="w-full bg-linear-to-r from-emerald-600 to-emerald-500 py-4 text-lg font-bold shadow-lg transition-all hover:scale-105 hover:shadow-xl disabled:opacity-50"
+        className="mt-6 w-full bg-linear-to-r from-emerald-600 to-emerald-500 py-6 text-lg font-bold text-white shadow-lg transition-all hover:scale-105 hover:shadow-xl disabled:opacity-50"
       >
         {isSubmitting ? t('submitting') : t('submit')}
       </Button>

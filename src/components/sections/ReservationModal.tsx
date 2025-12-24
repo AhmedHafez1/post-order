@@ -20,33 +20,18 @@ export function ReservationModal({ isOpen, onClose }: ReservationModalProps) {
 
   return (
     <Dialog open={isOpen} onOpenChange={onClose}>
-      <DialogContent className="sm:max-w-lg">
+      <DialogContent className="px-8 py-6 sm:max-w-lg">
         <DialogHeader className="text-center">
-          <DialogTitle className="mb-2 text-2xl font-black">
+          <DialogTitle className="mb-2 text-center text-2xl font-black">
             {t('reserve_title')}
           </DialogTitle>
-          <DialogDescription className="text-md text-gray-600">
+          <DialogDescription className="rounded-md bg-emerald-50 px-4 py-2 text-center text-sm font-medium text-emerald-700">
             {t('reserve_subtitle')}
           </DialogDescription>
         </DialogHeader>
 
         <div className="px-2 py-4">
           <WaitlistForm />
-        </div>
-
-        <div className="mt-4 flex flex-wrap items-center justify-center gap-x-6 gap-y-2 border-t pt-6 text-sm text-gray-500">
-          <div className="flex items-center gap-2">
-            <Shield className="h-4 w-4 text-emerald-600" />
-            <span>{t('trust_badges.secure')}</span>
-          </div>
-          <div className="flex items-center gap-2">
-            <CreditCard className="h-4 w-4 text-emerald-600" />
-            <span>{t('trust_badges.refund')}</span>
-          </div>
-          <div className="flex items-center gap-2">
-            <Headphones className="h-4 w-4 text-emerald-600" />
-            <span>{t('trust_badges.support')}</span>
-          </div>
         </div>
       </DialogContent>
     </Dialog>

@@ -38,7 +38,6 @@ export function Header() {
 
   const navigation = [
     { name: t('features'), id: 'solution' },
-    { name: t('demo'), id: 'demo' },
     { name: t('pricing'), id: 'pricing' },
     { name: t('faq'), id: 'faq' },
   ]

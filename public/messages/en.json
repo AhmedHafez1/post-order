@@ -191,8 +191,8 @@
     }
   },
   "reservation": {
-    "reserve_title": "🎁 Reserve at Founding Price",
-    "reserve_subtitle": "Last 8 spots remaining at reduced price - price increasing soon!",
+    "reserve_title": "Reserve Your Spot",
+    "reserve_subtitle": "We are currently activating accounts for a limited number of stores to ensure service quality. Leave your WhatsApp number or email, and we will contact you to activate your 50 free orders.",
     "trust_badges": {
       "secure": "100% secure data",
       "refund": "30-day refund",
