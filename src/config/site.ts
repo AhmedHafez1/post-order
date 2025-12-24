@@ -2,7 +2,7 @@ import { SiteConfig } from '@/types'
 import { Tier } from '@/types/tier.model'
 
 export const siteConfig: SiteConfig = {
-  name: 'Post Order',
+  name: 'Akeed',
   description: 'Smart WhatsApp bot for COD order verification',
   url: process.env.NEXT_PUBLIC_APP_URL || 'http://localhost:3000',
   ogImage: '/images/og-image.jpg',

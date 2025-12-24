@@ -132,7 +132,7 @@ export function ChatInterface() {
                   <Bot className="h-6 w-6 text-emerald-600" />
                 </div>
                 <div>
-                  <div className="font-bold text-white">Post Order</div>
+                  <div className="font-bold text-white">Akeed</div>
                   <div className="flex items-center gap-1 text-xs text-emerald-100">
                     <div className="h-2 w-2 animate-pulse rounded-full bg-green-300" />
                     {t('phone_status')}

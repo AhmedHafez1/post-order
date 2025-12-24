@@ -80,7 +80,7 @@ export function Header() {
               </div>
               <div>
                 <h1 className="bg-linear-to-r from-emerald-600 to-emerald-500 bg-clip-text text-xl font-black text-transparent">
-                  Post Order
+                  Akeed
                 </h1>
                 <p className="text-xs font-medium text-gray-600">
                   {t('tagline')}

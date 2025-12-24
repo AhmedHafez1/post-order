@@ -49,7 +49,7 @@
         "send_location": "Share Location"
       }
     },
-    "bot_name": "Post Order Bot",
+    "bot_name": "Akeed Bot",
     "typing_placeholder": "Type a message...",
     "stats_title": "Real-Time Performance",
     "stat_1_label": "Orders Confirmed",
@@ -148,7 +148,7 @@
       "title": "Advanced Analytics",
       "description": "Dashboard shows everything: confirmation rates, reasons, best times"
     },
-    "testimonial_1": "After using Post Order, our confirmation rate went from 55% to 89%! We saved 15,000 EGP monthly from return shipping. The bot works better than 3 employees!",
+    "testimonial_1": "After using Akeed, our confirmation rate went from 55% to 89%! We saved 15,000 EGP monthly from return shipping. The bot works better than 3 employees!",
     "orders_monthly": "orders monthly",
     "fast-confirm": {
       "title": "Faster Confirmation",
@@ -168,7 +168,7 @@
     }
   },
   "pricing": {
-    "title": "Pay as You Use.. The \"Recharge Card\" System Has Arrived at \"Post Order\"!",
+    "title": "Pay as You Use.. The \"Recharge Card\" System Has Arrived at \"Akeed\"!",
     "subtitle": "Your balance doesn't expire at month-end. Recharge and use whenever you want.",
     "check_1": "No mandatory monthly subscription",
     "check_2": "No hidden fees",
@@ -283,6 +283,6 @@
     "note": "Note: Average shipping cost burned per order is around 60 EGP (round trip)."
   },
   "footer": {
-    "copyright": "© 2024 Post Order. All rights reserved."
+    "copyright": "© 2024 Akeed. All rights reserved."
   }
 }
