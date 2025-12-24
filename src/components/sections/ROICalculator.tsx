@@ -74,7 +74,7 @@ export default function ROICalculator() {
         </div>
 
         {/* Scroll Indicator */}
-        <ScrollDownArrow to="pricing" />
+        <ScrollDownArrow to="pricing" className="hidden sm:block" />
       </Container>
     </Section>
   )

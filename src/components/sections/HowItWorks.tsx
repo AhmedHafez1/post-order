@@ -104,7 +104,7 @@ function HowItWorks() {
           </motion.div>
 
           {/* Scroll Indicator */}
-          <ScrollDownArrow to="calculator" />
+          <ScrollDownArrow to="calculator" className="hidden sm:block" />
         </Container>
       </Section>
     </>

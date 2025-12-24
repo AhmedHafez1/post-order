@@ -28,7 +28,7 @@ function Hero() {
 
   return (
     <section className="relative flex min-h-screen flex-col justify-center gap-8 overflow-hidden px-4 pt-20 pb-8 sm:gap-12 sm:px-6 sm:pt-24 sm:pb-12 md:flex-row md:gap-16 md:px-8 lg:gap-20 lg:px-16 lg:pt-28 lg:pb-16">
-      <div className="flex max-w-4xl flex-col items-center text-center md:w-3/5 md:justify-center lg:px-4">
+      <div className="flex max-w-4xl flex-col items-center px-8 text-center md:w-3/5 md:justify-center lg:px-4">
         {/* Main Headline */}
         <motion.div
           initial={{ opacity: 0, y: 10 }}
@@ -59,7 +59,7 @@ function Hero() {
           initial={{ opacity: 0, y: 12 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.3 }}
-          className="mb-4 flex w-full flex-col items-center justify-center gap-3 sm:mb-6 sm:gap-4 md:flex-row lg:mb-8"
+          className="mb-6 flex w-full flex-col items-center justify-center gap-6 md:flex-row lg:mb-8"
         >
           <SocialProof />
           <button
@@ -107,7 +107,7 @@ function Hero() {
       </div>
 
       {/* Scroll Indicator */}
-      <ScrollDownArrow to="problem" />
+      <ScrollDownArrow to="problem" className="hidden sm:block" />
       <ReservationModal
         isOpen={isReservationModalOpen}
         onClose={() => setIsReservationModalOpen(false)}

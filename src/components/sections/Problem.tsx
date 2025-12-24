@@ -113,7 +113,7 @@ function Problem() {
         </motion.div>
 
         {/* Scroll Indicator */}
-        <ScrollDownArrow to="solution" />
+        <ScrollDownArrow to="solution" className="hidden sm:block" />
       </Container>
     </Section>
   )

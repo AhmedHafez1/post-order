@@ -101,7 +101,7 @@ export function Solution() {
         </motion.div>
 
         {/* Scroll Indicator */}
-        <ScrollDownArrow to="how-it-works" />
+        <ScrollDownArrow to="how-it-works" className="hidden sm:block" />
       </Container>
     </Section>
   )
