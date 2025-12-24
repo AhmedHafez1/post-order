@@ -111,10 +111,10 @@ export function ChatInterface() {
       whileInView={{ opacity: 1, x: 0 }}
       viewport={{ once: true }}
       transition={{ delay: 0.3 }}
-      className="relative"
+      className="relative w-full md:w-auto"
     >
       {/* iPhone-style Frame */}
-      <div className="relative mx-auto w-80">
+      <div className="relative mx-auto w-full max-w-[320px] md:w-80">
         {/* Glow effect */}
         <div className="/10 blur-1xl absolute inset-0 rounded-[3rem] bg-linear-to-br from-gray-400/20 to-gray-200" />
 
