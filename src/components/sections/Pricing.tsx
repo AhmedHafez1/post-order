@@ -21,15 +21,15 @@ export default function Pricing() {
       <Container>
         {/* Header */}
         <div className="mb-8 text-center sm:mb-12">
-          <h2 className="mb-3 text-2xl font-black sm:text-3xl md:text-4xl">
+          <h2 className="mb-4 text-2xl font-black sm:text-3xl md:text-4xl">
             {t('title')}
           </h2>
-          <p className="mb-6 text-sm text-gray-600 sm:mb-8 sm:text-base">
+          <p className="mb-8 px-8 text-sm text-gray-600 sm:mb-8 sm:text-base">
             {t('subtitle')}
           </p>
 
           {/* Check items */}
-          <div className="flex flex-col items-start gap-3 text-sm font-bold text-gray-700 sm:flex-row sm:flex-wrap sm:justify-center sm:gap-4 md:gap-6 md:text-base">
+          <div className="flex flex-col items-start gap-3 px-8 text-sm font-bold text-gray-700 sm:flex-row sm:flex-wrap sm:justify-center sm:gap-4 md:gap-6 md:text-base">
             {checks.map((c, i) => (
               <div key={i} className="flex items-center gap-2">
                 <CheckCircle2 className="h-5 w-5 shrink-0 text-emerald-500 sm:h-6 sm:w-6" />
@@ -249,10 +249,10 @@ export default function Pricing() {
         </div>
 
         {/* CTA Button */}
-        <div className="mt-8 text-center sm:mt-10">
+        <div className="mt-10 px-8 text-center">
           <Button
             size="lg"
-            className="h-14 w-full rounded-xl bg-emerald-500 px-8 font-bold text-white transition-all hover:scale-105 hover:bg-emerald-600 sm:w-auto sm:px-12"
+            className="h-14 w-full rounded-xl bg-emerald-500 font-bold text-white transition-all hover:scale-105 hover:bg-emerald-600 sm:w-auto"
             onClick={() => setIsReservationModalOpen(true)}
           >
             {t('cta_recharge')}
