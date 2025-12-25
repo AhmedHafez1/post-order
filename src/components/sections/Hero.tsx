@@ -67,7 +67,6 @@ function Hero() {
             className="group relative inline-flex w-full items-center justify-center gap-2 rounded-xl bg-linear-to-r from-emerald-600 to-emerald-500 px-6 py-4 text-base font-bold text-white shadow-sm shadow-emerald-500/30 transition-all hover:-translate-y-0.5 hover:shadow-gray-400/70 sm:w-auto sm:px-8 sm:py-5 md:text-lg lg:py-6"
             suppressHydrationWarning
           >
-            <Zap className="h-4 w-4 sm:h-5 sm:w-5" />
             {t('cta')}
             {locale === 'ar' ? (
               <ChevronLeft className="h-4 w-4 transition-transform group-hover:-translate-x-1 sm:h-5 sm:w-5" />

@@ -259,6 +259,10 @@
       "label": "رابط المتجر (اختياري)",
       "placeholder": "https://mystore.com"
     },
+    "platform": {
+      "label": "ما هي منصة متجرك؟ (اختياري)",
+      "placeholder": "مثال: شوبيفاي، ووكومرس..."
+    },
     "monthlyOrders": {
       "label": "كم عدد الطلبات الشهرية تقريباً؟",
       "placeholder": "اختر...",

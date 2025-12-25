@@ -169,7 +169,7 @@ export default function ROICalculator() {
         </div>
 
         {/* Note */}
-        <div className="mt-4 rounded-lg bg-white p-4 sm:mt-6">
+        <div className="mt-4 sm:mt-6 md:mt-8">
           <p className="md:text-md text-center text-sm text-slate-500 sm:text-sm xl:text-lg">
             {t('note')}
           </p>

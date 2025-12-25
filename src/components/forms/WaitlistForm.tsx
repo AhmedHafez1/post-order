@@ -22,8 +22,8 @@ const formSchema = z.object({
   phone: z
     .string()
     .regex(/^(\+20|0)?1[0-2,5]\d{8}$/, 'Invalid Egyptian phone number'),
-  storeUrl: z.string().url().optional().or(z.literal('')),
   monthlyOrders: z.string().min(1, 'Please select order volume'),
+  platform: z.string().optional().or(z.literal('')),
 })
 
 type FormData = z.infer<typeof formSchema>
@@ -126,6 +126,25 @@ export function WaitlistForm() {
             <span>{t('phone.invalid')}</span>
           </div>
         )}
+      </div>
+
+      {/* Platform */}
+      <div>
+        <label
+          htmlFor="platform"
+          className="mb-2 flex items-center gap-2 text-sm font-bold text-gray-700"
+        >
+          <Store className="h-4 w-4 shrink-0 text-gray-500" />
+          <span>{t('platform.label')}</span>
+        </label>
+        <Input
+          id="platform"
+          type="text"
+          {...register('platform')}
+          placeholder={t('platform.placeholder')}
+          suppressHydrationWarning
+          className="h-12 text-base"
+        />
       </div>
 
       {/* Monthly Orders */}

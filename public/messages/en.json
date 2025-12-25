@@ -255,6 +255,10 @@
       "required": "Email is required",
       "invalid": "Invalid email"
     },
+    "platform": {
+      "label": "What is your store platform? (optional)",
+      "placeholder": "E.g., Shopify, WooCommerce..."
+    },
     "storeUrl": {
       "label": "Store URL (optional)",
       "placeholder": "https://mystore.com"
