@@ -219,6 +219,22 @@
     "pricing": {
       "question": "What happens if I exceed the confirmation limit?",
       "answer": "In the Professional plan, each additional confirmation is only 0.70 EGP. In the Starter plan, you can upgrade anytime."
+    },
+    "whatsapp_api": {
+      "question": "Do I need an expensive WhatsApp Business API?",
+      "answer": "Akeed offers you easy and affordable integration options, whether you want to use your own number or benefit from our solutions."
+    },
+    "unconfirmed_order": {
+      "question": "What if the customer doesn't confirm the order or send their location?",
+      "answer": "Akeed immediately marks the order as 'Unconfirmed' in your store, so you don't ship it and save your money."
+    },
+    "easy_integration": {
+      "question": "Is integration with my store difficult?",
+      "answer": "Not at all! Akeed provides you with a simple step-by-step video guide to connect your store in less than a minute. It's just an API Key or a simple plugin."
+    },
+    "customize_messages": {
+      "question": "Can I customize Akeed's messages and language?",
+      "answer": "Absolutely, you can choose the dialect that fits your brand (colloquial, formal, Franco) and edit the messages as you like."
     }
   },
   "form": {

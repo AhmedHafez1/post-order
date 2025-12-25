@@ -98,8 +98,10 @@ export const testimonials = [
 ]
 
 export const faqs = [
-  { key: 'integration' },
+  { key: 'easy_integration' },
   { key: 'whatsapp' },
   { key: 'arabic' },
-  { key: 'pricing' },
+  { key: 'whatsapp_api' },
+  { key: 'unconfirmed_order' },
+  { key: 'customize_messages' },
 ]
