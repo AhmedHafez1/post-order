@@ -33,7 +33,7 @@ export default function ROICalculator() {
   return (
     <Section
       id="calculator"
-      className="relative px-4 sm:px-8 md:px-12 lg:px-24 xl:px-48"
+      className="relative px-8 md:px-12 lg:px-24 xl:px-48"
     >
       <Container>
         {/* Title */}
@@ -48,7 +48,7 @@ export default function ROICalculator() {
           {roiData.map((row, idx) => (
             <div
               key={idx}
-              className="rounded-xl border-2 border-emerald-200 bg-white p-5 shadow-sm"
+              className="rounded-xl border border-emerald-100 bg-white px-8 py-6 shadow-sm"
             >
               {/* Orders Count */}
               <div className="mb-4 flex items-center justify-between border-b border-emerald-100 pb-3">
@@ -170,7 +170,7 @@ export default function ROICalculator() {
 
         {/* Note */}
         <div className="mt-4 rounded-lg bg-slate-50 p-4 sm:mt-6">
-          <p className="text-center text-xs text-slate-500 sm:text-sm">
+          <p className="md:text-md text-center text-xs text-slate-500 sm:text-sm xl:text-lg">
             {t('note')}
           </p>
         </div>

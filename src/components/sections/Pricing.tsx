@@ -40,16 +40,14 @@ export default function Pricing() {
         </div>
 
         {/* Mobile View - Cards */}
-        <div className="space-y-4 lg:hidden">
+        <div className="space-y-4 px-8 lg:hidden">
           {tiers.map((tier: Tier) => (
             <div
               key={tier.key}
               className={`rounded-xl border p-5 transition-all ${
-                tier.isFree
-                  ? 'border-gray-200 bg-gray-50/70'
-                  : tier.key === 'growth'
-                    ? 'relative border-2 border-emerald-500 bg-white shadow-lg'
-                    : 'border-gray-200 bg-white shadow-sm'
+                tier.key === 'growth'
+                  ? 'relative border-2 border-emerald-500 bg-white shadow-lg'
+                  : 'border-gray-200 bg-white shadow-sm'
               }`}
             >
               {/* Most Popular Badge */}
@@ -134,7 +132,7 @@ export default function Pricing() {
                 {tiers.map((tier: Tier) => (
                   <div key={tier.key} className="flex justify-center">
                     {tier.key === 'growth' && (
-                      <span className="inline-flex items-center gap-1 rounded-full bg-linear-to-r from-emerald-500 to-emerald-600 px-3 py-1 text-xs font-bold text-white shadow-lg">
+                      <span className="inline-flex items-center gap-1 rounded-full bg-linear-to-r from-emerald-500 to-emerald-600 px-3 py-1.5 text-xs font-bold text-white shadow-lg">
                         <Zap className="h-3 w-3" />
                         {t('most_popular')}
                       </span>
