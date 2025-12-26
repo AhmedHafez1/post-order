@@ -32,6 +32,7 @@ export function WaitlistForm() {
   const t = useTranslations('form')
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [isSuccess, setIsSuccess] = useState(false)
+  const [error, setError] = useState<string | null>(null)
   const pathname = usePathname()
   const locale = pathname.split('/')[1]
 
@@ -45,14 +46,30 @@ export function WaitlistForm() {
   })
 
   const onSubmit = async (data: FormData) => {
-    console.log({ ...data, locale })
     setIsSubmitting(true)
+    setError(null)
 
-    // TODO: Send data to actual API endpoint
-    setTimeout(() => {
-      setIsSubmitting(false)
+    try {
+      const response = await fetch('/api/waitlist', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ ...data, locale }),
+      })
+
+      const result = await response.json()
+
+      if (!response.ok) {
+        throw new Error(result.error || 'Failed to submit')
+      }
+
       setIsSuccess(true)
-    }, 1500)
+    } catch (err) {
+      setError(err instanceof Error ? err.message : 'Failed to submit')
+    } finally {
+      setIsSubmitting(false)
+    }
   }
 
   if (isSuccess) {
@@ -65,7 +82,7 @@ export function WaitlistForm() {
           {t('success_title') || 'تم التسجيل بنجاح! 🎉'}
         </h3>
         <p className="text-sm text-gray-600">
-          {t('success_message') || 'سنتواصل معك خلال 24 ساعة على الواتساب'}
+          {t('info') || 'سنتواصل معك خلال 24 ساعة على الواتساب'}
         </p>
       </div>
     )
@@ -73,6 +90,14 @@ export function WaitlistForm() {
 
   return (
     <div className="space-y-4">
+      {/* Error Alert */}
+      {error && (
+        <div className="flex items-center gap-2 rounded-lg bg-red-50 p-3 text-sm text-red-700">
+          <AlertCircle className="h-5 w-5 shrink-0" />
+          <span>{t('error')}</span>
+        </div>
+      )}
+
       {/* Store Name */}
       <div>
         <label

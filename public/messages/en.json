@@ -278,7 +278,8 @@
     "submit": "Reserve Your Spot Now 🎉",
     "submitting": "Sending...",
     "error": "An error occurred. Try again or contact us",
-    "info": "We'll contact you within 24 hours to start free setup"
+    "info": "We'll contact you within 24 hours to start free setup",
+    "success_title": "Registration Successful! 🎉"
   },
   "success": {
     "title": "Reservation Successful! 🎉",
