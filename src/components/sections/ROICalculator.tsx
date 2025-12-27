@@ -4,7 +4,13 @@ import { useTranslations } from 'next-intl'
 import { Container } from '@/components/ui/container'
 import { Section } from '@/components/ui/section'
 import ScrollDownArrow from './ScrollDownArrow'
-import { TrendingDown, TrendingUp, DollarSign, ArrowRight } from 'lucide-react'
+import {
+  TrendingDown,
+  TrendingUp,
+  DollarSign,
+  ArrowRight,
+  ArrowDown,
+} from 'lucide-react'
 import { motion } from 'framer-motion'
 
 const roiData = [
@@ -72,16 +78,13 @@ export default function ROICalculator() {
                 {/* Orders Count - Header */}
                 <div className="mb-5 flex items-center justify-between border-b-2 border-emerald-100 pb-4">
                   <div>
-                    <span className="block text-xs font-semibold tracking-wide text-emerald-600 uppercase">
+                    <span className="block text-lg font-semibold tracking-wide text-emerald-600 uppercase">
                       {t('orders')}
                     </span>
-                    <span className="mt-1 block text-3xl font-black text-slate-800">
-                      {row.orders}
-                    </span>
                   </div>
-                  <div className="flex h-14 w-14 items-center justify-center rounded-full bg-gradient-to-br from-emerald-500 to-emerald-600 shadow-lg">
-                    <DollarSign className="h-7 w-7 text-white" />
-                  </div>
+                  <span className="block text-3xl font-black text-slate-800">
+                    {row.orders}
+                  </span>
                 </div>
 
                 {/* Returns Comparison */}
@@ -102,19 +105,6 @@ export default function ROICalculator() {
                       <div className="text-xl font-black text-red-700">
                         {row.returnsWithout.split(' ')[0]}
                       </div>
-                      <div className="text-xs font-bold text-red-600">
-                        {row.returnsWithout.split(' ')[1]}
-                      </div>
-                    </div>
-                  </div>
-
-                  {/* Arrow Indicator */}
-                  <div className="flex justify-center">
-                    <div className="flex items-center gap-2 rounded-full bg-emerald-100 px-4 py-1.5">
-                      <ArrowRight className="h-4 w-4 text-emerald-600" />
-                      <span className="text-xs font-bold text-emerald-700">
-                        {row.reduction} تقليل
-                      </span>
                     </div>
                   </div>
 
@@ -125,8 +115,15 @@ export default function ROICalculator() {
                         <TrendingDown className="h-4 w-4 text-white" />
                       </div>
                       <div>
-                        <span className="block text-[10px] font-semibold tracking-wide text-emerald-600 uppercase">
-                          {t('returns_with')}
+                        <span className="flex gap-2 text-[10px] font-semibold tracking-wide text-emerald-600 uppercase">
+                          <div>{t('returns_with')}</div>
+                          <div className="flex justify-center">
+                            (
+                            <span className="text-xs font-bold text-emerald-700">
+                              {row.reduction}
+                            </span>
+                            <ArrowDown className="h-4 w-4 text-emerald-700" />)
+                          </div>
                         </span>
                       </div>
                     </div>
@@ -134,31 +131,25 @@ export default function ROICalculator() {
                       <div className="text-xl font-black text-emerald-700">
                         {row.returnsWith.split(' ')[0]}
                       </div>
-                      <div className="text-xs font-bold text-emerald-600">
-                        {row.returnsWith.split(' ')[1]}
-                      </div>
                     </div>
                   </div>
                 </div>
 
                 {/* Savings - Highlighted */}
-                <div className="relative overflow-hidden rounded-xl bg-gradient-to-r from-emerald-500 via-emerald-600 to-emerald-500 p-5 shadow-lg">
+                <div className="relative overflow-hidden p-5">
                   <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PHBhdHRlcm4gaWQ9ImdyaWQiIHdpZHRoPSI0MCIgaGVpZ2h0PSI0MCIgcGF0dGVyblVuaXRzPSJ1c2VyU3BhY2VPblVzZSI+PHBhdGggZD0iTSAwIDEwIEwgNDAgMTAgTSAxMCAwIEwgMTAgNDAgTSAwIDIwIEwgNDAgMjAgTSAyMCAwIEwgMjAgNDAgTSAwIDMwIEwgNDAgMzAgTSAzMCAwIEwgMzAgNDAiIGZpbGw9Im5vbmUiIHN0cm9rZT0id2hpdGUiIHN0cm9rZS1vcGFjaXR5PSIwLjA1IiBzdHJva2Utd2lkdGg9IjEiLz48L3BhdHRlcm4+PC9kZWZzPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjZ3JpZCkiLz48L3N2Zz4=')] opacity-30" />
                   <div className="relative text-center">
-                    <div className="mb-2 flex items-center justify-center gap-1.5 text-xs font-bold tracking-wider text-emerald-100 uppercase">
+                    <div className="mb-2 flex items-center justify-center gap-1.5 text-xs font-bold tracking-wider text-emerald-600 uppercase">
                       <DollarSign className="h-4 w-4" />
                       <span>{t('savings')}</span>
                     </div>
                     <div className="flex items-baseline justify-center gap-2">
-                      <span className="text-4xl font-black text-white">
+                      <span className="text-4xl font-black text-emerald-700">
                         {row.savings}
                       </span>
-                      <span className="text-lg font-bold text-emerald-100">
+                      <span className="text-lg font-bold text-emerald-600">
                         {t('currency')}
                       </span>
-                    </div>
-                    <div className="mt-2 text-xs font-semibold text-emerald-100">
-                      شهرياً
                     </div>
                   </div>
                 </div>
@@ -246,7 +237,7 @@ export default function ROICalculator() {
                           {row.savings}
                         </span>
                         <span className="text-sm font-bold text-emerald-600">
-                          {t('currency')} / شهرياً
+                          {t('currency')}
                         </span>
                       </div>
                     </td>
