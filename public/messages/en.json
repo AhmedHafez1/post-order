@@ -306,5 +306,9 @@
   },
   "footer": {
     "copyright": "© 2024 Akeed. All rights reserved."
+  },
+  "whatsapp_button": {
+    "text": "Start Trial on WhatsApp",
+    "message": "Hello, I want to try Akeed for order confirmation."
   }
 }

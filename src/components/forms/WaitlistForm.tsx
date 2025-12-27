@@ -226,7 +226,7 @@ export function WaitlistForm() {
       <Button
         onClick={handleSubmit(onSubmit)}
         disabled={isSubmitting}
-        className="mt-6 w-full bg-linear-to-r from-emerald-600 to-emerald-500 py-6 text-base font-bold text-white shadow-lg transition-all hover:scale-[1.02] hover:shadow-xl active:scale-100 disabled:cursor-not-allowed disabled:opacity-50 sm:text-lg"
+        className="mt-6 w-full bg-linear-to-r from-orange-600 to-orange-500 py-6 text-base font-bold text-white shadow-lg transition-all hover:scale-[1.02] hover:shadow-xl active:scale-100 disabled:cursor-not-allowed disabled:opacity-50 sm:text-lg"
       >
         {isSubmitting ? (
           <span className="flex items-center justify-center gap-2">

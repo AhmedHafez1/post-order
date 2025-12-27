@@ -3,9 +3,10 @@ import { NextIntlClientProvider } from 'next-intl'
 import { getMessages, getTranslations } from 'next-intl/server'
 import { Toaster } from 'react-hot-toast'
 import { Header } from '@/components/layout/Header'
+import { WhatsAppButton } from '@/components/ui/WhatsAppButton'
 import '../globals.css'
 
-const cairo = Cairo({ 
+const cairo = Cairo({
   subsets: ['arabic', 'latin'],
   weight: ['400', '600', '700', '900'],
   display: 'swap',
@@ -41,7 +42,8 @@ export default async function LocaleLayout({
         <NextIntlClientProvider messages={messages}>
           <Header />
           {children}
-          <Toaster 
+          <WhatsAppButton />
+          <Toaster
             position={locale === 'ar' ? 'top-left' : 'top-right'}
             toastOptions={{
               duration: 4000,

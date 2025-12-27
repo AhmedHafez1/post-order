@@ -27,13 +27,16 @@ export function Header() {
 
   const scrollToSection = (id: string) => {
     setIsMobileMenuOpen(false)
-    const element = document.getElementById(id)
-    if (element) {
-      const offset = 80
-      const elementPosition = element.getBoundingClientRect().top
-      const offsetPosition = elementPosition + window.pageYOffset - offset
-      window.scrollTo({ top: offsetPosition, behavior: 'smooth' })
-    }
+    // Add a small delay to ensure mobile menu closes before scrolling
+    setTimeout(() => {
+      const element = document.getElementById(id)
+      if (element) {
+        const offset = 80
+        const elementPosition = element.getBoundingClientRect().top
+        const offsetPosition = elementPosition + window.scrollY - offset
+        window.scrollTo({ top: offsetPosition, behavior: 'smooth' })
+      }
+    }, 100)
   }
 
   const navigation = [
@@ -194,7 +197,7 @@ export function Header() {
                         setIsMobileMenuOpen(false)
                         setIsReservationModalOpen(true)
                       }}
-                      className="w-full rounded-lg bg-linear-to-r from-emerald-600 to-emerald-500 px-4 py-3 text-base font-bold text-white shadow-lg"
+                      className="w-full rounded-lg bg-linear-to-r from-orange-600 to-orange-500 px-4 py-3 text-base font-bold text-white shadow-lg"
                     >
                       {t('cta')}
                     </button>

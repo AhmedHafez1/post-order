@@ -252,7 +252,7 @@ export default function Pricing() {
         <div className="mt-10 px-8 text-center">
           <Button
             size="lg"
-            className="h-14 w-full rounded-xl bg-emerald-500 font-bold text-white transition-all hover:scale-105 hover:bg-emerald-600 sm:w-auto"
+            className="h-14 w-full rounded-xl bg-orange-500 font-bold text-white transition-all hover:scale-105 hover:bg-orange-600 sm:w-auto"
             onClick={() => setIsReservationModalOpen(true)}
           >
             {t('cta_recharge')}
