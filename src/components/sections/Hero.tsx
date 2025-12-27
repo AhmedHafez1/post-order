@@ -27,16 +27,16 @@ function Hero() {
   }
 
   return (
-    <section className="relative flex min-h-screen flex-col justify-center gap-8 overflow-hidden px-4 pt-20 pb-8 sm:px-6 md:flex-row md:items-end md:gap-16 md:px-12 lg:gap-20 lg:px-24 lg:pb-24 xl:px-48">
+    <section className="relative flex min-h-screen flex-col justify-center gap-6 overflow-hidden px-6 pt-22 pb-8 sm:gap-8 sm:px-6 sm:pt-20 md:flex-row md:items-end md:gap-16 md:px-12 lg:gap-20 lg:px-24 lg:pb-24 xl:px-48">
       <div className="flex max-w-4xl flex-col items-center text-center md:w-3/5 md:justify-center md:self-stretch">
         {/* Main Headline */}
         <motion.div
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.1 }}
-          className="my-6 space-y-2 lg:my-10"
+          className="mb-4 space-y-2 sm:mb-6 lg:mb-8"
         >
-          <h1 className="text-3xl leading-tight font-black text-slate-900 sm:text-4xl md:text-5xl lg:text-6xl">
+          <h1 className="text-2xl leading-tight font-black text-slate-900 sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl">
             {t('title')}{' '}
             <span className="bg-linear-to-r from-emerald-600 to-emerald-400 bg-clip-text text-transparent">
               {t('highlight')}
@@ -49,7 +49,7 @@ function Hero() {
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.2 }}
-          className="mx-auto mb-6 max-w-2xl text-base leading-relaxed text-slate-600 sm:mb-8 sm:text-lg md:text-xl lg:mb-10"
+          className="mx-auto mb-5 max-w-2xl text-sm leading-relaxed text-slate-600 sm:mb-6 sm:text-base md:text-lg lg:mb-8 lg:text-xl"
         >
           {t('subtitle')}
         </motion.p>
@@ -59,12 +59,12 @@ function Hero() {
           initial={{ opacity: 0, y: 12 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.3 }}
-          className="mb-6 flex w-full flex-col items-center justify-center gap-6 md:flex-row lg:mb-8"
+          className="mb-3 flex w-full flex-col items-center justify-center gap-4 sm:mb-4 sm:gap-5 md:flex-row lg:mb-6"
         >
           <SocialProof />
           <button
             onClick={() => setIsReservationModalOpen(true)}
-            className="group relative inline-flex w-full items-center justify-center gap-2 rounded-xl bg-linear-to-r from-orange-600 to-orange-500 px-6 py-4 text-base font-bold text-white shadow-sm shadow-emerald-500/30 transition-all hover:-translate-y-0.5 hover:shadow-gray-400/70 sm:w-auto sm:px-8 sm:py-5 md:text-lg lg:py-6"
+            className="group relative inline-flex w-full items-center justify-center gap-2 rounded-xl bg-linear-to-r from-orange-600 to-orange-500 px-6 py-3.5 text-sm font-bold text-white shadow-sm shadow-emerald-500/30 transition-all hover:-translate-y-0.5 hover:shadow-gray-400/70 sm:w-auto sm:px-8 sm:py-4 md:text-base lg:py-5 lg:text-lg"
             suppressHydrationWarning
           >
             {t('cta')}
@@ -79,9 +79,9 @@ function Hero() {
           initial={{ opacity: 0, y: 12 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.3 }}
-          className="mb-6 sm:mb-8 lg:mb-10"
+          className="mb-6 sm:mb-8 md:mb-10"
         >
-          <p className="text-sm font-bold text-slate-600 sm:text-base">
+          <p className="text-xs font-semibold text-slate-500 sm:text-sm md:text-base">
             {t('no_credit_card')}
           </p>
         </motion.div>
@@ -94,13 +94,14 @@ function Hero() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.8, delay: 0.6 }}
+          className="mt-2 sm:mt-4"
         >
           <LogoTicker />
         </motion.div>
       </div>
 
       {/* Chat Interface */}
-      <div className="flex w-full items-center justify-center md:w-2/5 lg:w-auto">
+      <div className="flex w-full scale-90 items-center justify-center sm:scale-95 md:w-2/5 md:scale-100 lg:w-auto">
         <ChatInterface />
       </div>
 
