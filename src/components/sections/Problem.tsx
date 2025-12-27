@@ -32,7 +32,7 @@ function Problem() {
   return (
     <Section
       id="problem"
-      className="relative px-6 sm:px-8 md:px-12 lg:px-16 xl:px-48"
+      className="relative px-4 sm:px-6 md:px-12 lg:px-24 xl:px-48"
     >
       <Container>
         {/* Section Header */}

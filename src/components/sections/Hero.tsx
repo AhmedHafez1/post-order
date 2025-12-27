@@ -27,8 +27,8 @@ function Hero() {
   }
 
   return (
-    <section className="relative flex min-h-screen flex-col justify-center gap-8 overflow-hidden px-4 pt-20 pb-8 md:flex-row md:items-end md:gap-16 md:px-8 lg:gap-20 lg:px-16 lg:pb-24">
-      <div className="flex max-w-4xl flex-col items-center px-8 text-center md:w-3/5 md:justify-center md:self-stretch lg:px-4">
+    <section className="relative flex min-h-screen flex-col justify-center gap-8 overflow-hidden px-4 pt-20 pb-8 sm:px-6 md:flex-row md:items-end md:gap-16 md:px-12 lg:gap-20 lg:px-24 lg:pb-24 xl:px-48">
+      <div className="flex max-w-4xl flex-col items-center text-center md:w-3/5 md:justify-center md:self-stretch">
         {/* Main Headline */}
         <motion.div
           initial={{ opacity: 0, y: 10 }}

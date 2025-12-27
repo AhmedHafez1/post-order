@@ -12,7 +12,10 @@ function FAQ() {
   const tFaq = useTranslations('faq')
 
   return (
-    <Section id="faq" className="relative px-8 sm:px-12 md:px-16 lg:px-48">
+    <Section
+      id="faq"
+      className="relative px-4 sm:px-6 md:px-12 lg:px-24 xl:px-48"
+    >
       <Container>
         <motion.div
           initial={{ opacity: 0, y: 30 }}
