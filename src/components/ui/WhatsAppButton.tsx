@@ -16,7 +16,7 @@ export function WhatsAppButton() {
   return (
     <button
       onClick={handleClick}
-      className="bg-linear-gradient-to-r fixed right-0 bottom-0 left-0 z-50 mx-auto mb-4 flex min-h-[52px] w-[calc(100%-2rem)] max-w-md transform touch-manipulation items-center justify-center gap-3 rounded-xl bg-gradient-to-r from-emerald-700 to-teal-700 px-6 py-4 text-base font-semibold text-white transition-all duration-300 ease-out hover:bg-teal-500 hover:shadow-sm md:hidden"
+      className="bg-linear-gradient-to-r fixed right-0 bottom-0 left-0 z-50 mx-auto mb-4 flex min-h-[52px] w-[calc(100%-2rem)] max-w-md transform touch-manipulation items-center justify-center gap-3 rounded-xl bg-gradient-to-r from-emerald-700 to-emerald-600 px-6 py-4 text-base font-semibold text-white transition-all duration-300 ease-out hover:shadow-sm md:hidden"
       style={{
         paddingBottom: 'max(1rem, env(safe-area-inset-bottom))',
       }}

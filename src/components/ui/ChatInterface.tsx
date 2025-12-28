@@ -126,7 +126,7 @@ export function ChatInterface() {
           {/* Screen */}
           <div className="relative overflow-hidden rounded-[2.2rem] bg-white">
             {/* Header */}
-            <div className="flex items-center justify-between bg-linear-to-r from-emerald-500 to-emerald-600 px-4 py-4 pt-8">
+            <div className="flex items-center justify-between bg-linear-to-r from-emerald-700 to-emerald-600 px-4 py-4 pt-8">
               <div className="flex items-center gap-3">
                 <div className="flex h-10 w-10 items-center justify-center rounded-full bg-white shadow-md">
                   <Bot className="h-6 w-6 text-emerald-600" />
@@ -163,7 +163,7 @@ export function ChatInterface() {
                       <div
                         className={`rounded-2xl p-2 shadow-sm ${
                           message.type === 'user'
-                            ? 'rounded-br-md bg-linear-to-br from-emerald-500 to-emerald-600 text-white'
+                            ? 'rounded-br-md bg-linear-to-br from-emerald-600 to-emerald-700 text-white'
                             : 'rounded-bl-md border border-emerald-100 bg-white text-slate-800'
                         }`}
                       >
