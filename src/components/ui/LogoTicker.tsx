@@ -6,13 +6,11 @@ import { usePathname } from 'next/navigation'
 import { useTranslations } from 'next-intl'
 
 const logos = [
-  { name: 'EasyOrder', src: '/images/landing/logos/easy-order.png' },
-  { name: 'YouCan', src: '/images/landing/logos/you-can.png' },
+  { name: 'Zid', src: '/images/landing/logos/zid.png' },
+  { name: 'Salla', src: '/images/landing/logos/salla.png' },
   { name: 'Shopify', src: '/images/landing/logos/shopify.png' },
   { name: 'WooCommerce', src: '/images/landing/logos/woo.png' },
-  { name: 'Salla', src: '/images/landing/logos/salla.png' },
-  { name: 'Zid', src: '/images/landing/logos/zid.png' },
-  { name: 'ExpCart', src: '/images/landing/logos/exp-cart.png' },
+  { name: 'EasyOrder', src: '/images/landing/logos/easy-order.png' },
 ]
 
 export function LogoTicker() {
