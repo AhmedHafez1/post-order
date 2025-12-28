@@ -3,8 +3,9 @@
 import { useState, useEffect } from 'react'
 import { usePathname, useRouter } from 'next/navigation'
 import { motion, AnimatePresence } from 'framer-motion'
-import { Menu, X, Globe, Zap } from 'lucide-react'
+import { Menu, X, Globe } from 'lucide-react'
 import { useTranslations } from 'next-intl'
+import Image from 'next/image'
 import { ReservationModal } from '../sections/ReservationModal'
 
 export function Header() {
@@ -62,7 +63,7 @@ export function Header() {
       <header
         className={`fixed top-0 z-50 w-full transition-all duration-400 ${
           isScrolled
-            ? 'border-b border-emerald-100/70 bg-white/85 shadow-sm backdrop-blur-md'
+            ? 'border-b border-orange-100/70 bg-white/85 shadow-sm backdrop-blur-md'
             : 'bg-white/60 backdrop-blur'
         }`}
       >
@@ -75,20 +76,13 @@ export function Header() {
               className="group flex cursor-pointer items-center gap-3"
               onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
             >
-              <div className="relative">
-                <div className="absolute inset-0 rounded-2xl bg-linear-to-br from-emerald-500 to-emerald-600 opacity-30 blur-md transition-opacity group-hover:opacity-60" />
-                <div className="relative flex h-11 w-11 items-center justify-center rounded-2xl bg-linear-to-br from-emerald-500 to-emerald-600 shadow-md">
-                  <Zap className="h-6 w-6 text-white" fill="white" />
-                </div>
-              </div>
-              <div>
-                <h1 className="bg-linear-to-r from-emerald-600 to-emerald-500 bg-clip-text text-xl font-black text-transparent">
-                  Akeed
-                </h1>
-                <p className="text-xs font-medium text-gray-600">
-                  {t('tagline')}
-                </p>
-              </div>
+              <Image
+                src="/images/akeed_logo_no_bg.png"
+                alt="Akeed Logo"
+                width={70}
+                height={70}
+                className="object-contain"
+              />
             </motion.div>
 
             {/* Desktop Navigation */}
@@ -100,7 +94,7 @@ export function Header() {
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: index * 0.1 }}
                   onClick={() => scrollToSection(item.id)}
-                  className="rounded-lg px-3 py-2 text-sm font-semibold text-gray-700 transition-colors hover:bg-emerald-50 hover:text-emerald-700"
+                  className="rounded-lg px-3 py-2 text-sm font-semibold text-gray-700 transition-colors hover:bg-orange-50 hover:text-orange-700"
                 >
                   {item.name}
                 </motion.button>
@@ -111,7 +105,7 @@ export function Header() {
             <div className="hidden items-center gap-3 md:flex">
               <button
                 onClick={handleLocaleChange}
-                className="flex items-center gap-2 rounded-full border border-emerald-100/70 bg-white/80 px-3 py-1.5 text-sm font-semibold text-gray-700 transition-colors hover:border-emerald-200 hover:text-emerald-700"
+                className="flex items-center gap-2 rounded-full border border-orange-100/70 bg-white/80 px-3 py-1.5 text-sm font-semibold text-gray-700 transition-colors hover:border-orange-200 hover:text-orange-700"
                 suppressHydrationWarning
               >
                 <Globe className="h-4 w-4" />
@@ -119,11 +113,11 @@ export function Header() {
               </button>
               <button
                 onClick={() => setIsReservationModalOpen(true)}
-                className="group hover:-translate-y- relative overflow-hidden rounded-lg bg-linear-to-r from-emerald-600 to-emerald-500 px-5 py-2.5 text-sm font-bold text-white shadow-md transition-all hover:shadow-lg"
+                className="group hover:-translate-y- relative overflow-hidden rounded-lg bg-linear-to-r from-orange-600 to-orange-500 px-5 py-2.5 text-sm font-bold text-white shadow-md transition-all hover:shadow-lg"
                 suppressHydrationWarning
               >
                 <span className="relative z-10">{t('cta')}</span>
-                <div className="absolute inset-0 bg-linear-to-r from-emerald-500 to-emerald-400 opacity-0 transition-opacity group-hover:opacity-100" />
+                <div className="absolute inset-0 bg-linear-to-r from-orange-500 to-orange-400 opacity-0 transition-opacity group-hover:opacity-100" />
               </button>
             </div>
 
@@ -179,7 +173,7 @@ export function Header() {
                       animate={{ opacity: 1, x: 0 }}
                       transition={{ delay: index * 0.05 }}
                       onClick={() => scrollToSection(item.id)}
-                      className="block w-full rounded-lg px-4 py-3 text-left text-base font-semibold text-gray-700 transition-colors hover:bg-emerald-50 hover:text-emerald-600"
+                      className="block w-full rounded-lg px-4 py-3 text-left text-base font-semibold text-gray-700 transition-colors hover:bg-orange-50 hover:text-orange-600"
                     >
                       {item.name}
                     </motion.button>
