@@ -148,7 +148,7 @@ export function ChatInterface() {
             {/* Messages */}
             <div
               ref={scrollAreaRef}
-              className="h-110 space-y-3 overflow-y-auto scroll-smooth bg-amber-50 p-4"
+              className="h-110 space-y-3 overflow-y-auto scroll-smooth bg-emerald-50 p-4"
             >
               <AnimatePresence>
                 {messages.map((message, index) => (
