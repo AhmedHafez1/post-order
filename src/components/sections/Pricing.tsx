@@ -246,17 +246,16 @@ export default function Pricing() {
               ))}
             </div>
           </div>
-        </div>
-
-        {/* CTA Button */}
-        <div className="mt-10 text-center">
-          <Button
-            size="lg"
-            className="h-14 w-full rounded-xl bg-orange-500 font-bold text-white transition-all hover:scale-105 hover:bg-orange-600 sm:w-auto"
-            onClick={() => setIsReservationModalOpen(true)}
-          >
-            {t('cta_recharge')}
-          </Button>
+          {/* CTA Button */}
+          <div className="mt-12 text-center">
+            <Button
+              size="lg"
+              className="h-14 w-full rounded-xl bg-orange-500 font-bold text-white transition-all hover:scale-105 hover:bg-orange-600 sm:w-auto"
+              onClick={() => setIsReservationModalOpen(true)}
+            >
+              {t('cta_recharge')}
+            </Button>
+          </div>
         </div>
       </Container>
 

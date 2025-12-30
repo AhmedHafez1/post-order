@@ -1,9 +1,8 @@
 'use client'
 
-import { AnimatePresence, motion } from 'framer-motion'
-import Image from 'next/image'
+import { motion } from 'framer-motion'
 import { SocialProof } from '../ui/SocialProof'
-import { ChevronRight, Zap, ChevronLeft } from 'lucide-react'
+import { ChevronRight, ChevronLeft } from 'lucide-react'
 import ScrollDownArrow from './ScrollDownArrow'
 import { useTranslations } from 'next-intl'
 import { usePathname } from 'next/navigation'
@@ -19,12 +18,6 @@ function Hero() {
 
   // Extract locale from pathname (assuming /[locale]/...)
   const locale = pathname?.split('/')[1] === 'en' ? 'en' : 'ar'
-
-  const scrollToSection = (id: string) => {
-    document
-      .getElementById(id)
-      ?.scrollIntoView({ behavior: 'smooth', block: 'start' })
-  }
 
   return (
     <section className="relative flex min-h-screen flex-col justify-center gap-6 overflow-hidden px-6 pt-22 pb-8 sm:gap-8 sm:px-6 sm:pt-20 md:flex-row md:items-end md:gap-16 md:px-12 lg:gap-20 lg:px-24 lg:pt-24 lg:pb-24 xl:px-48">
@@ -64,7 +57,7 @@ function Hero() {
           <SocialProof />
           <button
             onClick={() => setIsReservationModalOpen(true)}
-            className="group relative inline-flex w-full items-center justify-center gap-2 rounded-xl bg-linear-to-r from-orange-600 to-orange-500 px-6 py-3.5 text-sm font-bold text-white shadow-sm shadow-emerald-500/30 transition-all hover:-translate-y-0.5 hover:shadow-gray-400/70 sm:w-auto sm:px-8 sm:py-4 md:text-base lg:py-5 lg:text-lg"
+            className="group relative hidden w-full items-center justify-center gap-2 rounded-xl bg-linear-to-r from-orange-600 to-orange-500 px-6 py-3.5 text-sm font-bold text-white shadow-sm shadow-emerald-500/30 transition-all hover:-translate-y-0.5 hover:shadow-gray-400/70 sm:w-auto sm:px-8 sm:py-4 md:flex md:text-base lg:py-5 lg:text-lg"
             suppressHydrationWarning
           >
             {t('cta')}
