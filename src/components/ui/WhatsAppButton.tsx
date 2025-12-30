@@ -23,7 +23,7 @@ export function WhatsAppButton() {
       aria-label={t('text')}
     >
       <span className="truncate">{t('text')}</span>
-      <MessageCircle className="h-6 w-6 flex-shrink-0" />
+      <MessageCircle className="h-6 w-6 shrink-0" />
     </button>
   )
 }

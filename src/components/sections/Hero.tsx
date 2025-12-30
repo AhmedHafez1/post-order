@@ -89,6 +89,10 @@ function Hero() {
           transition={{ duration: 0.8, delay: 0.6 }}
           className="mt-2 sm:mt-4"
         >
+          <h3 className="my-3 text-xs font-semibold text-slate-500 sm:text-sm md:text-base lg:mt-0 lg:mb-4">
+            {t('easy_integrated')}
+          </h3>
+
           <LogoTicker />
         </motion.div>
       </div>

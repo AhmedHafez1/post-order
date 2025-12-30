@@ -3,7 +3,6 @@
 import Image from 'next/image'
 import { motion } from 'framer-motion'
 import { usePathname } from 'next/navigation'
-import { useTranslations } from 'next-intl'
 
 const logos = [
   { name: 'Zid', src: '/images/landing/logos/zid.png' },
@@ -11,19 +10,17 @@ const logos = [
   { name: 'Shopify', src: '/images/landing/logos/shopify.png' },
   { name: 'WooCommerce', src: '/images/landing/logos/woo.png' },
   { name: 'EasyOrder', src: '/images/landing/logos/easy-order.png' },
+  { name: 'ExpandCart', src: '/images/landing/logos/exp-cart.png' },
+  { name: 'YouCan', src: '/images/landing/logos/you-can.png' },
 ]
 
 export function LogoTicker() {
   const pathname = usePathname()
-  const t = useTranslations('hero')
   const locale = pathname?.split('/')[1] === 'en' ? 'en' : 'ar'
   const isRtl = locale === 'ar'
 
   return (
-    <motion.div className="overflow-hidden border-y border-gray-200 bg-linear-to-r from-gray-50 to-white pb-4">
-      <h3 className="pt-4 pb-6 text-sm text-gray-600">
-        {t('easy_integrated')}
-      </h3>
+    <motion.div className="overflow-hidden border-y border-gray-200 bg-linear-to-r from-gray-50 to-white py-4">
       <div className="container mx-auto">
         <div className="flex overflow-hidden mask-[linear-gradient(to_right,transparent,black_10%,black_90%,transparent)]">
           <motion.div
