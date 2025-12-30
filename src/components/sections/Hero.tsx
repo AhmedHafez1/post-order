@@ -38,14 +38,27 @@ function Hero() {
         </motion.div>
 
         {/* Subtitle */}
-        <motion.p
+        <motion.div
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.2 }}
-          className="mx-auto mb-5 max-w-2xl text-sm leading-relaxed text-slate-600 sm:mb-6 sm:text-base md:text-lg lg:mb-8 lg:text-xl"
+          className="mb-8 self-start sm:mb-6 lg:mb-10 lg:px-20"
         >
-          {t('subtitle')}
-        </motion.p>
+          <div className="border-slate-200 backdrop-blur-sm sm:p-5">
+            <p
+              className={`${locale === 'ar' ? 'text-right' : 'text-left'} text-sm text-slate-700 md:text-lg lg:text-xl lg:leading-relaxed`}
+            >
+              {t('subtitle')}
+            </p>
+            <ul
+              className={`${locale === 'ar' ? 'text-right' : 'text-left'} md:text-md mt-3 space-y-2 text-sm text-slate-700 sm:text-base lg:text-lg`}
+            >
+              <li>{t('subtitle_bullet_1')}</li>
+              <li>{t('subtitle_bullet_2')}</li>
+              <li>{t('subtitle_bullet_3')}</li>
+            </ul>
+          </div>
+        </motion.div>
 
         {/* CTAs & Social Proof */}
         <motion.div

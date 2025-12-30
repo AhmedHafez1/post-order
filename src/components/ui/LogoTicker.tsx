@@ -7,7 +7,6 @@ import { usePathname } from 'next/navigation'
 const logos = [
   { name: 'ExpandCart', src: '/images/landing/logos/exp-cart.png' },
   { name: 'EasyOrder', src: '/images/landing/logos/easy-order.png' },
-  { name: 'YouCan', src: '/images/landing/logos/you-can.png' },
   { name: 'Shopify', src: '/images/landing/logos/shopify.png' },
   { name: 'WooCommerce', src: '/images/landing/logos/woo.png' },
   { name: 'Salla', src: '/images/landing/logos/salla.png' },
