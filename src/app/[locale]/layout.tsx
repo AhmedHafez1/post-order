@@ -55,6 +55,19 @@ export default async function LocaleLayout({
             fbq('track', 'PageView');
           `}
         </Script>
+        {/* Google tag (gtag.js) */}
+        <Script
+          strategy="afterInteractive"
+          src="https://www.googletagmanager.com/gtag/js?id=G-J7EM70ZQS0"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-J7EM70ZQS0');
+          `}
+        </Script>
       </head>
       <body className={cairo.className}>
         <NextIntlClientProvider messages={messages}>
