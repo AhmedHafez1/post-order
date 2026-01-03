@@ -78,7 +78,7 @@ export function ChatInterface() {
       const resetTimer = setTimeout(() => {
         setMessages([])
         setCurrentStep(0)
-      }, 15000)
+      }, 11000)
       return () => clearTimeout(resetTimer)
     }
 
