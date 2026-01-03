@@ -2,7 +2,7 @@
 
 import { motion } from 'framer-motion'
 import { SocialProof } from '../ui/SocialProof'
-import { ChevronRight, ChevronLeft } from 'lucide-react'
+import { ChevronRight, ChevronLeft, Star } from 'lucide-react'
 import ScrollDownArrow from './ScrollDownArrow'
 import { useTranslations } from 'next-intl'
 import { usePathname } from 'next/navigation'
@@ -10,6 +10,7 @@ import { ChatInterface } from '../ui/ChatInterface'
 import { LogoTicker } from '../ui'
 import { useState } from 'react'
 import { ReservationModal } from './ReservationModal'
+import Image from 'next/image'
 
 function Hero() {
   const t = useTranslations('hero')
@@ -27,7 +28,7 @@ function Hero() {
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.1 }}
-          className="mb-4 space-y-2 sm:mb-6 lg:mb-8"
+          className="mb-4 flex flex-col items-center space-y-2 sm:mb-6 lg:mb-8"
         >
           <h1 className="text-2xl leading-tight font-black text-slate-900 sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl">
             {t('title')}{' '}
