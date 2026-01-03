@@ -129,7 +129,13 @@ export function ChatInterface() {
             <div className="flex items-center justify-between bg-linear-to-r from-emerald-700 to-emerald-600 px-4 py-4 pt-8">
               <div className="flex items-center gap-3">
                 <div className="flex h-10 w-10 items-center justify-center rounded-full bg-white shadow-md">
-                  <Bot className="h-6 w-6 text-emerald-600" />
+                  <img
+                    src="/images/akeed_logo_no_bg.png"
+                    alt="Akeed Logo"
+                    className="object-contain"
+                    width={40}
+                    height={40}
+                  />
                 </div>
                 <div>
                   <div className="font-bold text-white">Akeed</div>
