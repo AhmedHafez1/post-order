@@ -45,13 +45,13 @@ export default function Pricing() {
             <div
               key={tier.key}
               className={`rounded-xl border p-5 transition-all ${
-                tier.key === 'growth'
+                tier.key === 'pro'
                   ? 'relative border-2 border-emerald-500 bg-white shadow-lg'
                   : 'border-gray-200 bg-white shadow-sm'
               }`}
             >
               {/* Most Popular Badge */}
-              {tier.key === 'growth' && (
+              {tier.key === 'pro' && (
                 <div className="absolute -top-3 left-1/2 -translate-x-1/2">
                   <span className="flex items-center gap-1 rounded-full bg-linear-to-r from-emerald-500 to-emerald-600 px-3 py-1 text-xs font-bold text-white shadow-lg">
                     <Zap className="h-3 w-3" />
@@ -127,11 +127,11 @@ export default function Pricing() {
           <div className="mx-auto max-w-6xl">
             {/* Most Popular Badge Row */}
             <div className="mb-3 flex justify-center">
-              <div className="grid w-full grid-cols-6 gap-3">
+              <div className="grid w-full grid-cols-5 gap-3">
                 <div className="col-span-1" />
                 {tiers.map((tier: Tier) => (
                   <div key={tier.key} className="flex justify-center">
-                    {tier.key === 'growth' && (
+                    {tier.key === 'pro' && (
                       <span className="inline-flex items-center gap-1 rounded-full bg-linear-to-r from-emerald-500 to-emerald-600 px-3 py-1.5 text-xs font-bold text-white shadow-lg">
                         <Zap className="h-3 w-3" />
                         {t('most_popular')}
@@ -143,7 +143,7 @@ export default function Pricing() {
             </div>
 
             {/* Pricing Cards Grid */}
-            <div className="grid grid-cols-6 gap-x-3">
+            <div className="grid grid-cols-5 gap-x-3">
               {/* Labels Column */}
               <div className="flex flex-col">
                 {/* Tier Label */}
@@ -167,13 +167,13 @@ export default function Pricing() {
                 <div
                   key={tier.key}
                   className={`flex flex-col ${
-                    tier.key === 'growth' ? 'relative z-10' : ''
+                    tier.key === 'pro' ? 'relative z-10' : ''
                   }`}
                 >
                   {/* Tier Name Card */}
                   <div
                     className={`flex h-24 flex-col items-center justify-center rounded-t-lg border-t p-3 text-center ${
-                      tier.key === 'growth'
+                      tier.key === 'pro'
                         ? 'border-x-2 border-t-2 border-emerald-500 bg-white shadow-md'
                         : 'border-x border-gray-200 bg-white'
                     }`}
@@ -191,7 +191,7 @@ export default function Pricing() {
                   {/* Total Price Card */}
                   <div
                     className={`flex h-32 items-center justify-center border-y p-4 ${
-                      tier.key === 'growth'
+                      tier.key === 'pro'
                         ? 'border-x-2 border-y-2 border-emerald-500 bg-white shadow-md'
                         : 'border-x border-gray-200 bg-white'
                     }`}
@@ -220,7 +220,7 @@ export default function Pricing() {
                   {/* Per Order Price Card */}
                   <div
                     className={`flex h-24 flex-col items-center justify-center rounded-b-lg border-b p-3 ${
-                      tier.key === 'growth'
+                      tier.key === 'pro'
                         ? 'border-x-2 border-b-2 border-emerald-500 bg-white shadow-md'
                         : 'border-x border-gray-200 bg-white'
                     }`}

@@ -47,14 +47,6 @@ export const pricing: { tiers: Tier[] } = {
       saving: 25,
       ordersDisplay: '1000',
     },
-    {
-      key: 'corporate',
-      orders: 2000,
-      price: 1599,
-      perOrder: 0.8,
-      saving: 40,
-      ordersDisplay: '2000',
-    },
   ],
 }
 
