@@ -8,7 +8,7 @@ export function SocialProof() {
   const t = useTranslations('hero')
 
   return (
-    <div className="group relative inline-flex items-center gap-2 overflow-hidden rounded-full border border-slate-200 bg-white/70 p-2 pe-4 shadow-lg shadow-emerald-200/10 backdrop-blur-lg transition-all hover:scale-105 hover:bg-white sm:pe-5 lg:px-6 lg:py-4">
+    <div className="group relative inline-flex items-center gap-2 overflow-hidden rounded-full border border-slate-200 bg-white/70 p-2 pe-4 shadow-lg shadow-emerald-200/10 backdrop-blur-lg transition-all hover:scale-105 hover:bg-white sm:pe-5 lg:px-4 lg:py-4">
       <div className="flex -space-x-3 ps-1">
         {[1, 2, 3, 4].map((num) => (
           <Image
