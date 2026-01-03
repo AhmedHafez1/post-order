@@ -29,7 +29,7 @@ export function SocialProof() {
           <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-500 opacity-75"></span>
           <span className="relative inline-flex h-3 w-3 rounded-full bg-emerald-500"></span>
         </span>
-        <span className="text-xs text-slate-600">
+        <span className="text-xs text-slate-600 lg:text-sm">
           {t.rich('join_social_proof', {
             bold: (chunks) => (
               <span className="font-bold text-slate-900">{chunks}</span>
