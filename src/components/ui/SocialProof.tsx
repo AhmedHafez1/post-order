@@ -8,7 +8,7 @@ export function SocialProof() {
   const t = useTranslations('hero')
 
   return (
-    <div className="group relative inline-flex items-center gap-3 overflow-hidden rounded-full border border-slate-200 bg-white/70 p-2 pe-4 shadow-lg shadow-emerald-200/10 backdrop-blur-lg transition-all hover:scale-105 hover:bg-white sm:pe-5 lg:px-6 lg:py-4">
+    <div className="group relative inline-flex items-center gap-2 overflow-hidden rounded-full border border-slate-200 bg-white/70 p-2 pe-4 shadow-lg shadow-emerald-200/10 backdrop-blur-lg transition-all hover:scale-105 hover:bg-white sm:pe-5 lg:px-6 lg:py-4">
       <div className="flex -space-x-3 ps-1">
         {[1, 2, 3, 4].map((num) => (
           <Image
@@ -24,19 +24,12 @@ export function SocialProof() {
 
       <div className="h-4 w-px bg-slate-200/60" />
 
-      <div className="flex items-center gap-1.5">
-        <Star className="h-3.5 w-3.5 fill-amber-400 text-amber-400" />
-        <span className="text-xs font-bold text-slate-800 sm:text-sm">5.0</span>
-      </div>
-
-      <div className="h-4 w-px bg-slate-200/60" />
-
       <div className="flex items-center gap-2">
-        <span className="relative flex h-2 w-2">
+        <span className="relative flex h-3 w-3">
           <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-500 opacity-75"></span>
-          <span className="relative inline-flex h-2 w-2 rounded-full bg-emerald-500"></span>
+          <span className="relative inline-flex h-3 w-3 rounded-full bg-emerald-500"></span>
         </span>
-        <span className="text-xs text-slate-600 sm:text-sm">
+        <span className="text-xs text-slate-600">
           {t.rich('join_social_proof', {
             bold: (chunks) => (
               <span className="font-bold text-slate-900">{chunks}</span>
