@@ -24,9 +24,9 @@ function FAQ() {
           transition={{ duration: 0.6 }}
           className="mx-auto max-w-3xl rounded-2xl border border-emerald-100 bg-white/90 p-6 shadow-sm"
         >
-          <h3 className="mb-4 text-center text-xl leading-tight font-black text-slate-700 sm:text-2xl lg:text-3xl">
+          <h2 className="mb-4 text-center text-2xl leading-tight font-black text-slate-700 sm:text-3xl md:text-4xl lg:text-5xl">
             {tFaq('section_title')}
-          </h3>
+          </h2>
           <p className="mb-8 text-center text-lg font-medium text-slate-600 sm:text-xl lg:mb-16">
             {tFaq('section_description')}
           </p>

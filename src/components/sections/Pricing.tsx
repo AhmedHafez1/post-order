@@ -21,7 +21,7 @@ export default function Pricing() {
       <Container>
         {/* Header */}
         <div className="mb-8 text-center sm:mb-12">
-          <h2 className="mb-4 text-2xl font-black sm:text-3xl md:text-4xl">
+          <h2 className="mb-4 text-2xl leading-tight font-black text-slate-700 sm:text-3xl md:text-4xl lg:text-5xl">
             {t('title')}
           </h2>
           <p className="mb-8 text-sm text-gray-600 sm:mb-8 sm:text-base">

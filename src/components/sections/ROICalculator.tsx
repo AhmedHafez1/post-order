@@ -54,7 +54,7 @@ export default function ROICalculator() {
           transition={{ duration: 0.6 }}
           className="mb-8 text-center sm:mb-12"
         >
-          <h2 className="mb-3 text-2xl leading-tight font-black text-slate-800 sm:text-3xl md:mb-4 lg:text-4xl">
+          <h2 className="mb-3 text-2xl leading-tight font-black text-slate-700 sm:text-3xl md:text-4xl lg:text-5xl">
             {t('section_title')}
           </h2>
           <div className="mx-auto h-1 w-24 rounded-full bg-gradient-to-r from-emerald-500 to-emerald-600" />

@@ -79,7 +79,7 @@ function Stats() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.1 }}
-              className="mb-8 text-xl leading-tight font-black text-slate-700 sm:text-2xl lg:text-3xl"
+              className="mb-8 text-2xl leading-tight font-black text-slate-700 sm:text-3xl md:text-4xl lg:text-5xl"
             >
               {t('title')}{' '}
               <span className="bg-linear-to-r from-emerald-600 to-emerald-500 bg-clip-text text-transparent">
